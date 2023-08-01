@@ -1,4 +1,4 @@
-# 使用yarn+vite+tailwind创建 和发布 react项目配置：
+## 使用yarn+vite+tailwind创建 和发布 react项目配置：
 
 
 
