@@ -1,0 +1,47 @@
+.index {
+    font-family: 'Radio Canada', sans-serif;
+
+    .section {
+        height: calc(100vh - 4rem);
+
+        // background-color: #131b2c;
+        position: relative;
+        top: 0;
+
+        // scroll-snap-align起作用的话必须父容器有overflow样式
+        overflow-y: auto;
+        scroll-snap-type: y mandatory;
+        // 隐藏垂直方向的滚动条
+        scrollbar-width: none; // for firefox
+        //设置滚动的速度
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        >* {
+            width: 100%;
+            height: inherit;
+            scroll-snap-align: start;
+
+            a {
+                text-decoration: none;
+            }
+
+            ul {
+                list-style: none;
+            }
+
+            a,
+            ul,
+            li,
+            span {
+                margin: 0;
+                padding: 0;
+            }
+
+            box-sizing: border-box;
+        }
+    }
+}
