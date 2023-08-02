@@ -14,7 +14,7 @@ import './index.scss'
 function Index() {
     return (
         <div className='index h-screen bg-bgColor '>
-            <header className='h-16 bg-bgColorHeader border-b border-subColor'>
+            <header className='h-16 bg-bgColorHeader border-b border-subBdColor'>
                 <Header />
                 {/* <Menu /> */}
             </header>

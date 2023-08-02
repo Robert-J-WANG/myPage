@@ -8,8 +8,8 @@ function Home() {
 
             {/* top avatar */}
             <div className="flex items-center justify-center w-40 h-40 rounded-full overflow-hidden relative">
-                <span className='absolute w-44 h-44 bg-gradient-to-br from-mainColor to-gray-700 animate-spin-slow'></span>
-                <div className="z-10 w-36 h-36 rounded-full bg-gray-400 bg-[url('./assets/myAvatar.png')] bg-center bg-95%"></div>
+                <span className='absolute w-44 h-44 bg-gradient-to-br from-mainColor to-bgColor animate-spin-slow'></span>
+                <div className="z-10 w-36 h-36 rounded-full bg-subBdColor bg-[url('./assets/myAvatar.png')] bg-center bg-95%"></div>
             </div>
 
 
@@ -41,13 +41,13 @@ function Home() {
                     introIconData.map(item => (
                         <li key={item.id} className=''>
 
-                            <a href={item.anchor} className="group relative inline-block h-10 w-10 overflow-hidden border border-subColor border-opacity-50 text-center align-middle text-lg leading-none text-body rounded">
+                            <a href={item.anchor} className="group relative inline-block h-10 w-10 overflow-hidden border border-subBdColor border-opacity-50 text-center align-middle text-lg leading-none text-body rounded">
 
                                 <span className="front relative left-0 top-0 flex h-full w-full translate-y-0 transform items-center justify-center rounded bg-bgColor transition-all duration-500 group-hover:-translate-y-full">
                                     <img src={item.icon1} alt="" className='w-10' />
                                 </span>
 
-                                <span className="back absolute left-0 top-0 flex h-full w-full translate-y-full items-center justify-center rounded bg-mainColor text-grey transition-all duration-500 group-hover:translate-y-0">
+                                <span className="back absolute left-0 top-0 flex h-full w-full translate-y-full items-center justify-center rounded bg-mainColor transition-all duration-500 group-hover:translate-y-0">
                                     <img src={item.icon2} alt="" className='w-10' />
 
                                 </span>

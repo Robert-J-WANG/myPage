@@ -9,7 +9,7 @@ export default function AboutBody() {
             <div className='hidden md:flex items-center justify-end'>
                 <div className=" flex items-center justify-center h-4/5  w-4/5 rounded-xl overflow-hidden relative">
                     <span className='absolute w-[800px] h-[800px] bg-gradient-to-br from-mainColor to-bgColor animate-spin-slow'></span>
-                    <div className="z-10 w-[calc(100%-20px)] h-[calc(100%-20px)] rounded-lg  bg-[url('./assets/about-image.jpg')] bg-cover bg-100% "></div>
+                    <div className="z-10 w-[calc(100%-20px)] h-[calc(100%-20px)] rounded-lg bg-[url('./assets/about-image.jpg')] bg-cover"></div>
                 </div>
             </div>
 
@@ -31,7 +31,7 @@ export default function AboutBody() {
                         </li>
                     ))}
                 </ul>
-                <a href="/resume.pdf" className="w-44 h-10 rounded text-gl text-mainColor border border-mainColor uppercase flex items-center justify-center hover:bg-mainColor hover:border-2  hover:text-bgColor  duration-200 "><span >Download Resume</span>
+                <a href="/resume.pdf" className="w-44 h-10 rounded text-gl text-mainColor bg-mainColor20 border border-mainColor uppercase flex items-center justify-center hover:bg-mainColor hover:text-bgColor  duration-200 "><span >Download Resume</span>
                 </a>
             </div>
 

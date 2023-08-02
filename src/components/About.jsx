@@ -5,7 +5,7 @@ import Pagination from '@mui/material/Pagination';
 import Stack from '@mui/material/Stack';
 import AboutBody from './widgets/AboutBody';
 import MySkill from './widgets/MySkill';
-import MyService from './MyService';
+import MyService from './widgets/MyService';
 
 function About() {
 

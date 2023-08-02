@@ -11,7 +11,7 @@ export default function
                 {
                     skillData.map(item => (
                         <li key={item.id}>
-                            <div className="relative p-4 text-center md:p-6 rounded-xl border border-subColor bg-subBgColor">
+                            <div className="relative p-4 text-center md:p-6 rounded-xl border border-subBdColor bg-subBgColor">
                                 <div className="relative mb-2 inline-block text-mainColor">
                                     <svg className="circle" width="120" height="120" viewBox="0 0 120 120">
                                         <circle className="circlebg" cx="60" cy="60" r="54" pathLength="1" strokeLinecap="round" strokeWidth="12"></circle>

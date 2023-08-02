@@ -19,9 +19,9 @@ function Header() {
 
             {/*right hamburger */}
             <div className='w-6 h-5 sm:w-10  sm:h-8 flex flex-col justify-between cursor-pointer ' onClick={() => { setMenuOpen(!menuOpen) }}>
-                <span className={`w-full h-1 bg-white transition-all duration-500 origin-left ${menuOpen ? 'rotate-0' : 'rotate-45'}`}></span>
-                <span className={`w-full h-1 transition-all duration-500 ${menuOpen ? ' bg-white' : 'bg-bgColorHeader'}`}></span>
-                <span className={`w-full h-1 bg-white origin-left transition-all duration-500 ${menuOpen ? 'rotate-0' : '-rotate-45'}`}></span>
+                <span className={`w-full h-1 bg-textColor transition-all duration-500 origin-left ${menuOpen ? 'rotate-0' : 'rotate-45'}`}></span>
+                <span className={`w-full h-1 transition-all duration-500 ${menuOpen ? ' bg-textColor' : 'bg-bgColorHeader'}`}></span>
+                <span className={`w-full h-1 bg-textColor origin-left transition-all duration-500 ${menuOpen ? 'rotate-0' : '-rotate-45'}`}></span>
             </div>
 
         </div>

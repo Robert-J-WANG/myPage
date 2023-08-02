@@ -1,5 +1,5 @@
 import React from 'react'
-import { serviceData } from '../data'
+import { serviceData } from '../../data'
 
 export default function MyService() {
     return (
@@ -7,7 +7,7 @@ export default function MyService() {
             <ul className='w-full h-full grid grid-cols-3 gap-5'>
                 {
                     serviceData.map(item => (
-                        <li key={item.id} className=' border border-subBgColor bg-subBgColor rounded-xl p-5 group'>
+                        <li key={item.id} className=' border border-subBdColor bg-subBgColor rounded-xl p-5 group'>
                             <div className='flex justify-between'>
                                 <span className='w-20 h-20 text-mainColor  rounded-full  bg-subBgColor overflow-hidden flex items-center justify-center '>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="60%" height="60%" className="injected-svg group-hover:animate-iconScale" data-src={item.link} xmlnsXlink="http://www.w3.org/1999/xlink" fill="currentColor" >

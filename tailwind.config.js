@@ -12,12 +12,14 @@ export default {
       },
 
       colors: {
-        'bgColor': '#272a37',
-        'bgColorHeader': 'rgba(37, 42, 63, .1)',
-        'mainColor': '#8fdfb2',
-        'mainColor20': 'rgba(143, 223, 178, .2)',
-        'subColor': 'rgba(130, 168, 210,.7)',
-        'subBgColor': 'rgba(130, 168, 210,.1)',
+        'textColor': '#c1d3cf',
+        'bgColor': '#1c1e26',
+        'bgColorHeader': 'rgba(21, 23, 28, .9)',
+        'mainColor': '#9feaad',
+        'mainColor20': 'rgba(145, 216, 209, .3)',
+        'subColor': '#82a8d2',
+        'subBgColor': 'rgba(96, 121, 153,.2)',
+        'subBdColor': 'rgba(96, 121, 153,.6)',
 
       },
 
