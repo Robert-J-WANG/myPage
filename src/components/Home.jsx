@@ -16,7 +16,7 @@ function Home() {
             {/* center type animation */}
             <div className=" flex flex-col items-center justify-center gap-5">
                 <div className='flex items-center justify-center gap-3 text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold' >
-                    <span className='text-white'>Hi, I am</span>
+                    <span className=''>Hi, I am</span>
                     <span className='text-mainColor ' >
                         <Typewriter
                             options={{
@@ -28,7 +28,7 @@ function Home() {
                         />
                     </span>
                 </div>
-                <p className='text-xs xs:text-sm sm:text-base md:text-xl text-gray-400 text-center'>
+                <p className='text-xs xs:text-sm sm:text-base md:text-xl text-subColor text-center'>
                     I am a frontend web developer. <br />
                     I can provide clean code and pixel perfect design. <br />
                     I also make website more & more interactive with web animations.
@@ -41,7 +41,7 @@ function Home() {
                     introIconData.map(item => (
                         <li key={item.id} className=''>
 
-                            <a href={item.anchor} className="group relative inline-block h-10 w-10 overflow-hidden border border-white border-opacity-50 text-center align-middle text-lg leading-none text-body rounded">
+                            <a href={item.anchor} className="group relative inline-block h-10 w-10 overflow-hidden border border-subColor border-opacity-50 text-center align-middle text-lg leading-none text-body rounded">
 
                                 <span className="front relative left-0 top-0 flex h-full w-full translate-y-0 transform items-center justify-center rounded bg-bgColor transition-all duration-500 group-hover:-translate-y-full">
                                     <img src={item.icon1} alt="" className='w-10' />

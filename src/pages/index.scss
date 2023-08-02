@@ -1,5 +1,7 @@
 .index {
     font-family: 'Radio Canada', sans-serif;
+    color: white;
+
 
     .section {
         height: calc(100vh - 4rem);
@@ -33,13 +35,6 @@
                 list-style: none;
             }
 
-            a,
-            ul,
-            li,
-            span {
-                margin: 0;
-                padding: 0;
-            }
 
             box-sizing: border-box;
         }

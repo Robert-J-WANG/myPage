@@ -12,7 +12,7 @@ function Menu() {
             {menuData.map(item => (
                 <li
                     key={item.id}
-                    className={`text-[8px] xs:text-sm sm:text-base md:text-lg lg:text-xl font-RCD font-bold  ${clickedId === item.id ? ' text-mainColor' : ' text-white'} cursor-pointer`}
+                    className={`text-[8px] xs:text-sm sm:text-base md:text-lg lg:text-xl font-RCD font-bold  ${clickedId === item.id ? ' text-mainColor' : ' '} cursor-pointer`}
                     onClick={() => { handleClick(item.id) }}
                 >
                     <a href={item.anchor}>{item.title}</a>

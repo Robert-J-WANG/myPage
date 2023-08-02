@@ -2,7 +2,9 @@ import React from 'react'
 
 function Blog() {
     return (
-        <div id='blog'>Blog</div>
+        <div id='blog' className='overflow-hidden'>
+
+        </div>
     )
 }
 
