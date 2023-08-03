@@ -3,7 +3,7 @@ import { serviceData } from '../../data'
 
 export default function MyService() {
     return (
-        <div className='w-5/6 h-2/3 '>
+        <div className=' w-5/6  h-2/3 mx-auto mt-10'>
             <ul className='w-full h-full grid grid-cols-3 gap-5'>
                 {
                     serviceData.map(item => (

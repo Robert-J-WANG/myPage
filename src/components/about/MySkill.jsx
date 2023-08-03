@@ -5,7 +5,7 @@ import { skillData, languageData } from '../../data'
 export default function
     () {
     return (
-        <div className='w-4/5 h-full'>
+        <div className='w-4/5 h-full mx-auto'>
             {/* top part */}
             <ul className='w-full h-2/5 grid grid-cols-4 gap-5'>
                 {

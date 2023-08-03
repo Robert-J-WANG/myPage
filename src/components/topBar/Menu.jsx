@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { menuData } from '../data'
+import { menuData } from '../../data'
 
 function Menu() {
     const [clickedId, setClickedId] = useState(1);

@@ -1,9 +1,8 @@
 import React from 'react'
-import Header from '../components/Header'
-import Menu from '../components/Menu'
+import TopBar from '../components/topBar/TopBar'
 import Home from '../components/Home'
-import About from '../components/About'
-import Resume from '../components/Resume'
+import About from '../components/about/About'
+import Resume from '../components/resume/Resume'
 import Works from '../components/Works'
 import Blog from '../components/Blog'
 import Contact from '../components/Contact'
@@ -15,7 +14,7 @@ function Index() {
     return (
         <div className='index h-screen bg-bgColor '>
             <header className='h-16 bg-bgColorHeader border-b border-subBdColor'>
-                <Header />
+                <TopBar />
                 {/* <Menu /> */}
             </header>
             <section className='section container mx-auto'>
