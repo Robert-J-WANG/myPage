@@ -149,3 +149,65 @@ export const experienceData = [
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
     },
 ];
+
+// works data
+export const uiData = [
+    {
+        id: 1,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-2.jpg',
+    },
+    {
+        id: 2,
+        title: 'Packet',
+        description: 'Packet design mockup',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-4.jpg',
+    },
+    {
+        id: 3,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-3.jpg',
+    },
+    {
+        id: 4,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-1.jpg',
+    },
+
+];
+
+export const basicWebData = [
+    {
+        id: 1,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-2.jpg',
+    },
+    {
+        id: 2,
+        title: 'Packet',
+        description: 'Packet design mockup',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-4.jpg',
+    },
+    {
+        id: 3,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-3.jpg',
+    },
+    {
+        id: 4,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-1.jpg',
+    },
+    {
+        id: 5,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-5.jpg',
+    },
+]
