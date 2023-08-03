@@ -1,11 +1,10 @@
 import React, { useRef, useState } from 'react'
 import SectionHeader from '../widgets/SectionHeader'
 import { aboutMenuData, infoData } from '../../data'
-import Pagination from '@mui/material/Pagination';
-import Stack from '@mui/material/Stack';
 import AboutBody from './AboutBody';
 import MySkill from './MySkill';
 import MyService from './MyService';
+import SectionPagination from '../widgets/SectionPagination';
 
 function About() {
 
@@ -65,9 +64,7 @@ function About() {
             </main>
 
             <footer className='w-full h-10  flex items-center justify-center'>
-                <Stack spacing={2}>
-                    <Pagination count={3} variant="outlined" color="primary" size="large" onChange={handlePage} />
-                </Stack>
+                <SectionPagination count={3} handlePage={handlePage} />
             </footer>
         </div>
     )

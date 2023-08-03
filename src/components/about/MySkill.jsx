@@ -37,15 +37,6 @@ export default function
                         </li>
                     ))
                 }
-
-
-                {/* <li className='bg-green-300'>right</li>
-                <li className='bg-green-300' >left</li>
-                <li className='bg-green-300'>right</li>
-                <li className='bg-green-300' >left</li>
-                <li className='bg-green-300'>right</li>
-                <li className='bg-green-300' >left</li>
-                <li className='bg-green-300'>right</li> */}
             </ul>
 
         </div>

@@ -11,32 +11,24 @@ function Resume() {
         setPage(value);
     }
 
-    const renderSelectedPage = () => {
-        switch (page) {
-            case 1:
-                return <Education />;
-            case 2:
-                return <Experience />;
-            default:
-                return null;
-        }
-    };
-
     return (
         <div id='resume' className='about flex flex-col items-center justify-center gap-10'>
             <header>
                 <SectionHeader title={'my resume'} />
             </header>
 
-            <main className='bg-red-500 w-full h-3/5 overflow-hidden ' >
+            <main className=' w-full h-3/5 overflow-hidden ' >
 
-                <div className='bg-yellow-300 w-full h-full flex  transition-transform ease-in-out duration-1500' style={{ transform: `translateX(-${(page - 1) * 100}%)` }}>
-                    <div className='bg-pink-400 w-full h-full flex-shrink-0'>
+                <div className=' w-full h-full flex  transition-transform ease-in-out duration-1500' style={{ transform: `translateX(-${(page - 1) * 100}%)` }}>
+
+                    <div className=' w-full h-full flex-shrink-0 '>
                         <Education />
                     </div>
-                    <div className='bg-pink-400 w-full h-full flex-shrink-0'>
+
+                    <div className=' w-full h-full flex-shrink-0'>
                         <Experience />
                     </div>
+
                 </div>
 
             </main>

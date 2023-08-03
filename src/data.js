@@ -100,3 +100,52 @@ export const serviceData = [
 
     },
 ];
+
+// resume
+export const educationData = [
+    {
+        id: 1,
+        year: '2008 - 2010',
+        title: 'Higher School Graduation',
+        school: 'Abc College',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+    {
+        id: 2,
+        year: '2010 - 2014',
+        title: 'Bachelor of Sciences',
+        school: 'Def University',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+    {
+        id: 3,
+        year: '2014 - 2016',
+        title: 'Masters of Sciences',
+        school: 'Def University',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+];
+
+export const experienceData = [
+    {
+        id: 1,
+        year: '2015 - 2017',
+        title: 'UI/UX Designer',
+        school: 'Abc Company',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+    {
+        id: 2,
+        year: '2017 - 2019',
+        title: 'Front-end Developer',
+        school: 'Def Company',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+    {
+        id: 3,
+        year: '2019 - Present',
+        title: 'Back-end Developer',
+        school: 'Def Company',
+        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+    },
+];

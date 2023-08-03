@@ -12,22 +12,22 @@
 
     progress {
         width: 100%;
-        height: 1rem;
+        height: 0.8rem;
         color: #9feaad;
         background: rgba(145, 216, 209, .3);
-        border-radius: 0.5rem;
+        border-radius: 0.4rem;
     }
 
     /* 表示总长度背景色 */
     progress::-webkit-progress-bar {
         background-color: rgba(145, 216, 209, .3);
-        border-radius: 0.5rem;
+        border-radius: 0.4rem;
     }
 
     /* 表示已完成进度背景色 */
     progress::-webkit-progress-value {
         background: #9feaad;
-        border-radius: 0.5rem;
+        border-radius: 0.4rem;
     }
 
 }
