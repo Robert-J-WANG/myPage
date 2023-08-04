@@ -151,34 +151,6 @@ export const experienceData = [
 ];
 
 // works data
-export const uiData = [
-    {
-        id: 1,
-        title: 'Paint',
-        description: 'Creative wall painting',
-        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-2.jpg',
-    },
-    {
-        id: 2,
-        title: 'Packet',
-        description: 'Packet design mockup',
-        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-4.jpg',
-    },
-    {
-        id: 3,
-        title: 'Paint',
-        description: 'Creative wall painting',
-        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-3.jpg',
-    },
-    {
-        id: 4,
-        title: 'Paint',
-        description: 'Creative wall painting',
-        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-1.jpg',
-    },
-
-];
-
 export const basicWebData = [
     {
         id: 1,
@@ -210,4 +182,32 @@ export const basicWebData = [
         description: 'Creative wall painting',
         img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-5.jpg',
     },
-]
+];
+
+export const advancedWebData = [
+    {
+        id: 1,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://img-c.udemycdn.com/course/480x270/1218586_9f86.jpg',
+    },
+    {
+        id: 2,
+        title: 'Packet',
+        description: 'Packet design mockup',
+        img: 'https://www.jagoanhosting.com/blog/wp-content/uploads/2022/09/web-development.jpg',
+    },
+    {
+        id: 3,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://mountaintopwebdesign.com/wp-content/uploads/webdesigner.jpg',
+    },
+    {
+        id: 4,
+        title: 'Paint',
+        description: 'Creative wall painting',
+        img: 'https://qodeinteractive.com/wp-content/uploads/2020/07/chiropractic.jpg',
+    },
+
+];
