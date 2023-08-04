@@ -4,7 +4,7 @@ import Home from '../components/Home'
 import About from '../components/about/About'
 import Resume from '../components/resume/Resume'
 import Works from '../components/works/Works'
-import Blog from '../components/Blog'
+import Blog from '../components/blog/Blog'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 

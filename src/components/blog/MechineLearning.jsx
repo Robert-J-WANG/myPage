@@ -3,7 +3,7 @@ import { advancedWebData } from '../../data'
 import CardList from '../widgets/CardList';
 import SectionPagination from '../widgets/SectionPagination';
 
-export default function AdvancedWeb() {
+export default function MechineLearning() {
     const [page, setPage] = useState(1);
     const handlePage = (event, value) => {
         setPage(value);

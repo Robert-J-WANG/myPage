@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function WorksList({ id, img, title, description }) {
+export default function CardList({ id, img, title, description }) {
     return (
         <div className='w-full h-full p-5 flex flex-col items-start justify-center gap-3  bg-subBgColor rounded border border-subBdColor group group-hover:-translate-y-2 duration-500'>
             <div className='basis-5/6 w-full h-full relative overflow-hidden'>

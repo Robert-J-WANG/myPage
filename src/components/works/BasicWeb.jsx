@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { basicWebData } from '../../data'
-import WorksList from './worksList';
+import CardList from '../widgets/CardList';
 import SectionPagination from '../widgets/SectionPagination';
 
 
@@ -16,7 +16,7 @@ export default function BasicWeb() {
                 {
                     basicWebData.map(data => (
                         <li key={data.id} className=' h-full basis-1/3 px-5 flex justify-center items-center flex-shrink-0 group'>
-                            <WorksList  {...data} />
+                            <CardList  {...data} />
                         </li>
                     ))
                 }
