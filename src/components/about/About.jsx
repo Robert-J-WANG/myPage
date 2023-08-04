@@ -6,32 +6,14 @@ import MySkill from './MySkill';
 import MyService from './MyService';
 import SectionPagination from '../widgets/SectionPagination';
 
-function About() {
-
-
+export default function About() {
     const [page, setPage] = useState(1)
     const handlePage = (event, value) => {
         setPage(value);
-
     }
-
-    // // 使用JS渲染组件的方式
-    // const renderSelectedPage = () => {
-    //     switch (page) {
-    //         case 1:
-    //             return <AboutBody />;
-    //         case 2:
-    //             return <MySkill />;
-    //         case 3:
-    //             return <MyService />;
-    //         default:
-    //             return null;
-    //     }
-    // };
-
     return (
-        <div id='about' className='about flex flex-col items-center justify-center gap-10'>
-            <header>
+        <div id='about' className=' about flex flex-col items-center justify-center'>
+            <header className=' w-full basis-0.2 items-center justify-center'>
                 {
                     aboutMenuData.map(item => {
                         if (item.id === page) {
@@ -42,14 +24,14 @@ function About() {
                 }
             </header>
 
-            <main className='w-full h-3/5 overflow-hidden ' >
+            <main className=' w-full basis-0.65 flex items-center justify-center overflow-hidden ' >
                 {/* 使用JS渲染组件的方式 */}
                 {/* {renderSelectedPage()} */}
 
                 {/* 使用css实现轮播效果 */}
-                <div className='w-full h-full flex  transition-transform ease-in-out duration-1500' style={{ transform: `translateX(-${(page - 1) * 100}%)` }}>
+                <div className='  w-full h-full flex  transition-transform items-center ease-in-out duration-1500' style={{ transform: `translateX(-${(page - 1) * 100}%)` }}>
 
-                    <div className=' w-full h-full flex-shrink-0'>
+                    <div className='w-full h-5/6 flex-shrink-0'>
                         <AboutBody />
                     </div>
                     <div className=' w-full h-full  flex-shrink-0'>
@@ -63,11 +45,11 @@ function About() {
 
             </main>
 
-            <footer className='w-full h-10  flex items-center justify-center'>
+            <footer className=' w-full basis-0.15  flex items-center justify-center'>
                 <SectionPagination count={3} handlePage={handlePage} />
             </footer>
         </div>
     )
 }
 
-export default About
+

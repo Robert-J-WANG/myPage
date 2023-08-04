@@ -4,7 +4,7 @@ import { infoData } from '../../data'
 
 export default function AboutBody() {
     return (
-        <div className='w-full h-full grid  md:grid-cols-2 gap-10'>
+        <div className='w-full  h-full grid  md:grid-cols-2 gap-10'>
             {/* left part */}
             <div className='hidden md:flex items-center justify-end'>
                 <div className=" flex items-center justify-center h-4/5  w-4/5 rounded-xl overflow-hidden relative">

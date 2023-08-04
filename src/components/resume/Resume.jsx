@@ -4,7 +4,7 @@ import SectionPagination from '../widgets/SectionPagination'
 import Education from './Education'
 import Experience from './Experience'
 
-function Resume() {
+export default function Resume() {
 
     const [page, setPage] = useState(1)
     const handlePage = (event, value) => {
@@ -12,12 +12,12 @@ function Resume() {
     }
 
     return (
-        <div id='resume' className='about flex flex-col items-center justify-center gap-10'>
-            <header>
+        <div id='resume' className='flex flex-col items-center justify-center '>
+            <header className='w-full basis-0.2  items-center justify-center'>
                 <SectionHeader title={'my resume'} />
             </header>
 
-            <main className=' w-full h-3/5 overflow-hidden ' >
+            <main className=' w-full basis-0.65 overflow-hidden ' >
 
                 <div className=' w-full h-full flex  transition-transform ease-in-out duration-1500' style={{ transform: `translateX(-${(page - 1) * 100}%)` }}>
 
@@ -33,14 +33,14 @@ function Resume() {
 
             </main>
 
-            <footer className='w-full h-10  flex items-center justify-center'>
+            <footer className=' w-full basis-0.15  flex items-center justify-center'>
                 <SectionPagination count={2} handlePage={handlePage} />
             </footer>
         </div>
     )
 }
 
-export default Resume
+
 
 
 
