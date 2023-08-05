@@ -6,27 +6,23 @@ import Resume from '../components/resume/Resume'
 import Works from '../components/works/Works'
 import Blog from '../components/blog/Blog'
 import Contact from '../components/Contact'
-import Footer from '../components/Footer'
 
 import './index.scss'
 
-function Index() {
-    return (
-        <div className='index h-screen bg-bgColor '>
-            <header className='h-16 bg-bgColorHeader border-b border-subBdColor'>
-                <TopBar />
-                {/* <Menu /> */}
-            </header>
-            <section className='section container mx-auto'>
-                <Home />
-                <About />
-                <Resume />
-                <Works />
-                <Blog />
-                <Contact />
-            </section>
-        </div>
-    )
+export default function Index () {
+  return (
+    <div className='h-screen index bg-bgColor '>
+      <header className='h-16 border-b bg-bgColorHeader border-subBdColor'>
+        <TopBar />
+      </header>
+      <section className='container mx-auto section'>
+        <Home />
+        <About />
+        <Resume />
+        <Works />
+        <Blog />
+        <Contact />
+      </section>
+    </div>
+  )
 }
-
-export default Index

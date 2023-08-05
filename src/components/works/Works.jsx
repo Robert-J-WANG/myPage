@@ -1,36 +1,40 @@
-import React from 'react'
-import { Route, Routes, Navigate } from 'react-router-dom'
+import React, { useEffect } from 'react'
+import { Navigate, Route, Routes, useNavigate } from 'react-router-dom'
 import SectionHeader from '../widgets/SectionHeader'
-import BasicWeb from './BasicWeb';
+import BasicWeb from './BasicWeb'
 
-import MyNavLink from '../widgets/MyNavLink';
-import AdvancedWeb from './AdvancedWeb';
+import MyNavLink from '../widgets/MyNavLink'
+import AdvancedWeb from './AdvancedWeb'
 
-export default function Works() {
+export default function Works () {
+  const navigate = useNavigate()
 
-    return (
-        <div id='works' className='flex flex-col items-center justify-center'>
-            <header className='basis-1/5 w-full '>
-                <SectionHeader title={'my works'} />
-            </header>
+  // useEffect(() => {
+  //   navigate('/basicWeb')
+  // }, [])
 
-            <main className='  w-full basis-4/5 flex flex-col items-center justify-center  overflow-hidden' >
-                {/* 连接路由 */}
-                <div className=' w-full basis-1/6 flex items-center justify-center gap-5'>
-                    <MyNavLink to='/works/basicWeb' >html & css</MyNavLink>
-                    <MyNavLink to='/works/advancedWeb'>react js</MyNavLink>
-                </div>
+  return (
+    <div id='works' className='flex flex-col items-center justify-center'>
+      <header className='w-full basis-1/5 '>
+        <SectionHeader title={'my works'} />
+      </header>
 
-                {/* 注册路由 */}
-                <div className='basis-5/6 w-full '>
-                    <Routes>
-                        <Route path='/works/basicWeb' element={<BasicWeb />} />
-                        <Route path='/works/advancedWeb' element={<AdvancedWeb />} />
-                        <Route path='/works/' element={<Navigate to='/works/basicWeb' />} />
-                    </Routes>
-                </div>
-            </main>
+      <main className='flex flex-col items-center justify-center w-full overflow-hidden basis-4/5'>
+        {/* 连接路由 */}
+        <div className='flex items-center justify-center w-full gap-5 basis-1/6'>
+          <MyNavLink to='/basicWeb'>html & css</MyNavLink>
+          <MyNavLink to='/advancedWeb'>react js</MyNavLink>
         </div>
-    )
-}
 
+        {/* 注册路由 */}
+        <div className='w-full basis-5/6 '>
+          <Routes>
+            <Route path='/basicWeb' element={<BasicWeb />} />
+            <Route path='/advancedWeb' element={<AdvancedWeb />} />
+            <Route path='/' element={<Navigate to='/basicWeb' />} />
+          </Routes>
+        </div>
+      </main>
+    </div>
+  )
+}
