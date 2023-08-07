@@ -14,7 +14,7 @@ export default {
       colors: {
         'textColor': '#c1d3cf',
         'bgColor': '#1c1e26',
-        'bgColorHeader': 'rgba(21, 23, 28, .9)',
+        'bgColorHeader': 'rgba(45, 49, 57 .3)',
         'mainColor': '#9feaad',
         'mainColor20': 'rgba(145, 216, 209, .3)',
         'subColor': '#82a8d2',
@@ -35,6 +35,7 @@ export default {
         'spin-slow': 'spin 2s linear infinite',
         'leftToRight': 'leftToRight 3s ease-in-out infinite',
         'iconScale': 'iconScale 0.5s ease-in-out 1',
+        'contactListScale': 'contactListScale 0.5s ease-in-out 1',
       },
 
       keyframes: {
@@ -46,7 +47,12 @@ export default {
           '0%': { transform: 'scale(1)' },
           '50%': { transform: 'scale(1.5)' },
           '100%': { transform: 'scale(1)' },
-        }
+        },
+        contactListScale: {
+          '0%': { transform: 'scale(1)' },
+          '50%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' },
+        },
       },
 
       screens: {

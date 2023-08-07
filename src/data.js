@@ -1,3 +1,4 @@
+import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 // Header
 export const menuData = [
     { id: 1, anchor: "#home", title: "HOME" },
@@ -9,7 +10,7 @@ export const menuData = [
 ];
 
 // Home
-export const introIconData = [
+export const soccialLinksData = [
     {
         id: 1,
         title: 'facebook',
@@ -54,13 +55,13 @@ export const infoData = [
     { id: 3, title: 'Nationality ', value: ': China' },
     { id: 4, title: 'Language ', value: ': English, Chinese' },
     { id: 5, title: 'Address ', value: ': 17 Cleghorn Ave, Mt Roskill, Auckland' },
-    { id: 6, title: 'College ', value: ': Unitec' },
+    { id: 6, title: 'College ', value: ': Unitec Institute of Technology' },
 ];
 
 export const skillData = [
     { id: 1, title: 'UI/UX Design', stroke: '0.65px 1px', percent: '65%' },
-    { id: 2, title: 'Back-end Development', stroke: '0.55px 1px', percent: '55%' },
-    { id: 3, title: 'Front-end Development', stroke: '0.85px 1px', percent: '85%' },
+    { id: 2, title: 'Front-end Development', stroke: '0.85px 1px', percent: '85%' },
+    { id: 3, title: 'Back-end Development', stroke: '0.55px 1px', percent: '55%' },
     { id: 4, title: 'Mobile App Development', stroke: '0.75px 1px', percent: '75%' },
 ];
 export const languageData = [
@@ -105,23 +106,23 @@ export const serviceData = [
 export const educationData = [
     {
         id: 1,
-        year: '2008 - 2010',
-        title: 'Higher School Graduation',
-        school: 'Abc College',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+        year: '2006 - 2010',
+        title: 'Bachelor of Mechanical Design and Automotive Engineering',
+        school: 'Shenyang University of Technology',
+        content: 'Graduate with expertise in mechanical engineering principles and specialized knowledge in automotive design. Skilled in problem-solving, CAD,UG, and project management, poised to contribute innovative solutions to the automotive industry.',
     },
     {
         id: 2,
-        year: '2010 - 2014',
-        title: 'Bachelor of Sciences',
-        school: 'Def University',
+        year: '2022 - 2023',
+        title: 'Graduate Diploma in Computing',
+        school: 'Unitec Institute of Technology',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
     },
     {
         id: 3,
-        year: '2014 - 2016',
-        title: 'Masters of Sciences',
-        school: 'Def University',
+        year: '2024 - 2025',
+        title: 'Master of Applied Technologies-Computing',
+        school: 'Unitec Institute of Technology',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
     },
 ];
@@ -129,10 +130,10 @@ export const educationData = [
 export const experienceData = [
     {
         id: 1,
-        year: '2015 - 2017',
-        title: 'UI/UX Designer',
-        school: 'Abc Company',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',
+        year: '2010 - 2016',
+        title: 'Mechanical Designer and Engineer',
+        school: 'Dalian Huarui Heavy Industry Group',
+        content: 'Designed heavy equipment components for bulk material handling, specializing in bucket wheel reclaimers and combined stacker/reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.',
     },
     {
         id: 2,
@@ -210,4 +211,17 @@ export const advancedWebData = [
         img: 'https://qodeinteractive.com/wp-content/uploads/2020/07/chiropractic.jpg',
     },
 
+];
+
+// contact 
+
+export const contactData=[
+    {id: 1, title: 'Contact on phone', description:'+64 2102610798', img:'../src/assets/phone.svg'},
+    {id: 2, title: 'Contact on email', description:'robert00nz@gmail.com', img:'../src/assets/email.svg'},
+    {id: 3, title: 'Contact address', description:'17 Cleghorn Ave, Mt Roskill, Auckland', img:'../src/assets/address.svg'},
+];
+export const contactInputData=[
+    {id: 1, title: 'Name', placeHolder: 'Enter your name...'},
+    {id: 2, title: 'Email', placeHolder: 'Enter your Email...'},
+    {id: 3, title: 'Subject', placeHolder: 'Enter your Subject...'},
 ];
