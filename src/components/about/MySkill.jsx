@@ -9,8 +9,8 @@ export default function () {
       <ul className='grid w-full grid-cols-4 gap-5 h-2/5'>
         {skillData.map(item => (
           <li key={item.id}>
-            <div className='relative p-4 text-center border md:p-6 rounded-xl border-subBdColor bg-subBgColor'>
-              <div className='relative inline-block mb-2 text-mainColor'>
+            <div className='relative p-2 text-center border lg:p-4 xl:p-6 rounded-xl border-subBdColor bg-subBgColor'>
+              <div className='relative inline-block lg:mb-2 text-mainColor'>
                 <svg
                   className='circle'
                   width='120'
@@ -42,14 +42,14 @@ export default function () {
                   {item.percent}
                 </span>
               </div>
-              <h5 className=''>{item.title}</h5>
+              <h5 className='text-sm xl:text-base'>{item.title}</h5>
             </div>
           </li>
         ))}
       </ul>
 
       {/* bottom part */}
-      <ul className='grid w-full grid-cols-2 gap-5 h-3/5'>
+      <ul className='grid w-full grid-cols-2 gap-2 bg-blue-400 lg:gap-5 h-3/5'>
         {languageData.map(item => (
           <li key={item.id} className='flex flex-col justify-center '>
             <h5 className='text-xl'>
