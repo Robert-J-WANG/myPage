@@ -31,10 +31,10 @@ export default function About () {
           className='flex items-center w-full h-full transition-transform ease-in-out duration-1500'
           style={{ transform: `translateX(-${(page - 1) * 100}%)` }}
         >
-          <div className='flex-shrink-0 w-full h-full sm:h-5/6'>
+          <div className='flex-shrink-0 w-full h-full md:h-5/6'>
             <AboutBody />
           </div>
-          <div className='flex-shrink-0 w-full h-full bg-red-300'>
+          <div className='flex-shrink-0 w-full h-full '>
             <MySkill />
           </div>
           <div className='flex-shrink-0 w-full h-full '>
