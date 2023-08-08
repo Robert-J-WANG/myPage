@@ -13,7 +13,7 @@ export default function About () {
   }
   return (
     <div id='about' className='flex flex-col items-center justify-center about'>
-      <header className=' w-full basis-0.2 items-center justify-center'>
+      <header className='w-full basis-1/12 sm:basis-0.2  items-center justify-center'>
         {aboutMenuData.map(item => {
           if (item.id === page) {
             return <SectionHeader title={item.title} key={item.id} />
@@ -22,7 +22,7 @@ export default function About () {
         })}
       </header>
 
-      <main className=' w-full basis-0.65 flex items-center justify-center overflow-hidden '>
+      <main className=' w-full basis-3/4 sm:basis-0.65 flex items-center justify-center overflow-hidden '>
         {/* 使用JS渲染组件的方式 */}
         {/* {renderSelectedPage()} */}
 
@@ -43,7 +43,7 @@ export default function About () {
         </div>
       </main>
 
-      <footer className=' w-full basis-0.15  flex items-center justify-center'>
+      <footer className=' w-full basis:1/12 sm:basis-0.15  flex items-center justify-center'>
         <SectionPagination count={3} handlePage={handlePage} />
       </footer>
     </div>

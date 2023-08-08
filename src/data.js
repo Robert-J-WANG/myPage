@@ -144,7 +144,7 @@ export const experienceData = [
     },
     {
         id: 3,
-        year: '2019 - Present',
+        year: '2019 - Now',
         title: 'Back-end Developer',
         school: 'Def Company',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed consectetur donec gravida ullamcorper cum id. Sit viverra donec in ornare euismod.',

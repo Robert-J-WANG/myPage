@@ -51,7 +51,10 @@ export default function () {
       {/* bottom part */}
       <ul className='grid w-full grid-cols-2 gap-2 lg:gap-3 xl:gap-5 2xl:gap-6 h-3/5'>
         {languageData.map(item => (
-          <li key={item.id} className='flex flex-col justify-end '>
+          <li
+            key={item.id}
+            className='flex flex-col justify-center sm:justify-end '
+          >
             <h5 className='xl:text-xl'>
               {item.title} -{' '}
               <span className='text-mainColor'>( {`${item.value} %`} )</span>

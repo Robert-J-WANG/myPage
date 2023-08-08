@@ -1,53 +1,58 @@
 import React from 'react'
-import EngineeringIcon from '@mui/icons-material/Engineering';
-import { experienceData } from '../../data';
+import EngineeringIcon from '@mui/icons-material/Engineering'
+import { experienceData } from '../../data'
 
-export default function Experience() {
-    return (
-        <div className='w-4/5 mx-auto h-full  flex flex-col items-center justify-center'>
-            {/* top part */}
-            <p className='p-5 basis-1/6 flex items-center justify-center'>
-                <span className=' w-8 h-8  border border-subBdColor rounded-full mx-5 flex items-center justify-center text-mainColor bg-subBgColor   '>
-                    <EngineeringIcon />
-                </span>
-                <span className='text-2xl'>Working Experience</span>
-            </p>
+export default function Experience () {
+  return (
+    <div className='flex flex-col items-center justify-center w-full h-full mx-auto xl:w-4/5'>
+      {/* top part */}
+      <p className='flex items-center justify-center w-full h-16 '>
+        <span className='flex items-center justify-center w-8 h-8 mx-5 border rounded-full border-subBdColor text-mainColor bg-subBgColor'>
+          <EngineeringIcon />
+        </span>
+        <span className='test-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl'>
+          Working Experience
+        </span>
+      </p>
 
-            {/* content part */}
-            <ul className=' w-full basis-5/6 flex flex-col items-end justify-center '>
-                {
-                    experienceData.map(data => (
-                        <li key={data.id} className='relative w-4/5 basis-1/3 border-mainColor '>
-                            {/* left */}
-                            <span className=" absolute top-0 -left-40 mt-7 mr-12 min-w-[115px] rounded-full bg-subBgColor p-1 text-center text-sm ">{data.year}</span>
+      {/* content part */}
+      <ul className='flex flex-col items-end justify-center w-full  h-[calc(100%-4rem)]'>
+        {experienceData.map(data => (
+          <li
+            key={data.id}
+            className='relative w-4/5 basis-1/3 border-mainColor '
+          >
+            {/* left */}
+            <span className='absolute w-10 p-1 text-sm text-center rounded-xl h-15 top-2 -left-20 bg-subBgColor'>
+              {data.year}
+            </span>
 
-                            {/* right */}
-                            <div className="w-full h-full  relative border-l-4 border-subBdColor pt-7 pl-12 ">
-                                {/* corss line */}
-                                <span className="absolute -left-0.5 top-0 mt-1 ">
+            {/* right */}
+            <div className='relative w-full h-full pl-12 border-l-4 border-subBdColor pt-7 '>
+              {/* corss line */}
+              <span className='absolute -left-0.5 top-0 mt-1 '>
+                {/* big circle */}
+                <span className='absolute z-10 inline-block w-6 h-6 border-4 rounded-full -left-3 top-6 border-mainColor '></span>
+                {/* small circle */}
+                <span className='absolute inline-block w-4 h-4 rounded-full -left-2 top-7 z-11 bg-bgColor '></span>
+                {/* x-line */}
+                <span className='absolute -left-10 top-6 -z-10 mt-2.5 h-1 w-20  rounded-full bg-subBdColor '></span>
+              </span>
 
-                                    {/* big circle */}
-                                    <span className="absolute -left-3 top-6 z-10 inline-block h-6 w-6 rounded-full border-4 border-mainColor "></span>
-                                    {/* small circle */}
-                                    <span className="absolute -left-2 top-7 z-11 inline-block h-4 w-4 rounded-full bg-bgColor "></span>
-                                    {/* x-line */}
-                                    <span className="absolute -left-10 top-6 -z-10 mt-2.5 h-1 w-20  rounded-full bg-subBdColor "></span>
-                                </span>
-
-                                {/* text */}
-                                <h5 className=" text-mainColor text-lg">{data.title}</h5>
-                                <p className="mb-2 text-heading text-subColor">{data.school}</p>
-                                <p className='w-4/5 '>{data.content}</p>
-                            </div>
-                        </li>
-                    ))
-                }
-
-            </ul>
-
-        </div>
-    )
+              {/* text */}
+              <h5 className='w-full text-sm sm:text-base md:text-lg lg:text-xl h-2/12 text-mainColor'>
+                {data.title}
+              </h5>
+              <p className='w-full text-xs sm:text-sm h-3/12 md:text-base text-heading text-subColor'>
+                {data.school}
+              </p>
+              <p className='w-full overflow-hidden text-xs sm:text-sm h-7/17 2xl:w-4/5 lg:text-base'>
+                {data.content}
+              </p>
+            </div>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
 }
-
-
-

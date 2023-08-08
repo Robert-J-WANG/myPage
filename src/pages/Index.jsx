@@ -20,7 +20,7 @@ export default function Index () {
         <About />
         <Resume />
         <Works />
-        <Blog />
+        {/* <Blog /> */}
         <Contact />
       </section>
     </div>
