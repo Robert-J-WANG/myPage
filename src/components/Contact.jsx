@@ -5,22 +5,22 @@ import SocialLinks from './widgets/SocialLinks'
 
 function Contact () {
   return (
-    <div id='contact' className='flex flex-col items-center justify-center '>
-      <header className='w-full basis-0.2  items-center justify-center'>
+    <div id='contact' className='flex flex-col items-center justify-center'>
+      <header className='w-full basis-1/12 sm:basis-1/5 '>
         <SectionHeader title={'contact me'} />
       </header>
 
-      <main className=' w-5/6  basis-0.65 flex  items-center justify-center gap-5 '>
+      <main className='flex flex-col items-center justify-center w-full overflow-hidden xl:w-5/6 sm:flex-row basis-10/12 sm:basis-4/5'>
         {/* left part */}
-        <div className='flex flex-col h-full p-5 basis-5/12'>
-          <h3 className='flex items-center text-2xl font-bold basis-1/6'>
+        <div className='flex flex-col w-full h-full px-2 sm:p-5 basis-5/12'>
+          <h3 className='hidden pl-2 text-xl font-bold sm:block md:text-2xl basis-1/12'>
             Contact Information
           </h3>
-          <ul className='flex flex-col items-center justify-center w-full gap-5 basis-5/6'>
+          <ul className='flex flex-col items-center justify-center w-full gap-2 sm:gap-5 basis-11/12'>
             {contactData.map(data => (
               <li
                 key={data.id}
-                className='flex items-center justify-start w-full gap-5 p-5 border rounded cursor-pointer basis-1/3 border-subBdColor bg-subBgColor group hover:animate-contactListScale'
+                className='flex items-center justify-start w-full gap-5 pl-5 border rounded cursor-pointer md:p-5 basis-1/3 border-subBdColor bg-subBgColor group hover:animate-contactListScale'
               >
                 {/* icon part */}
                 <span className='flex items-center justify-center w-10 h-10 rounded-full bg-mainColor20'>
@@ -29,7 +29,9 @@ function Contact () {
 
                 {/* text part */}
                 <div>
-                  <h3 className='mb-2 text-xl font-bold '>{data.title}</h3>
+                  <h3 className='font-bold sm:mb-2 md:text-xl '>
+                    {data.title}
+                  </h3>
                   <p className=' text-subColor group-hover:text-mainColor'>
                     {data.description}
                   </p>
@@ -40,9 +42,9 @@ function Contact () {
         </div>
 
         {/* right part */}
-        <div className='flex items-center justify-center h-full pt-12 pb-5 basis-7/12'>
+        <div className='flex items-center justify-center w-full h-full px-2 md:p-5 basis-7/12'>
           <form
-            className='flex flex-col items-center justify-center w-full h-full gap-2 p-5 border rounded-lg border-subBdColor bg-subBgColor'
+            className='flex flex-col items-center justify-center w-full h-full gap-2 px-5 border rounded-lg border-subBdColor bg-subBgColor'
             action='#'
           >
             {/* top list */}
@@ -70,8 +72,8 @@ function Contact () {
                   placeholder='Enter your message'
                 ></textarea>
               </li>
-              <li className='w-full basis-1/5 '>
-                <button className='px-5 py-2 uppercase duration-500 rounded text-mainColor bg-mainColor20 border-mainColor hover:bg-mainColor hover:text-bgColor '>
+              <li className='flex items-end justify-end w-full basis-1/5'>
+                <button className='px-5 py-1 text-sm uppercase duration-500 rounded text-mainColor bg-mainColor20 border-mainColor hover:bg-mainColor hover:text-bgColor sm:text-base'>
                   Send Email
                 </button>
               </li>
@@ -80,9 +82,12 @@ function Contact () {
         </div>
       </main>
 
-      <footer className='w-full basis-0.15  flex items-end justify-center'>
-        <div className='flex items-center justify-between w-full border-t h-3/5 border-subBdColor'>
-          <SocialLinks />
+      <footer className='  w-full basis-1/12 sm:basis-0.15  flex items-end justify-center'>
+        <div className='flex items-center justify-center w-full border-t sm:justify-between h-3/5 border-subBdColor'>
+          <div className='hidden sm:block'>
+            <SocialLinks />
+          </div>
+
           <p>
             © 2023, All right reserved @{' '}
             <a

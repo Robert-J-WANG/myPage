@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function SectionHeader ({ title }) {
   return (
-    <div className='flex flex-col items-center w-full h-full bg-yellow-300 justify-evenly'>
+    <div className='flex flex-col items-center w-full h-full justify-evenly'>
       <h1 className='text-xl font-black uppercase sm:text-2xl lg:text-3xl xl:text-4xl'>
         {' '}
         {title}{' '}
