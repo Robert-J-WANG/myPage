@@ -5,6 +5,7 @@ import React, {
   useContext,
   createContext
 } from 'react'
+import { useLocation, useNavigate } from 'react-router'
 import TopBar from '../components/topBar/TopBar'
 import Home from '../components/Home'
 import About from '../components/about/About'
@@ -13,7 +14,6 @@ import Works from '../components/works/Works'
 import Blog from '../components/blog/Blog'
 import Contact from '../components/Contact'
 import { menuData } from '../data'
-
 import './index.scss'
 
 // 使用 useContext, createContext钩子将参数从祖组件传递给孙组件
@@ -22,6 +22,10 @@ export default function Index () {
   // 存储所有子容器的滚动信息（id,初始时距离顶部的距离offsetTop)
   const [scrollList, setScrollList] = useState([])
   const [curPageKey, setCurPageKey] = useState('home') //存储当前页面key,用于将key传递给子组件来设置a链接的样式
+
+  /* ----------修改URL路径的部分 ------------------------ */
+  const navigate = useNavigate() // 用于在React Router中进行页面导航
+  const location = useLocation() // 获取当前页面的URL信息
 
   // 获取页面初次加载后所有子容器的滚动信息
   useEffect(() => {
@@ -49,7 +53,13 @@ export default function Index () {
         for (let i = scrollList.length - 1; i >= 0; i--) {
           const { key, offsetTop } = scrollList[i] //获取每个页面的数据
           if (ref.current.scrollTop >= offsetTop - 100) {
-            setCurPageKey(key)
+            setCurPageKey(key) // 更新当前页面的key值
+
+            /* -----    更新当前页面的URL路径 ---------------------------- */
+            // 更新路径后会引发其他子组件路由重定向的问题
+            // const newPath = `${location.pathname}${location.search}`
+            // navigate(key, { replace: true, state: newPath })
+
             break // 倒序遍历，一旦满足条件就退出遍历
           }
         }
