@@ -68,7 +68,7 @@ function Contact () {
               <li className='w-full basis-4/5'>
                 <h2 className='text-lg'>Message</h2>
                 <textarea
-                  className='w-full p-2 bg-transparent border rounded outline-none h-3/4 border-subBdColor focus:bg-transparent'
+                  className='w-full p-2 bg-transparent border rounded outline-none resize-none h-3/4 border-subBdColor focus:bg-transparent'
                   placeholder='Enter your message'
                 ></textarea>
               </li>

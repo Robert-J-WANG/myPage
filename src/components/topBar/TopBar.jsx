@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import Menu from './Menu'
 
-function Header () {
+export default function TopBar () {
   const [menuOpen, setMenuOpen] = useState(false)
-
   return (
     <div className='container flex items-center justify-between h-full mx-auto '>
       {/*left logo */}
@@ -53,5 +52,3 @@ function Header () {
     </div>
   )
 }
-
-export default Header

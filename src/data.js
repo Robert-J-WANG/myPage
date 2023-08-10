@@ -1,12 +1,12 @@
 import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 // Header
 export const menuData = [
-    { id: 1, anchor: "#home", title: "HOME" },
-    { id: 2, anchor: "#about", title: "ABOUT" },
-    { id: 3, anchor: "#resume", title: "RESUME" },
-    { id: 4, anchor: "#works", title: "WORKS" },
-    { id: 5, anchor: "#blog", title: "BLOG" },
-    { id: 6, anchor: "#contact", title: "CONTACT" },
+    { id: 1,key:'home' ,anchor: "#home", title: "HOME" },
+    { id: 2,key:'about' ,anchor: "#about", title: "ABOUT" },
+    { id: 3,key:'resume' ,anchor: "#resume", title: "RESUME" },
+    { id: 4,key:'works' ,anchor: "#works", title: "WORKS" },
+    { id: 5,key:'blog' ,anchor: "#blog", title: "BLOG" },
+    { id: 6,key:'contact' ,anchor: "#contact", title: "CONTACT" },
 ];
 
 // Home
