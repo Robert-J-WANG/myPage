@@ -7,8 +7,6 @@ import MyNavLink from '../widgets/MyNavLink'
 import AdvancedWeb from './AdvancedWeb'
 
 export default function Works () {
-  const navigate = useNavigate()
-
   return (
     <div id='works' className='flex flex-col items-center justify-center'>
       <header className='w-full basis-1/12 sm:basis-1/5 '>

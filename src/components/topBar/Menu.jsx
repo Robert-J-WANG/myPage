@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+
 import { menuData } from '../../data'
 
 // 引入createContext
@@ -10,7 +11,9 @@ function Menu () {
   const curPageKey = useContext(PageContext)
 
   const handleClick = key => {
-    setClickedKey(key)
+    setClickedKey(key) // 设置锚点跳转的ref值
+
+    // 修改点击时的URL路径（去掉#号）
   }
   return (
     <ul className='flex items-center justify-between w-full h-full md:justify-evenly lg:justify-between lg:w-4/5 xl:w-3/5 '>
