@@ -1,12 +1,11 @@
-import PhoneAndroidIcon from '@mui/icons-material/PhoneAndroid';
 // Header
 export const menuData = [
-    { id: 1,key:'home' ,anchor: "#home", title: "HOME" },
-    { id: 2,key:'about' ,anchor: "#about", title: "ABOUT" },
-    { id: 3,key:'resume' ,anchor: "#resume", title: "RESUME" },
-    { id: 4,key:'works' ,anchor: "#works", title: "WORKS" },
-    { id: 5,key:'blog' ,anchor: "#blog", title: "BLOG" },
-    { id: 6,key:'contact' ,anchor: "#contact", title: "CONTACT" },
+    { id: 1, key: 'home', anchor: "#home", title: "HOME" },
+    { id: 2, key: 'about', anchor: "#about", title: "ABOUT" },
+    { id: 3, key: 'resume', anchor: "#resume", title: "RESUME" },
+    { id: 4, key: 'works', anchor: "#works", title: "WORKS" },
+    { id: 5, key: 'blog', anchor: "#blog", title: "BLOG" },
+    { id: 6, key: 'contact', anchor: "#contact", title: "CONTACT" },
 ];
 
 // Home
@@ -155,33 +154,38 @@ export const experienceData = [
 export const basicWebData = [
     {
         id: 1,
-        title: 'Paint',
-        description: 'Creative wall painting',
-        img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-2.jpg',
+        title: 'Meow Bubbles',
+        description: 'A funny cavans game',
+        img: '../src/assets/myWorksImg/basicWeb/meowBubbles.png',
+        url: 'https://robert-j-wang.github.io/Meow-Bubble/'
     },
     {
         id: 2,
         title: 'Packet',
         description: 'Packet design mockup',
         img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-4.jpg',
+        url: 'https://robert-j-wang.github.io/Meow-Bubble/'
     },
     {
         id: 3,
         title: 'Paint',
         description: 'Creative wall painting',
         img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-3.jpg',
+        url: 'https://robert-j-wang.github.io/Meow-Bubble/'
     },
     {
         id: 4,
         title: 'Paint',
         description: 'Creative wall painting',
         img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-1.jpg',
+        url: 'https://robert-j-wang.github.io/Meow-Bubble/'
     },
     {
         id: 5,
         title: 'Paint',
         description: 'Creative wall painting',
         img: 'https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-5.jpg',
+        url: 'https://robert-j-wang.github.io/Meow-Bubble/'
     },
 ];
 
@@ -215,13 +219,13 @@ export const advancedWebData = [
 
 // contact 
 
-export const contactData=[
-    {id: 1, title: 'Contact on phone', description:'+64 2102610798', img:'../src/assets/phone.svg'},
-    {id: 2, title: 'Contact on email', description:'robert00nz@gmail.com', img:'../src/assets/email.svg'},
-    {id: 3, title: 'Contact address', description:'17 Cleghorn Ave, Mt Roskill, Auckland', img:'../src/assets/address.svg'},
+export const contactData = [
+    { id: 1, title: 'Contact on phone', description: '+64 2102610798', img: '../src/assets/phone.svg' },
+    { id: 2, title: 'Contact on email', description: 'robert00nz@gmail.com', img: '../src/assets/email.svg' },
+    { id: 3, title: 'Contact address', description: '17 Cleghorn Ave, Mt Roskill, Auckland', img: '../src/assets/address.svg' },
 ];
-export const contactInputData=[
-    {id: 1, title: 'Name', placeHolder: 'Enter your name...'},
-    {id: 2, title: 'Email', placeHolder: 'Enter your Email...'},
-    {id: 3, title: 'Subject', placeHolder: 'Enter your Subject...'},
+export const contactInputData = [
+    { id: 1, title: 'Name', placeHolder: 'Enter your name...' },
+    { id: 2, title: 'Email', placeHolder: 'Enter your Email...' },
+    { id: 3, title: 'Subject', placeHolder: 'Enter your Subject...' },
 ];

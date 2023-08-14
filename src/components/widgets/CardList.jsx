@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function CardList ({ id, img, title, description }) {
+export default function CardList ({ id, img, title, description,url }) {
   return (
     <div className='flex flex-col items-start justify-center w-full h-full gap-3 p-5 duration-500 border rounded-xl bg-subBgColor border-subBdColor group group-hover:-translate-y-2'>
       <div className='relative w-full h-full overflow-hidden basis-5/6'>
@@ -15,7 +15,7 @@ export default function CardList ({ id, img, title, description }) {
             <img
               className='w-8 h-8 rounded cursor-pointer bg-mainColor'
               src='../../../src/assets/worksLink.svg'
-              alt=''
+              alt={url}
             />
           </a>
         </div>
