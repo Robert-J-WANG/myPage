@@ -11,11 +11,11 @@ export default function CardList ({ id, img, title, description,url }) {
         />
 
         <div className='absolute top-0 z-20 flex items-center justify-center w-full h-full duration-500 rounded -left-full bg-subBgColor group-hover:translate-x-full'>
-          <a href='#'>
+          <a href={url} target='_blank'>
             <img
               className='w-8 h-8 rounded cursor-pointer bg-mainColor'
               src='../../../src/assets/worksLink.svg'
-              alt={url}
+              alt=''
             />
           </a>
         </div>
