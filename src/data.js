@@ -185,10 +185,10 @@ export const basicWebData = [
   },
   {
     id: 2,
-    title: "Packet",
-    description: "Packet design mockup",
-    img: "https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-4.jpg",
-    url: "https://robert-j-wang.github.io/Meow-Bubble/",
+    title: "Orewa Beach Lodges",
+    description: "booking your lodge in Orewa Beach",
+    img: "../src/assets/myWorksImg/basicWeb/orewaBeachLodges.png",
+    url: "https://robert-j-wang.github.io/Orewa-Beach-Loges/",
   },
   {
     id: 3,
