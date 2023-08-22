@@ -192,10 +192,10 @@ export const basicWebData = [
   },
   {
     id: 3,
-    title: "Paint",
-    description: "Creative wall painting",
-    img: "https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-3.jpg",
-    url: "https://robert-j-wang.github.io/Meow-Bubble/",
+    title: "City Views",
+    description: "Glimmering City Lights ",
+    img: "../src/assets/myWorksImg/basicWeb/cityViews.png",
+    url: "https://robert-j-wang.github.io/js_image_slider/",
   },
   {
     id: 4,
