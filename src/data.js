@@ -199,10 +199,10 @@ export const basicWebData = [
   },
   {
     id: 4,
-    title: "Paint",
-    description: "Creative wall painting",
-    img: "https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-1.jpg",
-    url: "https://robert-j-wang.github.io/Meow-Bubble/",
+    title: "Christmas Countdown",
+    description: "Countdown to the Christmas day! ",
+    img: "../src/assets/myWorksImg/basicWeb/countdown.png",
+    url: "https://robert-j-wang.github.io/js_christmas_countdown/",
   },
   {
     id: 5,
