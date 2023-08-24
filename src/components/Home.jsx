@@ -7,7 +7,7 @@ function Home() {
     <div id="home" className="flex flex-col items-center justify-center gap-8">
       {/* top avatar */}
       <div className="relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full">
-        <span className="absolute w-44 h-44 bg-gradient-to-br from-mainColor to-bgColor animate-spin-slow"></span>
+        <span className="absolute w-44 h-44 bg-gradient-to-br from-mainColor to-subBgColor animate-spin-slow"></span>
         <div className="z-10 w-36 h-36 rounded-full bg-subBdColor bg-[url('./assets/myAvatar.png')] bg-center bg-95%"></div>
       </div>
 

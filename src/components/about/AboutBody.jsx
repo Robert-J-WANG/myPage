@@ -7,7 +7,7 @@ export default function AboutBody() {
       {/* left part */}
       <div className="flex items-center justify-center w-full h-full md:justify-end basis-1/2">
         <div className="relative flex items-center justify-center w-4/5 h-full overflow-hidden sm:w-3/5 md:w-full xl:w-11/12 2xl:w-4/5 md:h-3/5 lg:h-5/6 rounded-xl">
-          <span className="absolute w-[800px] h-[800px] bg-gradient-to-br from-mainColor to-bgColor animate-spin-slow"></span>
+          <span className="absolute w-[800px] h-[800px] bg-gradient-to-br from-mainColor to-subBgColor animate-spin-slow"></span>
 
           <div className="z-10 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-lg bg-[url('./assets/about-image.jpg')] bg-cover"></div>
         </div>
