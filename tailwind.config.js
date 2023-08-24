@@ -14,7 +14,7 @@ export default {
         mainColor: "#9feaad",
         mainColor20: "rgba(145, 216, 209, .3)",
         subColor: "#82a8d2",
-        subColor2: "#7fced6",
+        subColor2: "#8be1e4",
         subBgColor: "rgba(96, 121, 153,.2)",
         subBdColor: "rgba(96, 121, 153,.6)",
       },

@@ -30,7 +30,7 @@ export default function AboutBody() {
               <span className=" inline-block min-w-[80px] font-medium text-subColor ">
                 {item.title}
               </span>
-              <span className="inline-block text-subColor">{item.value}</span>
+              <span className="inline-block text-subColor2">{item.value}</span>
             </li>
           ))}
         </ul>
