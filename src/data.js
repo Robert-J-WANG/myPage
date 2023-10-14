@@ -247,10 +247,10 @@ export const reactFrontEndData = [
   },
   {
     id: 2,
-    title: "AgriBazaar NZ Website",
-    description: "A website sales and rents agricultural machinery",
-    img: "../src/assets/myWorksImg/reactFrontEnd/agriBazaarNZ.png",
-    url: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
+    title: "Weather Forecast",
+    description: "A Weather Forecast website for Cities",
+    img: "../src/assets/myWorksImg/reactFrontEnd/weather.png",
+    url: "https://robert-j-wang.github.io/react_weather/",
   },
   {
     id: 3,
