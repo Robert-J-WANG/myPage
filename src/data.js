@@ -235,6 +235,13 @@ export const reactMiniProjectData = [
     img: "../src/assets/myWorksImg/reactMini/gitUserSearch.png",
     url: "https://robert-j-wang.github.io/react_search_users/",
   },
+  {
+    id: 4,
+    title: "Tshirt Shopping Cart",
+    description: "select your size, add to cart",
+    img: "../src/assets/myWorksImg/reactMini/tshirtShoppingCart.png",
+    url: "https://robert-j-wang.github.io/react_Tshirt/",
+  },
 ];
 
 export const reactFrontEndData = [
@@ -254,10 +261,10 @@ export const reactFrontEndData = [
   },
   {
     id: 3,
-    title: "AgriBazaar NZ Website",
-    description: "A website sales and rents agricultural machinery",
-    img: "../src/assets/myWorksImg/reactFrontEnd/agriBazaarNZ.png",
-    url: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
+    title: "BurgerQueen",
+    description: "Order the best burgers on the website",
+    img: "../src/assets/myWorksImg/reactFrontEnd/burgerQueen.png",
+    url: "https://robert-j-wang.github.io/react_BurgerQueen/",
   },
 ];
 
