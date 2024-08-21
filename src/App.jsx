@@ -1,13 +1,12 @@
-import './App.css'
-import Index from './pages/Index'
+import "./App.css";
+import Layout from "./Layout/Index";
 
 function App() {
-
   return (
     <>
-      <Index />
+      <Layout />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

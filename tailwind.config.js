@@ -29,15 +29,15 @@ export default {
 
       animation: {
         "spin-slow": "spin 2s linear infinite",
-        leftToRight: "leftToRight 3s ease-in-out infinite",
+        leftToRight: "leftToRight 4s ease-in-out infinite",
         iconScale: "iconScale 0.5s ease-in-out 1",
         contactListScale: "contactListScale 0.5s ease-in-out 1",
       },
 
       keyframes: {
         leftToRight: {
-          "0%": { transform: "translateX(-6px)" },
-          "100%": { transform: "translateX(128px)" },
+          "0%": { transform: "translateX(-10px)" },
+          "100%": { transform: "translateX(180px)" },
         },
         iconScale: {
           "0%": { transform: "scale(1)" },
@@ -52,7 +52,6 @@ export default {
       },
 
       screens: {
-        xs: "480px",
         xs: "480px",
         sm: "640px",
         md: "768px",

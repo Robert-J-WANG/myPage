@@ -1,10 +1,11 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import SocialLinks from "./widgets/SocialLinks";
+import SectionLayout from "@/Layout/SectionLayout";
 
 function Home() {
-  return (
-    <div id="home" className="flex flex-col items-center justify-center gap-8">
+  const mainContent = (
+    <div className="flex flex-col items-center justify-center gap-8">
       {/* top avatar */}
       <div className="relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full">
         <span className="absolute w-44 h-44 bg-gradient-to-br from-mainColor to-subBgColor animate-spin-slow"></span>
@@ -12,9 +13,9 @@ function Home() {
       </div>
 
       {/* center type animation */}
-      <div className="flex flex-col items-center justify-center gap-5 ">
-        <div className="flex items-center justify-center gap-3 text-2xl font-bold xs:text-3xl sm:text-4xl md:text-5xl">
-          <span className="">Hi, I am</span>
+      <div className="flex flex-col items-center justify-center gap-5">
+        <div className="flex items-center justify-center gap-3 text-xl font-bold xs:text-2xl sm:text-3xl md:text-4xl">
+          <span>Hi, I am</span>
           <span className="text-mainColor ">
             <Typewriter
               options={{
@@ -31,10 +32,6 @@ function Home() {
           </span>
         </div>
 
-        {/*
-        文字颜色渐变：
-         bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 
-         */}
         <p className="text-xs text-center text-transparent xs:text-sm sm:text-base md:text-xl bg-clip-text bg-gradient-to-r from-textColor to-mainColor ">
           I am a frontend web developer. <br />
           I can provide clean code and pixel perfect design. <br />I also make
@@ -46,6 +43,8 @@ function Home() {
       <SocialLinks />
     </div>
   );
+
+  return <SectionLayout id="home" mainContent={mainContent} />;
 }
 
 export default Home;

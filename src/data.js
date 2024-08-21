@@ -49,15 +49,15 @@ export const aboutMenuData = [
 
 export const infoData = [
   { id: 1, title: "First Name ", value: ": Robert Jiqiang" },
-  { id: 2, title: "Last Name ", value: ": Wang" },
-  { id: 3, title: "Nationality ", value: ": China" },
+  { id: 2, title: "Last Name ", value: ": WANG" },
+  { id: 3, title: "Nationality ", value: ": CHINA" },
   { id: 4, title: "Language ", value: ": English, Chinese" },
-  {
-    id: 5,
-    title: "Address ",
-    value: ": 17 Cleghorn Ave, Mt Roskill, Auckland",
-  },
-  { id: 6, title: "College ", value: ": Unitec Institute of Technology" },
+  // {
+  //   id: 5,
+  //   title: "Address ",
+  //   value: ": 17 Cleghorn Ave, Mt Roskill, Auckland",
+  // },
+  { id: 6, title: "College", value: ": Unitec Institute of Technology" },
 ];
 
 export const skillData = [

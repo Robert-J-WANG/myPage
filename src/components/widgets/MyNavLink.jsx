@@ -1,9 +1,19 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom';
-
+import React from "react";
+import { NavLink } from "react-router-dom";
 
 export default function MyNavLink({ to, children }) {
-    return (
-        <Link to={to} className='text-mainColor bg-mainColor20 text-center rounded uppercase px-3 py-2'>{children}</Link>
-    )
+  return (
+    <NavLink
+      to={to}
+      className={({ isActive }) =>
+        `px-3 py-2 text-center uppercase rounded ${
+          isActive
+            ? "text-mainColor bg-mainColor20"
+            : "bg-subBgColor text-subColor"
+        }`
+      }
+    >
+      {children}
+    </NavLink>
+  );
 }

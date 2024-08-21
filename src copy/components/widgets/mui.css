@@ -1,0 +1,10 @@
+.custom-pagination .MuiPaginationItem-root {
+    color: #c1d3cf !important;
+    border: 1px solid #485469 !important;
+    transition: all 1s ease-in-out !important;
+}
+   
+  .custom-pagination .MuiPaginationItem-root:hover{
+    transform: rotate(720deg) !important;
+   
+  }

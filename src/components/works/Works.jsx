@@ -1,37 +1,78 @@
-import React, { useEffect } from "react";
-import { Navigate, Route, Routes, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
+import SectionLayout from "@/Layout/SectionLayout";
 import SectionHeader from "../widgets/SectionHeader";
-import BasicWeb from "./BasicWeb";
-
+import WorksContent from "./WorksContent";
 import MyNavLink from "../widgets/MyNavLink";
-import ReactFrontEndWeb from "./ReactFrontEndWeb";
-import ReactMiniProject from "./ReactMiniProject";
+import SectionPagination from "../widgets/SectionPagination";
+import {
+  basicWebData,
+  reactMiniProjectData,
+  reactFrontEndData,
+} from "../../data";
 
 export default function Works() {
-  return (
-    <div id="works" className="flex flex-col items-center justify-center">
-      <header className="w-full basis-1/12 sm:basis-1/5 ">
-        <SectionHeader title={"my works"} />
-      </header>
+  const [page, setPage] = useState(1);
+  const location = useLocation();
 
-      <main className="flex flex-col items-center justify-center w-full overflow-hidden basis-11/12 sm:basis-4/5">
-        {/* 连接路由 */}
-        <div className="flex items-center justify-center w-full gap-5 basis-1/6">
-          <MyNavLink to="/basicWeb">html & css</MyNavLink>
-          <MyNavLink to="/reactMiniProject">React Mini Project</MyNavLink>
-          <MyNavLink to="/reactFrontEndWeb">React FrontEnd Web</MyNavLink>
-        </div>
+  // 根据当前路径来选择渲染的数据集
+  let data;
+  if (location.pathname === "/basicWeb") {
+    data = basicWebData;
+  } else if (location.pathname === "/reactMiniProject") {
+    data = reactMiniProjectData;
+  } else if (location.pathname === "/reactFrontEndWeb") {
+    data = reactFrontEndData;
+  } else {
+    data = basicWebData; // 默认数据集
+  }
 
-        {/* 注册路由 */}
-        <div className="w-full h-full basis-5/6 ">
-          <Routes>
-            <Route path="/basicWeb" element={<BasicWeb />} />
-            <Route path="/reactMiniProject" element={<ReactMiniProject />} />
-            <Route path="/reactFrontEndWeb" element={<ReactFrontEndWeb />} />
-            <Route path="/" element={<Navigate to="/basicWeb" />} />
-          </Routes>
-        </div>
-      </main>
+  const handlePageChange = (event, value) => {
+    setPage(value);
+  };
+
+  const headerContent = <SectionHeader title="my works" />;
+
+  const mainContent = (
+    <div className="flex flex-col items-center justify-center w-full h-full">
+      {/* 导航链接部分 (h-1/6) */}
+      <div className="flex items-center justify-center w-full gap-5 h-1/6">
+        <MyNavLink to="/basicWeb">html & css</MyNavLink>
+        <MyNavLink to="/reactMiniProject">React Mini Project</MyNavLink>
+        <MyNavLink to="/reactFrontEndWeb">React FrontEnd Web</MyNavLink>
+      </div>
+
+      {/* 显示内容部分 (h-5/6) */}
+      <div className="w-full h-5/6">
+        <Routes>
+          <Route
+            path="/basicWeb"
+            element={<WorksContent data={basicWebData} page={page} />}
+          />
+          <Route
+            path="/reactMiniProject"
+            element={<WorksContent data={reactMiniProjectData} page={page} />}
+          />
+          <Route
+            path="/reactFrontEndWeb"
+            element={<WorksContent data={reactFrontEndData} page={page} />}
+          />
+          <Route path="/" element={<Navigate to="/basicWeb" />} />
+        </Routes>
+      </div>
     </div>
+  );
+
+  const footerContent = (
+    <SectionPagination count={data.length} handlePage={handlePageChange} />
+  );
+
+  return (
+    <SectionLayout
+      id="works"
+      headerContent={headerContent}
+      mainContent={mainContent}
+      footerContent={footerContent}
+    />
   );
 }
