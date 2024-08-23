@@ -1,31 +1,46 @@
 import React, { useState } from "react";
-import Education from "./Education";
-import Experience from "./Experience";
+import SchoolIcon from "@mui/icons-material/School";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+import { resumeData } from "../../data";
 import SectionLayout from "@/Layout/SectionLayout";
 import SectionHeader from "../widgets/SectionHeader";
 import SectionPagination from "../widgets/SectionPagination";
+import Timeline from "./TimeLine";
 
 export default function Resume() {
   const [page, setPage] = useState(1);
 
-  const headerContent = <SectionHeader title="my resume" />;
+  const headerContent = (
+    <div
+      className="flex w-full h-full transition-transform ease-in-out duration-1500"
+      style={{ transform: `translateX(-${(page - 1) * 100}%)` }}
+    >
+      {resumeData.map((item, index) => (
+        <div key={index} className="flex-shrink-0 w-full h-full">
+          <SectionHeader title={item.name} />
+        </div>
+      ))}
+    </div>
+  );
 
   const mainContent = (
     <div
       className="flex w-full h-full transition-transform ease-in-out duration-1500"
       style={{ transform: `translateX(-${(page - 1) * 100}%)` }}
     >
-      <div className="flex-shrink-0 w-full h-full">
-        <Education />
-      </div>
-      <div className="flex-shrink-0 w-full h-full">
-        <Experience />
-      </div>
+      {resumeData.map((item, index) => (
+        <div key={index} className="flex-shrink-0 w-full h-full">
+          <Timeline data={item.data} />
+        </div>
+      ))}
     </div>
   );
 
   const footerContent = (
-    <SectionPagination count={2} handlePage={(e, v) => setPage(v)} />
+    <SectionPagination
+      count={resumeData.length}
+      handlePage={(e, v) => setPage(v)}
+    />
   );
 
   return (

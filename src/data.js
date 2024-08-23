@@ -1,3 +1,6 @@
+import SchoolIcon from "@mui/icons-material/School";
+import EngineeringIcon from "@mui/icons-material/Engineering";
+
 // Header
 export const menuData = [
   { id: 1, key: "home", anchor: "#home", title: "HOME" },
@@ -118,59 +121,66 @@ export const serviceData = [
   },
 ];
 
-// resume
-export const educationData = [
+// resume data
+export const resumeData = [
   {
-    id: 1,
-    year: "2024 - 2025",
-    title: "Master of Applied Technologies-Computing",
-    school: "Unitec Institute of Technology",
-    content:
-      "Specialized in advanced computing technologies, focusing on machine learning, big data, data analysis, cloud computing, and IoT. Proficient in tools like Python, TensorFlow, Hadoop, and AWS for developing innovative tech solutions.",
+    name: "Education",
+    data: [
+      {
+        id: 1,
+        year: "2024 - 2025",
+        title: "Master of Applied Technologies-Computing",
+        school: "Unitec Institute of Technology",
+        content:
+          "Specialized in advanced computing technologies, focusing on machine learning, big data, data analysis, cloud computing, and IoT. Proficient in tools like Python, TensorFlow, Hadoop, and AWS for developing innovative tech solutions.",
+      },
+      {
+        id: 2,
+        year: "2022 - 2023",
+        title: "Graduate Diploma in Computing",
+        school: "Unitec Institute of Technology",
+        content:
+          "Completed a comprehensive program focused on software development, web technologies, database management, and Agile methodologies, equipping me with the skills to tackle real-world computing challenges.",
+      },
+      {
+        id: 3,
+        year: "2006 - 2010",
+        title: "Bachelor of Mechanical Design and Automotive Engineering",
+        school: "Shenyang University of Technology",
+        content:
+          "Completed a degree in mechanical engineering, specializing in automotive design. Developed skills in CAD, UG, and project management. The program provided a strong foundation in engineering principles and design techniques.",
+      },
+    ],
   },
   {
-    id: 2,
-    year: "2022 - 2023",
-    title: "Graduate Diploma in Computing",
-    school: "Unitec Institute of Technology",
-    content:
-      "Completed a comprehensive program focused on software development, web technologies, database management, and Agile methodologies, equipping me with the skills to tackle real-world computing challenges.",
-  },
-  {
-    id: 3,
-    year: "2006 - 2010",
-    title: "Bachelor of Mechanical Design and Automotive Engineering",
-    school: "Shenyang University of Technology",
-    content:
-      "Completed a degree in mechanical engineering, specializing in automotive design. Developed skills in CAD, UG, and project management. The program provided a strong foundation in engineering principles and design techniques.",
-  },
-];
+    name: "Working",
+    data: [
+      {
+        id: 1,
+        year: "2020 - Now",
+        title: "Internship Objective",
+        school: "Unitec Institute of Technology",
+        content:
+          "Currently seeking an internship in software engineering, web development, big data, or data analysis. Passionate about applying technical skills to real-world projects and eager to gain hands-on experience in the tech industry.",
+      },
+      {
+        id: 2,
+        year: "2017 - 2019",
+        title: "Part-Time Positions",
+        school: "Living Foods",
+        content:
+          "Gained hands-on experience in various roles, including salad vegetable packer, kitchen factory assistant, orchard picker, and warehouse assistant. These positions enhanced my ability to work efficiently in different environments and manage diverse tasks.",
+      },
 
-export const experienceData = [
-  {
-    id: 1,
-    year: "2020 - Now",
-    title: "Internship Objective",
-    school: "Unitec Institute of Technology",
-    content:
-      "Currently seeking an internship in software engineering, web development, big data, or data analysis. Passionate about applying technical skills to real-world projects and eager to gain hands-on experience in the tech industry.",
-  },
-  {
-    id: 2,
-    year: "2017 - 2019",
-    title: "Part-Time Positions",
-    school: "Living Foods",
-    content:
-      "Gained hands-on experience in various roles, including salad vegetable packer, kitchen factory assistant, orchard picker, and warehouse assistant. These positions enhanced my ability to work efficiently in different environments and manage diverse tasks.",
-  },
-
-  {
-    id: 3,
-    year: "2010 - 2016",
-    title: "Mechanical Designer and Engineer",
-    school: "Dalian Huarui Heavy Industry Group",
-    content:
-      "Designed heavy equipment components for bulk material handling, specializing in bucket wheel reclaimers and combined stacker/reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.",
+      {
+        id: 3,
+        year: "2010 - 2016",
+        title: "Mechanical Designer and Engineer",
+        school: "Dalian Huarui Heavy Industry Group",
+        content:
+          "Designed heavy equipment components for bulk material handling, specializing in bucket wheel reclaimers and combined stacker/reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.",
+      },
+    ],
   },
 ];
 
