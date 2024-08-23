@@ -42,12 +42,6 @@ export default function Index() {
           const { key, offsetTop } = scrollList[i]; //获取每个页面的数据
           if (ref.current.scrollTop >= offsetTop - 100) {
             setCurPageKey(key); // 更新当前页面的key值
-
-            /* -----    更新当前页面的URL路径 ---------------------------- */
-            // 更新路径后会引发其他子组件路由重定向的问题
-            // const newPath = `${location.pathname}${location.search}`
-            // navigate(key, { replace: true, state: newPath })
-
             break; // 倒序遍历，一旦满足条件就退出遍历
           }
         }
@@ -65,7 +59,7 @@ export default function Index() {
   return (
     // 将curPageKey传递个所以后代组件
     <PageContext.Provider value={curPageKey}>
-      <div className="h-screen index bg-bgColor ">
+      <div className="h-screen index bg-bgColor">
         {/* 顶部导航栏 */}
         <header className="h-16 border-b bg-bgColorHeader border-subBdColor">
           <TopBar curPageKey={curPageKey} />
@@ -73,8 +67,7 @@ export default function Index() {
         {/* <hr className="border-subBdColor" /> */}
         {/* 下部主体栏 */}
         <section
-          className="w-5/6 mx-auto section"
-          // onScrollCapture={onScrollEvent} // 监听滚动事件并执行onScrollEvent函数
+          className="h-[cal(100%-4rem)]   section"
           ref={ref} // 将引用绑定到滚动容器的DOM节点
         >
           <Home />

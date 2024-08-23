@@ -6,7 +6,7 @@ export default function MyNavLink({ to, children }) {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `px-3 py-2 text-center uppercase rounded ${
+        `text-sm px-3 py-2 text-center uppercase rounded ${
           isActive
             ? "text-mainColor bg-mainColor20"
             : "bg-subBgColor text-subColor"

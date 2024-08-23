@@ -3,7 +3,7 @@ import React from "react";
 // eslint-disable-next-line no-unused-vars
 export default function CardList({ id, img, title, description, url }) {
   return (
-    <div className="flex flex-col items-start justify-center w-full h-full gap-3 p-5 duration-500 border rounded-xl bg-subBgColor border-subBdColor group group-hover:-translate-y-2">
+    <div className="flex flex-col items-start justify-center w-[400px] h-[400px] gap-3 p-5 duration-500 border rounded-xl bg-subBgColor border-subBdColor group group-hover:-translate-y-2">
       <div className="relative w-full h-full overflow-hidden basis-5/6">
         <img
           className="absolute top-0 left-0 w-full h-full duration-500 group-hover:blur group-hover:opacity-20"
@@ -23,8 +23,8 @@ export default function CardList({ id, img, title, description, url }) {
       </div>
 
       <div className="flex flex-col items-start w-full h-full basis-1/6 justify-evenly">
-        <h2 className="text-2xl ">{title}</h2>
-        <p className="text-xl text-subColor">{description}</p>
+        <h2 className="text-xl ">{title}</h2>
+        <p className=" text-subColor">{description}</p>
       </div>
     </div>
   );
