@@ -47,10 +47,6 @@ export default function Education() {
               <p className="w-full text-xs sm:text-sm h-3/12 md:text-base text-heading text-subColor">
                 {data.school}
               </p>
-              {/*
-                文字颜色渐变：
-                bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-teal-400 
-              */}
               <p className="w-full overflow-hidden text-xs text-transparent sm:text-sm h-7/17 2xl:w-4/5 lg:text-base bg-clip-text bg-gradient-to-r from-textColor to-subColor2 ">
                 {data.content}
               </p>
