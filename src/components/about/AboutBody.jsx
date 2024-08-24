@@ -3,11 +3,11 @@ import { infoData } from "../../data";
 
 export default function AboutBody() {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-4 md:gap-6 lg:gap-8 md:flex-row">
+    <div className="flex flex-col items-center justify-center w-full h-full gap-4 md:gap-12 lg:gap-8 md:flex-row">
       {/* left part */}
       <div className="flex items-center justify-center w-full h-full md:justify-end basis-1/2">
-        <div className="relative flex items-center justify-center w-[240px] h-[240px] overflow-hidden md:w-[320px] md:h-[320px] lg:w-[400px] lg:h-[400px] rounded-xl">
-          <span className="absolute w-[600px] h-[600px] bg-gradient-to-br from-mainColor to-black animate-spin-slow"></span>
+        <div className="relative flex items-center justify-center w-[388px] h-[240px] overflow-hidden md:w-[198px] md:h-[320px] lg:w-[518px] lg:h-[320px] rounded-xl">
+          <span className="absolute w-[700px] h-[700px] bg-gradient-to-br from-mainColor to-black animate-spin-slow"></span>
 
           <div className="z-10 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-lg bg-[url('./assets/about-image2.jpg')] bg-cover"></div>
         </div>
