@@ -8,7 +8,7 @@ export default function Contact() {
   const headerContent = <SectionHeader title="contact me" />;
 
   const mainContent = (
-    <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden 3xl:w-5/6 md:flex-row">
+    <div className="flex flex-col items-center justify-center w-full h-full overflow-hidden xl:w-3/4 3xl:w-2/3 md:flex-row">
       {/* left */}
       <ul className="flex flex-col items-center justify-center w-full h-full gap-2 p-2 md:gap-10 basis-1/4 md:basis-5/12">
         {contactData.map((data) => (
@@ -71,12 +71,12 @@ export default function Contact() {
   );
 
   const footerContent = (
-    <div className="flex items-center justify-center w-full border-t h-3/5 md:justify-between border-subBdColor">
-      <div className="hidden md:block">
+    <div className="flex items-center justify-center w-full border-t h-3/5 lg:justify-between border-subBdColor">
+      <div>
         <SocialLinks />
       </div>
-      <p>
-        <span className="pr-5">© 2023, All right reserved</span> @{" "}
+      <p className="hidden text-xs lg:block lg:text-base">
+        <span>© 2023, All right reserved</span> @{" "}
         <a
           className="text-subColor"
           href="https://github.com/Robert-J-WANG"

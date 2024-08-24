@@ -20,14 +20,15 @@ import {
 export default function Works() {
   const [page, setPage] = useState(1);
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  console.log(location);
 
   // 当 hash 为 #works 时，导航到 /basicWeb
-  useEffect(() => {
-    if (location.hash === "#works") {
-      navigate("/basicWeb");
-    }
-  }, [location.hash, navigate]);
+  // useEffect(() => {
+  //   if (location.pathname === "/myPage") {
+  //     navigate("/basicWeb");
+  //   }
+  // }, [location.pathname, navigate]);
 
   // 根据当前路径来选择渲染的数据集
   let data;
@@ -71,7 +72,7 @@ export default function Works() {
             path="/reactFrontEndWeb"
             element={<WorksContent data={reactFrontEndData} page={page} />}
           />
-          {/* <Route path="*" element={<Navigate to="/basicWeb" />} /> */}
+          <Route path="*" element={<Navigate to="/basicWeb" />} />
         </Routes>
       </div>
     </div>
