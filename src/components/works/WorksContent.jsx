@@ -4,7 +4,7 @@ import CardList from "../widgets/CardList";
 export default function WorksContent({ data, page }) {
   return (
     <div className="flex flex-col items-center justify-center w-full h-full">
-      <ul className="flex items-center justify-start w-full h-full gap-10">
+      <ul className="flex items-center justify-start w-full h-full gap-8">
         {data.map((item) => (
           <li
             key={item.id}

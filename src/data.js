@@ -1,5 +1,21 @@
-import SchoolIcon from "@mui/icons-material/School";
-import EngineeringIcon from "@mui/icons-material/Engineering";
+/* eslint-disable no-unused-vars */
+import basicImg_1 from "./assets/myWorksImg/basicWeb/meowBubbles.png";
+import basicImg_2 from "./assets/myWorksImg/basicWeb/orewaBeachLodges.png";
+import basicImg_3 from "./assets/myWorksImg/basicWeb/cityViews.png";
+import basicImg_4 from "./assets/myWorksImg/basicWeb/countdown.png";
+
+import miniReactImg_1 from "./assets/myWorksImg/reactMini/todoList.png";
+import miniReactImg_2 from "./assets/myWorksImg/reactMini/bookSheet.png";
+import miniReactImg_3 from "./assets/myWorksImg/reactMini/gitUserSearch.png";
+import miniReactImg_4 from "./assets/myWorksImg/reactMini/tshirtShoppingCart.png";
+
+import frondEndReactImg_1 from "./assets/myWorksImg/reactFrontEnd/agriBazaarNZ.png";
+import frondEndReactImg_2 from "./assets/myWorksImg/reactFrontEnd/weather.png";
+import frondEndReactImg_3 from "./assets/myWorksImg/reactFrontEnd/burgerQueen.png";
+
+import phoneSvg from "./assets/phone.svg";
+import emailSvg from "./assets/email.svg";
+import addressSvg from "./assets/address.svg";
 
 // Header
 export const menuData = [
@@ -190,36 +206,29 @@ export const basicWebData = [
     id: 1,
     title: "Meow Bubbles",
     description: "A funny canvas game",
-    img: "../src/assets/myWorksImg/basicWeb/meowBubbles.png",
+    img: basicImg_1,
     url: "https://robert-j-wang.github.io/Meow-Bubble/",
   },
   {
     id: 2,
     title: "Orewa Beach Lodges",
     description: "booking your lodge in Orewa Beach",
-    img: "../src/assets/myWorksImg/basicWeb/orewaBeachLodges.png",
+    img: basicImg_2,
     url: "https://robert-j-wang.github.io/Orewa-Beach-Loges/",
   },
   {
     id: 3,
     title: "City Views",
     description: "Glimmering City Lights ",
-    img: "../src/assets/myWorksImg/basicWeb/cityViews.png",
+    img: basicImg_3,
     url: "https://robert-j-wang.github.io/js_image_slider/",
   },
   {
     id: 4,
     title: "Christmas Countdown",
     description: "Countdown to the Christmas day! ",
-    img: "../src/assets/myWorksImg/basicWeb/countdown.png",
+    img: basicImg_4,
     url: "https://robert-j-wang.github.io/js_christmas_countdown/",
-  },
-  {
-    id: 5,
-    title: "Paint",
-    description: "Creative wall painting",
-    img: "https://tf-react-bieber.vercel.app/images/portfolios/portfolio-image-5.jpg",
-    url: "https://robert-j-wang.github.io/Meow-Bubble/",
   },
 ];
 
@@ -228,28 +237,28 @@ export const reactMiniProjectData = [
     id: 1,
     title: "TodoList",
     description: "Add and delete a todo list easily",
-    img: "../src/assets/myWorksImg/reactMini/todoList.png",
+    img: miniReactImg_1,
     url: "https://robert-j-wang.github.io/react_todo_list/",
   },
   {
     id: 2,
     title: "BookSheet",
     description: "Manage your books",
-    img: "../src/assets/myWorksImg/reactMini/bookSheet.png",
+    img: miniReactImg_2,
     url: "https://robert-j-wang.github.io/react_booksheet/",
   },
   {
     id: 3,
     title: "gitHub Users Search",
     description: "Enter a keyWord to search gitHub users",
-    img: "../src/assets/myWorksImg/reactMini/gitUserSearch.png",
+    img: miniReactImg_3,
     url: "https://robert-j-wang.github.io/react_search_users/",
   },
   {
     id: 4,
     title: "Tshirt Shopping Cart",
     description: "select your size, add to cart",
-    img: "../src/assets/myWorksImg/reactMini/tshirtShoppingCart.png",
+    img: miniReactImg_4,
     url: "https://robert-j-wang.github.io/react_Tshirt/",
   },
 ];
@@ -259,21 +268,21 @@ export const reactFrontEndData = [
     id: 1,
     title: "AgriBazaar NZ Website",
     description: "A website sales and rents agricultural machinery",
-    img: "../src/assets/myWorksImg/reactFrontEnd/agriBazaarNZ.png",
+    img: frondEndReactImg_1,
     url: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
   },
   {
     id: 2,
     title: "Weather Forecast",
     description: "A Weather Forecast website for Cities",
-    img: "../src/assets/myWorksImg/reactFrontEnd/weather.png",
+    img: frondEndReactImg_2,
     url: "https://robert-j-wang.github.io/react_weather/",
   },
   {
     id: 3,
     title: "BurgerQueen",
     description: "Order the best burgers on the website",
-    img: "../src/assets/myWorksImg/reactFrontEnd/burgerQueen.png",
+    img: frondEndReactImg_3,
     url: "https://robert-j-wang.github.io/react_BurgerQueen/",
   },
 ];
@@ -285,19 +294,19 @@ export const contactData = [
     id: 1,
     title: "Contact on phone",
     description: "+64 2102610798",
-    img: "../src/assets/phone.svg",
+    img: phoneSvg,
   },
   {
     id: 2,
     title: "Contact on email",
     description: "robert00nz@gmail.com",
-    img: "../src/assets/email.svg",
+    img: emailSvg,
   },
   {
     id: 3,
     title: "Contact address",
     description: "17 Cleghorn Ave, Mt Roskill, Auckland",
-    img: "../src/assets/address.svg",
+    img: addressSvg,
   },
 ];
 export const contactInputData = [

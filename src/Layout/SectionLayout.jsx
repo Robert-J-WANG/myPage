@@ -15,7 +15,7 @@ export default function SectionLayout({
       </header>
 
       {/* Main Section */}
-      <main className="flex items-center justify-center w-5/6 mx-auto overflow-hidden basis-5/6">
+      <main className="flex items-center justify-center w-4/5 mx-auto overflow-hidden basis-5/6">
         {mainContent && mainContent}
       </main>
 
