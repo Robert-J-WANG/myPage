@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 通用样式配置 */
+
+* {
+  @apply p-0 m-0;
+}
+
+a {
+  @apply no-underline;
+}
+
+ul,
+li {
+  @apply list-none;
+}
+

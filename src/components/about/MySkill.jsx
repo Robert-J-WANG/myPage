@@ -21,14 +21,14 @@ export default function MySkill() {
               r="54"
               pathLength="1"
               strokeLinecap="round"
-              strokeWidth="12"
+              strokeWidth="8"
             ></circle>
             <circle
               cx="60"
               cy="60"
               r="54"
               strokeLinecap="round"
-              strokeWidth="12"
+              strokeWidth="8"
               opacity="1"
               pathLength="1"
               strokeDashoffset="0px"
@@ -56,12 +56,12 @@ export default function MySkill() {
   return (
     <div className="flex flex-col w-full h-full gap-5 mx-auto my-skill-container md:w-5/6 xl:w-4/5 ">
       {/* top part */}
-      <ul className="grid w-full grid-cols-4 gap-2 md:gap-5 basis-1/3">
+      <ul className="grid w-full grid-cols-4 gap-3 md:gap-6 basis-1/3">
         {topItems}
       </ul>
 
       {/* bottom part */}
-      <ul className="grid w-full grid-cols-2 gap-2 md:gap-5 basis-2/3 ">
+      <ul className="grid w-full grid-cols-2 gap-3 md:gap-6 basis-2/3 ">
         {bottomItems}
       </ul>
     </div>

@@ -1,0 +1,33 @@
+.my-skill-container {
+    .circle {
+        fill: none;
+        stroke: #9feaad;
+        rotate: -90deg;
+        // transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    }
+
+    .circlebg {
+        stroke: rgba(145, 216, 209, .3);
+    }
+
+    progress {
+        width: 100%;
+        height: 0.8rem;
+        color: #9feaad;
+        background: rgba(145, 216, 209, .3);
+        border-radius: 0.4rem;
+    }
+
+    /* 表示总长度背景色 */
+    progress::-webkit-progress-bar {
+        background-color: rgba(145, 216, 209, .3);
+        border-radius: 0.4rem;
+    }
+
+    /* 表示已完成进度背景色 */
+    progress::-webkit-progress-value {
+        background: #9feaad;
+        border-radius: 0.4rem;
+    }
+
+}

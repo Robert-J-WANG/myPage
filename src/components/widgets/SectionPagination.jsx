@@ -3,12 +3,12 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 import { ThemeProvider } from "@mui/material/styles";
 import MyTheme from "../MyTheme.js";
-import "./mui.css";
+import "./pagination.scss";
 
 export default function SectionPagination({ count, handlePage }) {
   const [page, setPage] = useState(1);
 
-  useEffect(() => {
+  /* useEffect(() => {
     const interval = setInterval(() => {
       setPage((prevPage) => {
         const nextPage = prevPage >= count ? 1 : prevPage + 1;
@@ -18,7 +18,7 @@ export default function SectionPagination({ count, handlePage }) {
     }, 6000); // Auto change page every 6 seconds
 
     return () => clearInterval(interval); // Clean up the interval on component unmount
-  }, [count, handlePage]);
+  }, [count, handlePage]); */
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -31,6 +31,7 @@ export default function SectionPagination({ count, handlePage }) {
         <Pagination
           count={count}
           variant="outlined"
+          shape="rounded"
           color="primary"
           size="large"
           page={page} // Controlled pagination

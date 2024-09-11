@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import { BASE_PATH } from "@/config";
 import basicImg_1 from "./assets/myWorksImg/basicWeb/meowBubbles.png";
 import basicImg_2 from "./assets/myWorksImg/basicWeb/orewaBeachLodges.png";
 import basicImg_3 from "./assets/myWorksImg/basicWeb/cityViews.png";
@@ -18,12 +19,12 @@ import emailSvg from "./assets/email.svg";
 import addressSvg from "./assets/address.svg";
 
 // Header
-export const menuData = [
-  { id: 1, key: "home", anchor: "#home", title: "HOME" },
-  { id: 2, key: "about", anchor: "#about", title: "ABOUT" },
-  { id: 3, key: "resume", anchor: "#resume", title: "RESUME" },
-  { id: 4, key: "works", anchor: "#works", title: "WORKS" },
-  { id: 6, key: "contact", anchor: "#contact", title: "CONTACT" },
+export const navLinkData = [
+  { id: 1, key: "home", to: `${BASE_PATH}/home`, content: "Home" },
+  { id: 2, key: "about", to: `${BASE_PATH}/about`, content: "About" },
+  // { id: 3, key: "resume", to: `${BASE_PATH}/resume`, content: "Resume" },
+  { id: 4, key: "projects", to: `${BASE_PATH}/projects`, content: "Projects" },
+  /*  { id: 5, key: "contact", to: `${BASE_PATH}/contact`, content: "Contact" }, */
 ];
 
 // Home
@@ -60,9 +61,10 @@ export const socialLinksData = [
 
 // About
 export const aboutMenuData = [
-  { id: 1, title: "about me" },
-  { id: 2, title: "my skill" },
-  { id: 3, title: "my service" },
+  { id: 1, title: "About Me" },
+  { id: 2, title: "Skills" },
+  { id: 3, title: "Education" },
+  { id: 4, title: "Experience" },
 ];
 
 export const infoData = [
@@ -169,7 +171,7 @@ export const resumeData = [
     ],
   },
   {
-    name: "Working",
+    name: "Experience",
     data: [
       {
         id: 1,
@@ -194,7 +196,7 @@ export const resumeData = [
         title: "Mechanical Designer and Engineer",
         school: "Dalian Huarui Heavy Industry Group",
         content:
-          "Designed heavy equipment components for bulk material handling, specializing in bucket wheel reclaimers and combined stacker/reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.",
+          "Designed heavy equipment components for bulk material handling, specialized in bucket wheel reclaimers and reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.",
       },
     ],
   },
