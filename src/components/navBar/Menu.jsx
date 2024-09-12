@@ -1,4 +1,4 @@
-import { navLinkData } from "@/data";
+import { navLinkData } from "@/server/data";
 import MyNavLink from "./MyNavLink";
 function Menu() {
   return (

@@ -1,6 +1,6 @@
 import React from "react";
 import "./MySkill.scss";
-import { skillData, languageData } from "../../data";
+import { skillData, languageData } from "../../server/data";
 
 export default function MySkill() {
   const topItems = skillData.map((item) => (

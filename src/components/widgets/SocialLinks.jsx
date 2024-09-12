@@ -1,5 +1,5 @@
 import React from "react";
-import { socialLinksData } from "../../data";
+import { socialLinksData } from "../../server/data";
 
 export default function SocialLinks() {
   return (

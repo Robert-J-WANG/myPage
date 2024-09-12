@@ -1,3 +1,5 @@
+import daisyui from "daisyui";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
@@ -17,13 +19,16 @@ export default {
         subColor2: "#8be1e4",
         subBgColor: "rgba(96, 121, 153,.2)",
         subBdColor: "rgba(96, 121, 153,.6)",
+        borderColor: "#535862",
       },
 
       backgroundSize: {
         auto: "auto",
         cover: "cover",
         contain: "contain",
-        "95%": "95%",
+        "93%": "93%",
+        "120%": "120%",
+        "100%": "100%",
         16: "4rem",
       },
 
@@ -79,5 +84,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [daisyui],
 };

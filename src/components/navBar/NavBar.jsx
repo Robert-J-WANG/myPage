@@ -1,11 +1,11 @@
 import { useState } from "react";
 import Menu from "./Menu";
-import Icon from "@/assets/robert.png";
+import Icon from "@/assets/myLogo.png";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <div className="flex items-center justify-between w-5/6 h-full mx-auto ">
+    <div className="container 2xl:max-w-[1280px] flex items-center justify-between h-full mx-auto ">
       {/*left logo */}
       <div className="w-20 h-10 ">
         <img src={Icon} className="w-full h-full" alt="" />
@@ -13,7 +13,7 @@ export default function NavBar() {
 
       {/* center menu */}
       <div
-        className={`flex items-center justify-center w-full md:w-[calc(100%-9rem)] transition-all duration-500 ${
+        className={`flex items-center justify-center w-full  transition-all duration-500 ${
           menuOpen ? "-translate-y-14" : "translate-y-0"
         }`}
       >

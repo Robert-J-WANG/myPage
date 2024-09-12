@@ -10,7 +10,7 @@ export default function Timeline({ data }) {
             className="relative w-4/5 basis-1/3 border-mainColor "
           >
             {/* left */}
-            <p className="absolute items-center w-10 p-1 text-sm text-center rounded-xl top-4 lg:top-7 -left-20 bg-subBgColor">
+            <p className="absolute items-center w-10 p-1 text-sm text-center rounded-xl top-2 -left-20 bg-subBgColor">
               {item.year}
             </p>
 

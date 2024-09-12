@@ -1,5 +1,5 @@
 import React from "react";
-import { resumeData } from "../../data";
+import { resumeData } from "../../server/data";
 import Timeline from "./TimeLine";
 
 export default function Education() {
