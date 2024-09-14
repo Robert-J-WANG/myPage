@@ -10,7 +10,7 @@ export default function SectionLayout({
   return (
     <div
       id={id}
-      className="flex flex-col items-center justify-between w-full lg:max-w-[1280px]"
+      className="flex flex-col items-center justify-between w-full xl:max-w-[1280px]"
     >
       {/* Header Section */}
       <header className="flex items-center justify-center w-full h-20">
