@@ -54,14 +54,14 @@ export default function MySkill() {
     </li>
   ));
   return (
-    <div className="flex flex-col w-full h-full gap-5 mx-auto my-skill-container md:w-5/6 xl:w-4/5 ">
+    <div className="flex flex-col w-full h-full gap-10 mx-auto my-skill-container ">
       {/* top part */}
       <ul className="grid w-full grid-cols-4 gap-3 md:gap-6 basis-1/3">
         {topItems}
       </ul>
 
       {/* bottom part */}
-      <ul className="grid w-full grid-cols-2 gap-3 md:gap-6 basis-2/3 ">
+      <ul className="grid w-full grid-cols-2 gap-6 basis-2/3 ">
         {bottomItems}
       </ul>
     </div>

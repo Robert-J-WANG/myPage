@@ -1,18 +1,19 @@
 /* eslint-disable no-unused-vars */
 import { BASE_PATH } from "@/config";
-import basicImg_1 from "@/assets/projectsImgs/basicWeb/meowBubbles.png";
-import basicImg_2 from "@/assets/projectsImgs/basicWeb/orewaBeachLodges.png";
-import basicImg_3 from "@/assets/projectsImgs/basicWeb/cityViews.png";
-import basicImg_4 from "@/assets/projectsImgs/basicWeb/countdown.png";
+import meowBubbles from "@/assets/projectsImgs/meowBubbles.png";
+import orewaBeachLodges from "@/assets/projectsImgs/orewaBeachLodges.png";
+import cityViews from "@/assets/projectsImgs/cityViews.png";
+import countdown from "@/assets/projectsImgs/countdown.png";
 
-import miniReactImg_1 from "@/assets/projectsImgs/reactMini/todoList.png";
-import miniReactImg_2 from "@/assets/projectsImgs/reactMini/bookSheet.png";
-import miniReactImg_3 from "@/assets/projectsImgs/reactMini/gitUserSearch.png";
-import miniReactImg_4 from "@/assets/projectsImgs/reactMini/tshirtShoppingCart.png";
+import todoList from "@/assets/projectsImgs/todoList.png";
+import bookSheet from "@/assets/projectsImgs/bookSheet.png";
+import gitUserSearch from "@/assets/projectsImgs/gitUserSearch.png";
+import tshirtShoppingCart from "@/assets/projectsImgs/tshirtShoppingCart.png";
 
-import frondEndReactImg_1 from "@/assets/projectsImgs/reactFrontEnd/agriBazaarNZ.png";
-import frondEndReactImg_2 from "@/assets/projectsImgs/reactFrontEnd/weather.png";
-import frondEndReactImg_3 from "@/assets/projectsImgs/reactFrontEnd/burgerQueen.png";
+import agriBazaarNZ from "@/assets/projectsImgs/agriBazaarNZ.png";
+import weather from "@/assets/projectsImgs/weather.png";
+import burgerQueen from "@/assets/projectsImgs/burgerQueen.png";
+import shoppia from "@/assets/projectsImgs/shoppia.png";
 
 // Header
 export const navLinkData = [
@@ -186,7 +187,7 @@ export const projectsData = {
       tags: ["All", "JavaScript", "Canvas"],
       title: "Meow Bubbles",
       description: "A funny canvas game",
-      img: basicImg_1,
+      img: meowBubbles,
       url: "https://robert-j-wang.github.io/Meow-Bubble/",
     },
     {
@@ -194,7 +195,7 @@ export const projectsData = {
       tags: ["All", "JavaScript"],
       title: "Orewa Beach Lodges",
       description: "booking your lodge in Orewa Beach",
-      img: basicImg_2,
+      img: orewaBeachLodges,
       url: "https://robert-j-wang.github.io/Orewa-Beach-Loges/",
     },
     {
@@ -202,7 +203,7 @@ export const projectsData = {
       tags: ["All", "JavaScript"],
       title: "City Views",
       description: "Glimmering City Lights ",
-      img: basicImg_3,
+      img: cityViews,
       url: "https://robert-j-wang.github.io/js_image_slider/",
     },
     {
@@ -210,7 +211,7 @@ export const projectsData = {
       tags: ["All", "JavaScript"],
       title: "Christmas Countdown",
       description: "Countdown to the Christmas day! ",
-      img: basicImg_4,
+      img: countdown,
       url: "https://robert-j-wang.github.io/js_christmas_countdown/",
     },
     {
@@ -218,7 +219,7 @@ export const projectsData = {
       tags: ["All", "React", "reactHooks"],
       title: "TodoList",
       description: "Add and delete a todo list easily",
-      img: miniReactImg_1,
+      img: todoList,
       url: "https://robert-j-wang.github.io/react_todo_list/",
     },
     {
@@ -226,7 +227,7 @@ export const projectsData = {
       tags: ["All", "Bootstrap", "React", "reactHooks"],
       title: "BookSheet",
       description: "Manage your books",
-      img: miniReactImg_2,
+      img: bookSheet,
       url: "https://robert-j-wang.github.io/react_booksheet/",
     },
     {
@@ -234,7 +235,7 @@ export const projectsData = {
       tags: ["All", "Axios", "React"],
       title: "gitHub Users Search",
       description: "Enter a keyWord to search gitHub users",
-      img: miniReactImg_3,
+      img: gitUserSearch,
       url: "https://robert-j-wang.github.io/react_search_users/",
     },
     {
@@ -250,7 +251,7 @@ export const projectsData = {
       ],
       title: "Tshirt Shopping Cart",
       description: "select your size, add to cart",
-      img: miniReactImg_4,
+      img: tshirtShoppingCart,
       url: "https://robert-j-wang.github.io/react_Tshirt/",
     },
     {
@@ -258,7 +259,7 @@ export const projectsData = {
       tags: ["All", "React", "Tailwind", "react-hooks", "Zustand"],
       title: "AgriBazaar NZ Website",
       description: "A website sales and rents agricultural machinery",
-      img: frondEndReactImg_1,
+      img: agriBazaarNZ,
       url: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
     },
     {
@@ -266,7 +267,7 @@ export const projectsData = {
       tags: ["All", "TypeScript", "React", "Bootstrap", "Axios", "react-hooks"],
       title: "Weather Forecast",
       description: "A Weather Forecast website for Cities",
-      img: frondEndReactImg_2,
+      img: weather,
       url: "https://robert-j-wang.github.io/react_weather/",
     },
     {
@@ -282,8 +283,24 @@ export const projectsData = {
       ],
       title: "BurgerQueen",
       description: "Order the best burgers on the website",
-      img: frondEndReactImg_3,
+      img: burgerQueen,
       url: "https://robert-j-wang.github.io/react_BurgerQueen/",
+    },
+    {
+      id: 12,
+      tags: [
+        "All",
+        "TypeScript",
+        "React",
+        "Tailwind",
+        "React-router",
+        "react-hooks",
+        "Zustand",
+      ],
+      title: "Shoppia",
+      description: "Go shopping on Shoppia",
+      img: shoppia,
+      url: "https://robert-j-wang.github.io/react_Shoppia/",
     },
   ],
 };

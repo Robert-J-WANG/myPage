@@ -11,7 +11,7 @@ function Index({ header, content, animationBackground }) {
     <div className="relative w-full text-textColor ">
       {/* header 导航区*/}
       <header
-        className=" w-full h-16 border-b-[0.5px] border-subColor flexjustify-center items-center
+        className=" w-full h-16 border-b-[1px] border-subBdColor flexjustify-center items-center
       "
       >
         {header}

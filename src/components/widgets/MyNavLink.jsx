@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function MyNavLink({ to, children }) {
@@ -6,11 +5,7 @@ export default function MyNavLink({ to, children }) {
     <NavLink
       to={to}
       className={({ isActive }) =>
-        `text-sm px-3 py-2 text-center uppercase rounded ${
-          isActive
-            ? "text-mainColor bg-mainColor20"
-            : "bg-subBgColor text-subColor"
-        }`
+        `text-2xl   ${isActive ? "text-mainColor " : " text-textColor"}`
       }
     >
       {children}

@@ -1,5 +1,5 @@
 import { navLinkData } from "@/server/data";
-import MyNavLink from "./MyNavLink";
+import MyNavLink from "../widgets/MyNavLink";
 function Menu() {
   return (
     <ul className="flex items-center justify-center gap-6 sm:gap-10 lg:gap-16">

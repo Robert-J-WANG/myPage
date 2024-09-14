@@ -2,7 +2,7 @@ import React from "react";
 
 export default function SectionHeader({ title }) {
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-2">
+    <div className="flex flex-col items-center justify-end w-full h-full gap-2">
       {/* text */}
       <h1 className="text-2xl font-black text-transparent lg:text-3xl bg-clip-text bg-gradient-to-r from-subColor to-mainColor">
         {title}

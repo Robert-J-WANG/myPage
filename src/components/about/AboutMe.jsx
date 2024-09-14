@@ -30,7 +30,7 @@ export default function AboutMe() {
           {infoData.map((item) => (
             <li
               key={item.id}
-              className="flex items-center justify-start gap-2 italic md:text-lg lg:text-xl text-ellipsis"
+              className="flex items-center justify-start gap-2 md:text-lg lg:text-xl text-ellipsis"
             >
               {/* dots */}
               <span className="inline-block w-2 h-2 rounded-full bg-mainColor"></span>
