@@ -3,6 +3,7 @@ import SectionHeader from "../widgets/SectionHeader";
 import CardList from "../widgets/CardList";
 import { useTags } from "../../hooks/useTags";
 import { useProjects } from "../../hooks/useProjects";
+import GoTop from "../widgets/GoTop";
 
 export default function Projects() {
   // 标签列表数据
@@ -22,11 +23,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full ">
-      {/* title */}
-      {/* <div className="flex items-center justify-center w-full h-20 ">
-        <SectionHeader title={"My Projects"} />
-      </div> */}
+    <div className="relative flex flex-col items-center justify-center w-full h-full">
       {/* tag */}
       <div className="flex mt-10 items-center justify-start mx-5 2xl:max-w-[1280px] flex-wrap gap-3 border-[0.5px] border-borderColor rounded-xl py-2 px-5">
         {tags &&
@@ -56,6 +53,11 @@ export default function Projects() {
           ))}
         </div>
       )}
+
+      {/* go to top button */}
+      <div className="fixed right-2 bottom-1/4">
+        <GoTop />
+      </div>
     </div>
   );
 }

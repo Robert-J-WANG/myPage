@@ -7,12 +7,12 @@ export default function AboutMe() {
     <div className="flex flex-col items-center justify-center w-full h-full gap-4 md:gap-12 md:flex-row">
       {/* left part */}
       <div className="flex items-center justify-center w-full h-full md:justify-end basis-1/2">
-        <div className="relative flex items-center justify-center w-[340px] h-[240px] lg:w-[408px] lg:h-[288px] overflow-hidden rounded-xl">
-          <span className="absolute w-[700px] h-[700px] bg-gradient-to-br from-mainColor to-black animate-spin-slow"></span>
+        <div className="relative flex items-center justify-center w-[306px] h-[216px] sm:w-[340px] sm:h-[240px] lg:w-[408px] lg:h-[288px] overflow-hidden rounded-2xl">
+          <span className="absolute w-[500px] h-[500px] bg-gradient-to-br from-mainColor to-black animate-spin-slow"></span>
 
           {/* 使用 require() 动态加载图片 */}
           <div
-            className="z-10 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-lg bg-cover bg-no-repeat"
+            className="z-10 w-[calc(100%-16px)] h-[calc(100%-16px)] rounded-xl bg-cover bg-no-repeat"
             style={{ backgroundImage: `url(${aboutMe})` }}
           ></div>
         </div>

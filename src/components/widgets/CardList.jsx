@@ -1,4 +1,5 @@
 import React from "react";
+import worksLink from "@/assets/worksLink.svg";
 
 // eslint-disable-next-line no-unused-vars
 export default function CardList({ id, img, title, description, url }) {
@@ -15,7 +16,7 @@ export default function CardList({ id, img, title, description, url }) {
           <a href={url} target="_blank" rel="noreferrer">
             <img
               className="w-8 h-8 rounded cursor-pointer bg-mainColor"
-              src="../../../src/assets/worksLink.svg"
+              src={worksLink}
               alt=""
             />
           </a>

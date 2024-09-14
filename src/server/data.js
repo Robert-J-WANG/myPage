@@ -14,7 +14,7 @@ import agriBazaarNZ from "@/assets/projectsImgs/agriBazaarNZ.png";
 import weather from "@/assets/projectsImgs/weather.png";
 import burgerQueen from "@/assets/projectsImgs/burgerQueen.png";
 import shoppia from "@/assets/projectsImgs/shoppia.png";
-
+import topMovies from "@/assets/projectsImgs/topMovies.png";
 // Header
 export const navLinkData = [
   { id: 1, key: "home", to: `${BASE_PATH}/home`, content: "Home" },
@@ -258,7 +258,7 @@ export const projectsData = {
       id: 9,
       tags: ["All", "React", "Tailwind", "react-hooks", "Zustand"],
       title: "AgriBazaar NZ Website",
-      description: "A website sales and rents agricultural machinery",
+      description: "sale and rent agricultural machineries",
       img: agriBazaarNZ,
       url: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
     },
@@ -301,6 +301,14 @@ export const projectsData = {
       description: "Go shopping on Shoppia",
       img: shoppia,
       url: "https://robert-j-wang.github.io/react_Shoppia/",
+    },
+    {
+      id: 13,
+      tags: ["All", "React", "Axios", "react-hooks"],
+      title: "TopMovies",
+      description: "search popular moives on TopMovies",
+      img: topMovies,
+      url: "https://robert-j-wang.github.io/react-topMovies/",
     },
   ],
 };
