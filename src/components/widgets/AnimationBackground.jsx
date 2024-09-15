@@ -1,6 +1,6 @@
 import React from "react";
-import useCanvas from "../hooks/useCanvas"; // 导入自定义 Hook
-import usePageSize from "../hooks/usePageSize";
+import useCanvas from "../../hooks/useCanvas"; // 导入自定义 Hook
+import usePageSize from "../../hooks/usePageSize";
 
 /**
  * 根据不同尺寸的页面，绘制指定尺寸组的小星星

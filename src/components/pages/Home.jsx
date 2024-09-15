@@ -2,10 +2,15 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import SocialLinks from "../widgets/SocialLinks";
 import SectionLayout from "@/Layout/SectionLayout";
+import { useAOSAnimation } from "../../hooks/useAOSAnimation";
 
 function Home() {
+  useAOSAnimation(1500);
   const mainContent = (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-10">
+    <div
+      className="flex flex-col items-center justify-center w-full h-full gap-10"
+      data-aos="zoom-in"
+    >
       {/* top avatar */}
       <div className="relative flex items-center justify-center w-40 h-40 overflow-hidden rounded-full">
         <span className="absolute w-44 h-44 bg-gradient-to-br from-mainColor to-subBgColor animate-spin-slow"></span>

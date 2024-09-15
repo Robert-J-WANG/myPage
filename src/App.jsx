@@ -3,7 +3,7 @@ import "./App.css";
 import Layout from "./Layout/Index";
 import NavBar from "./components/navBar/NavBar";
 import Content from "./components/content/Content";
-import AnimationBackground from "./test/AnimationBackground";
+import AnimationBackground from "./components/widgets/AnimationBackground";
 
 function App() {
   return (
@@ -19,6 +19,7 @@ function App() {
           />
         }
       />
+      {/* <Test /> */}
     </BrowserRouter>
   );
 }

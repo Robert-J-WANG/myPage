@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import SectionHeader from "../widgets/SectionHeader";
 import CardList from "../widgets/CardList";
 import { useTags } from "../../hooks/useTags";
 import { useProjects } from "../../hooks/useProjects";

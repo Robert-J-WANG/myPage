@@ -1,10 +1,15 @@
 import React from "react";
 import { infoData } from "../../server/data";
 import aboutMe from "@/assets/aboutMe.png"; // 动态加载图片
+import { useAOSAnimation } from "../../hooks/useAOSAnimation";
 
 export default function AboutMe() {
+  useAOSAnimation(1500);
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap-4 md:gap-12 md:flex-row">
+    <div
+      className="flex flex-col items-center justify-center w-full h-full gap-4 md:gap-12 md:flex-row"
+      data-aos="fade-up"
+    >
       {/* left part */}
       <div className="flex items-center justify-center w-full h-full md:justify-end basis-1/2">
         <div className="relative flex items-center justify-center w-[306px] h-[216px] sm:w-[340px] sm:h-[240px] lg:w-[408px] lg:h-[288px] overflow-hidden rounded-2xl">
