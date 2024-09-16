@@ -5,7 +5,7 @@ export default function GoTop() {
     <button
       className="btn btn-active btn-neutral bg-subBgColor text-mainColor "
       onClick={() => {
-        scrollTo(0, 0);
+        scrollTo({ top: 0, behavior: "smooth" });
       }}
     >
       Go Top
