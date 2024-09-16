@@ -1,45 +1,27 @@
-import React, { useState } from "react";
-import CardList from "../widgets/CardList";
-import { useTags } from "../../hooks/useTags";
-import { useProjects } from "../../hooks/useProjects";
-import GoTop from "../widgets/GoTop";
+import CardList from "@/components/projects/CardList";
+import { useProjects } from "@/hooks/useProjects";
+import GoTop from "@/components/projects/GoTop";
+import useScrollPosition from "@/hooks/useScrollPosition";
+import useWindowSize from "@/hooks/useWindowSize";
+import { useActiveTag } from "@/hooks/useActiveTag";
+import Tags from "@/components/projects/Tags";
 
 export default function Projects() {
-  // 标签列表数据
-  const tags = useTags();
-  // 当前激活的标签
-  const [activeTag, setActiveTag] = useState("All");
-  // projects 数据
+  // 维护当前激活的标签
+  const { activeTag, handleTagClick } = useActiveTag();
+
+  // 根据当前activeTag获取不同的projects数据
   const projects = useProjects(activeTag);
 
-  /**
-   * 处理tag点击事件的回调
-   * @param {*} e
-   */
-  const handleTagClick = (e) => {
-    const clickedTag = e.target.getAttribute("data-tag");
-    setActiveTag(clickedTag);
-  };
+  // 获取滚动条的位置和浏览器窗口的大小，来显示GoTop组件
+  const scrollPosition = useScrollPosition();
+  const windowSize = useWindowSize();
 
   return (
     <div className="relative flex flex-col items-center justify-center w-full h-full">
       {/* tag */}
-      <div className="flex mt-10 items-center justify-start mx-5 2xl:max-w-[1280px] flex-wrap gap-3 border-[0.5px] border-borderColor rounded-xl py-2 px-5">
-        {tags &&
-          tags.map((tag, i) => (
-            <p
-              data-tag={tag}
-              className={`px-2 hover:cursor-pointer py-1 rounded-md ${
-                tag === activeTag
-                  ? "bg-subBgColor text-mainColor"
-                  : "bg-transparent"
-              }`}
-              key={i}
-              onClick={handleTagClick}
-            >
-              {tag}
-            </p>
-          ))}
+      <div className="flex mt-10 items-center justify-center mx-5 2xl:max-w-[1280px] border-[0.5px] border-borderColor rounded-xl py-2 px-5">
+        <Tags activeTag={activeTag} handleTagClick={handleTagClick} />
       </div>
 
       {/* content */}
@@ -55,7 +37,7 @@ export default function Projects() {
 
       {/* go to top button */}
       <div className="fixed right-2 bottom-1/4">
-        <GoTop />
+        {scrollPosition.scrollY > windowSize.height / 2 && <GoTop />}
       </div>
     </div>
   );

@@ -1,8 +1,8 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import SocialLinks from "../widgets/SocialLinks";
+import SocialLinks from "../home/SocialLinks";
 import SectionLayout from "@/Layout/SectionLayout";
-import { useAOSAnimation } from "../../hooks/useAOSAnimation";
+import { useAOSAnimation } from "@/hooks/useAOSAnimation";
 
 function Home() {
   useAOSAnimation(1500);

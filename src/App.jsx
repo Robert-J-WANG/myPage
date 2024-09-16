@@ -4,6 +4,7 @@ import Layout from "./Layout/Index";
 import NavBar from "./components/navBar/NavBar";
 import Content from "./components/content/Content";
 import AnimationBackground from "./components/widgets/AnimationBackground";
+// import Test from "./test/Test";
 
 function App() {
   return (

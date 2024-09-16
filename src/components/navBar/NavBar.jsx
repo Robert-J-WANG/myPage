@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Menu from "./Menu";
 import Icon from "@/assets/myLogo.png";
-import Swap from "../widgets/Swap";
+import Swap from "./Swap";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

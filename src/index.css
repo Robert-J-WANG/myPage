@@ -3,9 +3,7 @@
 @tailwind utilities;
 
 /* 通用样式配置 */
-html{
-  @apply scroll-smooth;
-}
+
 * {
   @apply p-0 m-0;
 }

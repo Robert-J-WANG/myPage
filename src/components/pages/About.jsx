@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import SectionLayout from "@/Layout/SectionLayout";
 import SectionHeader from "../widgets/SectionHeader";
 import SectionPagination from "../widgets/SectionPagination";
-import { aboutMenuData } from "../../server/data";
+import { aboutMenuData } from "@/server/data";
 import AboutMe from "../about/AboutMe";
 import MySkill from "../about/MySkill";
 import Education from "../about/Education";
