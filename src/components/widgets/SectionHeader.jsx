@@ -2,9 +2,9 @@ import React from "react";
 
 export default function SectionHeader({ title }) {
   return (
-    <div className="flex flex-col items-center justify-end gap-1 lg:gap-2 ">
+    <div className="flex flex-col items-center justify-end gap-2 ">
       {/* text */}
-      <h1 className="px-2 text-2xl font-black text-transparent l xl:text-3xl bg-clip-text bg-gradient-to-r from-subColor to-mainColor">
+      <h1 className="px-2 text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-mainColor to-textColor">
         {title}
       </h1>
       {/* bar */}

@@ -8,22 +8,19 @@ export default function SectionLayout({
   footerContent,
 }) {
   return (
-    <div
-      id={id}
-      className="flex flex-col items-center justify-between w-full xl:max-w-[1280px]"
-    >
+    <div id={id} className="w-full">
       {/* Header Section */}
-      <header className="flex items-center justify-center w-full h-20">
+      <header className="flex items-end justify-center w-full h-20 ">
         {headerContent && headerContent}
       </header>
 
       {/* Main Section */}
-      <main className="flex items-center justify-center w-full mx-auto overflow-hidden lg:w-4/5 min-h-[calc(100vh-14rem)]">
+      <main className="flex items-center justify-center w-full min-h-[calc(100vh-192px)] mx-auto overflow-hidden">
         {mainContent && mainContent}
       </main>
 
-      {/* Footer Section */}
-      <footer className="flex items-center justify-center w-4/5 h-20">
+      {/* /* Footer Section */}
+      <footer className="flex items-start justify-center w-full h-12">
         {footerContent && footerContent}
       </footer>
     </div>

@@ -3,7 +3,7 @@ import SectionLayout from "@/Layout/SectionLayout";
 import SectionHeader from "../widgets/SectionHeader";
 import SectionPagination from "../widgets/SectionPagination";
 import { aboutMenuData } from "@/server/data";
-import AboutMe from "../about/AboutMe";
+import AboutMe from "../about/Introduction";
 import MySkill from "../about/MySkill";
 import Education from "../about/Education";
 import Experience from "../about/Experience";

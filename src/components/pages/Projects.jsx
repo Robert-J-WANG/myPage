@@ -18,7 +18,7 @@ export default function Projects() {
   const windowSize = useWindowSize();
 
   return (
-    <div className="relative flex flex-col items-center justify-center w-full h-full">
+    <div className="relative flex flex-col items-center justify-start w-full h-full min-h-[calc(100vh-64px)]">
       {/* tag */}
       <div className="flex mt-10 items-center justify-center mx-5 2xl:max-w-[1280px] border-[0.5px] border-borderColor rounded-xl py-2 px-5">
         <Tags activeTag={activeTag} handleTagClick={handleTagClick} />
@@ -26,7 +26,9 @@ export default function Projects() {
 
       {/* content */}
       {projects.length < 1 ? (
-        <p>Loading...</p>
+        <p className="pt-10 text-lg text-textBlue">
+          Currently under development...
+        </p>
       ) : (
         <div className="grid my-10 gap-14 xl:gap-10 lg:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (

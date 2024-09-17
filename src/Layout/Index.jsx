@@ -7,7 +7,7 @@ Index.propTypes = {
 };
 
 // 开启/关闭动画背景开关
-const didAnimationBgOpen = false;
+const didAnimationBgOpen = true;
 
 function Index({ header, content, animationBackground }) {
   return (
@@ -18,7 +18,7 @@ function Index({ header, content, animationBackground }) {
       </header>
 
       {/* content 内容区 */}
-      <main className="container mx-auto min-h-[calc(100vh-64px)] flex flex-col justify-start items-center">
+      <main className="container mx-auto max-w-[1280px] flex flex-col justify-start items-center">
         {content && content}
       </main>
 

@@ -20,6 +20,7 @@ export default {
         subBgColor: "rgba(96, 121, 153,.2)",
         subBdColor: "rgba(96, 121, 153,.6)",
         borderColor: "#535862",
+        textBlue: "#499ff8",
       },
 
       backgroundSize: {

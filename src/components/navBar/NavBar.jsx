@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Menu from "./Menu";
-import Icon from "@/assets/myLogo.png";
 import Swap from "./Swap";
+import { BASE_PATH } from "../../config";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -11,13 +11,18 @@ export default function NavBar() {
   return (
     <div className="container 2xl:max-w-[1280px] flex items-center justify-between h-full mx-auto ">
       {/*left logo */}
-      <div className="w-16 h-8 ">
-        <img src={Icon} className="w-full h-full" alt="" />
+      <div className="hidden h-4/5 md:block">
+        <a
+          href={`${BASE_PATH}/home`}
+          className="text-[2.25rem] font-[900] italic bg-clip-text text-transparent bg-gradient-to-r from-subColor to-mainColor "
+        >
+          Robert .
+        </a>
       </div>
 
       {/* center menu */}
       <div
-        className={`flex items-center justify-center w-full  transition-all duration-500 ${
+        className={`flex items-center justify-center   transition-all duration-500 ${
           isMenuOpen ? "-translate-y-14" : "translate-y-0"
         }`}
       >

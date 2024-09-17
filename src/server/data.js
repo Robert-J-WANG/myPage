@@ -15,6 +15,7 @@ import weather from "@/assets/projectsImgs/weather.png";
 import burgerQueen from "@/assets/projectsImgs/burgerQueen.png";
 import shoppia from "@/assets/projectsImgs/shoppia.png";
 import topMovies from "@/assets/projectsImgs/topMovies.png";
+import Programming from '../../src copy 2/components/blog/Programming';
 // Header
 export const navLinkData = [
   { id: 1, key: "home", to: `${BASE_PATH}/home`, content: "Home" },
@@ -56,40 +57,41 @@ export const socialLinksData = [
 
 // About
 export const aboutMenuData = [
-  { id: 1, title: "About Me" },
+  { id: 1, title: "Introduction" },
   { id: 2, title: "Skills" },
   { id: 3, title: "Education" },
   { id: 4, title: "Experience" },
 ];
 
 export const infoData = [
-  { id: 1, title: "First Name ", value: ": Robert Jiqiang" },
+  { id: 1, title: "First Name ", value: ": Jiqiang ( Robert )" },
   { id: 2, title: "Last Name ", value: ": WANG" },
   { id: 3, title: "Nationality ", value: ": Chinese" },
   { id: 4, title: "Language ", value: ": English, Chinese" },
-  { id: 5, title: "College", value: ": Unitec Institute of Technology" },
+  { id: 5, title: "College", value: ": Unitec" },
+  { id: 6, title: "Location", value: ": Auckland" },
 ];
 
 export const skillData = [
-  { id: 1, title: "UI/UX Design", stroke: "0.50px 1px", percent: "50%" },
   {
-    id: 2,
+    id: 1,
     title: "Front-end Development",
     stroke: "0.80px 1px",
     percent: "80%",
   },
   {
-    id: 3,
+    id: 2,
     title: "Back-end Development",
     stroke: "0.50px 1px",
     percent: "50%",
   },
   {
-    id: 4,
+    id: 3,
     title: "Mobile App Development",
     stroke: "0.45px 1px",
     percent: "45%",
   },
+  { id: 4, title: "UI/UX Design", stroke: "0.30px 1px", percent: "30%" },
 ];
 export const languageData = [
   { id: 1, title: "Html & Css", value: "90" },
@@ -112,16 +114,23 @@ export const resumeData = [
         year: "2024 - 2025",
         title: "Master of Applied Technologies-Computing",
         school: "Unitec Institute of Technology",
-        content:
-          "Specialized in advanced computing technologies, focusing on machine learning, big data, data analysis, cloud computing, and IoT. Proficient in tools like Python, TensorFlow, Hadoop, and AWS for developing innovative tech solutions.",
+        content: [
+          "Specialized in advanced computing technologies", "Focused on Machine Learning, Big Data & Data Analysis, Cloud Computing and IoT",
+          "Proficient in tools like Python, TensorFlow, Hadoop and AWS for developing innovative tech solutions"
+        ]
+
       },
       {
         id: 2,
         year: "2022 - 2023",
         title: "Graduate Diploma in Computing",
         school: "Unitec Institute of Technology",
-        content:
-          "Completed a comprehensive program focused on software development, web technologies, database management, and Agile methodologies, equipping me with the skills to tackle real-world computing challenges.",
+        content: [
+          "Completed a comprehensive program focused on software development",
+          "Learned Programming Languages, web technologies and database management",
+          "Gained an understanding of Agile methodologies and Testing skills",
+        ]
+
       },
       {
         id: 3,
@@ -129,7 +138,8 @@ export const resumeData = [
         title: "Bachelor of Mechanical Design and Automotive Engineering",
         school: "Shenyang University of Technology",
         content:
-          "Completed a degree in mechanical engineering, specializing in automotive design. Developed skills in CAD, UG, and project management. The program provided a strong foundation in engineering principles and design techniques.",
+          ["Completed a degree in mechanical engineering and automotive design", "Learned a strong foundation in engineering principles and design techniques", "Proficient in skills like autoCAD, UG, Solidworks and project management"]
+
       },
     ],
   },
@@ -141,28 +151,34 @@ export const resumeData = [
         year: "2020 - Now",
         title: "Internship Objective",
         school: "Unitec Institute of Technology",
-        content:
-          "Currently seeking an internship in software engineering, web development, big data, or data analysis. Passionate about applying technical skills to real-world projects and eager to gain hands-on experience in the tech industry.",
+        content: [
+          "Currently seeking an internship in web development", "Also interested in software development & big data & data analysis", "Passionate about applying technical skills in real-world projects", "Eager to gain hands-on experience in the tech industry",
+        ]
       },
       {
         id: 2,
         year: "2017 - 2019",
-        title: "Part-Time Positions",
-        school: "Living Foods",
-        content:
-          "Gained hands-on experience in various roles, including salad vegetable packer, kitchen factory assistant, orchard picker, and warehouse assistant. These positions enhanced my ability to work efficiently in different environments and manage diverse tasks.",
+        title: "Various roles",
+        school: "Living Foods Limited",
+        content: [
+          "Gained hands-on experience in various roles", "Enhanced my ability to work efficiently in different environments", "Improved my skills in cooperating with team members on diverse tasks"
+        ]
       },
-
       {
         id: 3,
         year: "2010 - 2016",
-        title: "Mechanical Designer and Engineer",
+        title: "Mechanical Engineer and Designer",
         school: "Dalian Huarui Heavy Industry Group",
-        content:
-          "Designed heavy equipment components for bulk material handling, specialized in bucket wheel reclaimers and reclaimers. Created AutoCAD drawings, 3D models, and managed product data using Siemens PDM system. Assisted in selecting Electrical, Hydraulic, and Lubricating components.",
-      },
-    ],
-  },
+        content: [
+          "Designed components for bulk material handling systems.",
+          "Created AutoCAD drawings, 3D models, and managed product data.",
+          "Collaborated with experts to design electrical, hydraulic, and lubricating systems."
+        ]
+      }
+    ]
+  }
+
+
 ];
 
 // projects data

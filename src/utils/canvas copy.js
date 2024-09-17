@@ -4,26 +4,37 @@ const resizeCanvas = (canvas, width, height) => {
   canvas.height = height;
 
   const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear previous drawings
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // 清除之前的绘制
 };
 
-// Draw regular polygon (Pentagon)
-const drawPentagon = (ctx, cx, cy, sides, radius, angle, color) => {
-  const step = (Math.PI * 2) / sides; // Divide circle by number of sides
-  let rotation = angle;
+// Draw star function with starColor
+const drawStar = (
+  ctx,
+  cx,
+  cy,
+  spikes,
+  outerRadius,
+  innerRadius,
+  angle,
+  starColor
+) => {
+  let rot = (Math.PI / 2) * 3;
+  let step = Math.PI / spikes;
 
   ctx.save();
   ctx.translate(cx, cy);
-  ctx.rotate(rotation);
+  ctx.rotate(angle);
   ctx.beginPath();
-  for (let i = 0; i < sides; i++) {
-    const x = Math.cos(step * i) * radius;
-    const y = Math.sin(step * i) * radius;
-    ctx.lineTo(x, y);
+  ctx.moveTo(0, -outerRadius);
+  for (let i = 0; i < spikes; i++) {
+    ctx.lineTo(Math.cos(rot) * outerRadius, Math.sin(rot) * outerRadius);
+    rot += step;
+    ctx.lineTo(Math.cos(rot) * innerRadius, Math.sin(rot) * innerRadius);
+    rot += step;
   }
   ctx.closePath();
 
-  ctx.fillStyle = color;
+  ctx.fillStyle = starColor;
   ctx.fill();
   ctx.restore();
 };
@@ -50,7 +61,7 @@ const generateStars = (canvas, starSizes, starNumber, stars) => {
   }
 };
 
-// Draw and update stars with pentagon shape
+// Draw and update stars with starColor
 const drawStars = (ctx, canvas, stars, starColor) => {
   ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear canvas before redrawing
   stars.forEach((star) => {
@@ -63,13 +74,14 @@ const drawStars = (ctx, canvas, stars, starColor) => {
 
     star.angle += star.rotationSpeed;
 
-    // Draw pentagon instead of star
-    drawPentagon(
+    // 绘制星星时，使用传入的颜色
+    drawStar(
       ctx,
       star.x,
       star.y,
-      5, // Number of sides (pentagon)
+      5,
       star.size,
+      star.size / 2,
       star.angle,
       starColor
     );
