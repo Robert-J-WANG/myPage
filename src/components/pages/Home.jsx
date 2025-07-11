@@ -9,26 +9,25 @@ function Home() {
   const mainContent = (
     <div
       className="flex flex-col items-center justify-center w-full h-full gap-10"
-      data-aos="zoom-in"
+      data-aos="fade-up"
     >
       {/* top avatar */}
       <div className="relative flex items-center justify-center overflow-hidden rounded-full w-44 h-44">
         <span className="absolute w-48 h-48 bg-gradient-to-br from-mainColor to-subBgColor animate-spin-slow"></span>
-        <div className="z-10 w-40 h-40 rounded-full bg-subBdColor bg-[url('./assets/myAvatar.png')] bg-center bg-93%"></div>
+        <div className="z-10 w-40 h-40 rounded-full bg-subBdColor bg-[url('./assets/myAvatar.png')] bg-center bg-100%"></div>
       </div>
 
       {/* center type animation */}
-      <div className="flex flex-col items-center justify-center gap-5">
-        <div className="flex items-center justify-center gap-3 text-xl font-bold xs:text-2xl sm:text-3xl md:text-4xl">
-          <span>Hi, I am</span>
+      <div className="flex flex-col items-start justify-center gap-5">
+        
+        <div className="flex items-center justify-center gap-3 text-xl lg:text-2xl">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-textColor to-textColor">👋👋 Hi, I’m</span>
           <span className="text-mainColor ">
             <Typewriter
               options={{
                 strings: [
-                  "Robert Jiqiang WANG",
-                  "a Master's student ",
-                  "a Web Designer",
-                  "a Front-end Developer",
+                  "Robert J. WANG.",
+                  "a Software Developer.",
                 ],
                 autoStart: true,
                 delay: 150,
@@ -38,12 +37,17 @@ function Home() {
           </span>
         </div>
 
-        <p className="flex flex-col justify-between gap-1 text-xs text-center text-transparent xs:text-sm sm:text-base md:text-xl lg:text-2xl bg-clip-text bg-gradient-to-r from-mainColor to-textColor">
-          <span>Majoring in Applied Technology of Computing.</span>
-          <span>Committed to becoming a Web Designer & Developer.</span>
+        <p className="flex flex-col justify-between gap-1 text-xs text-transparent text-start xs:text-sm sm:text-base lg:text-xl bg-clip-text bg-gradient-to-r from-mainColor to-textColor">
+          <span>With a background in Applied Technology of Computing, </span>
+          <span>I’m all about diving into new challenges, chasing innovation, </span>
           <span>
-            Enthusiastic about new technologies, passionate about work, positive
-            about life.
+            and growing in the fast-paced tech scene.
+          </span>
+           <span>
+            Life’s too short for boring code or a dull mindset,
+          </span>
+           <span>
+             so I bring passion and positivity to everything I do. ✨✨✨
           </span>
         </p>
       </div>

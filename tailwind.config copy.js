@@ -43,8 +43,8 @@ export default {
 
       keyframes: {
         leftToRight: {
-           "0%": { transform: "translateX(-10px)" },
-          "100%": { transform: "translateX(250px)" },
+          "0%": { transform: "translateX(-10px)" },
+          "100%": { transform: "translateX(180px)" },
         },
         iconScale: {
           "0%": { transform: "scale(1)" },

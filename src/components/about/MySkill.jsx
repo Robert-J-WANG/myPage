@@ -3,6 +3,7 @@ import "./MySkill.scss";
 import { skillData, languageData } from "../../server/data";
 
 export default function MySkill() {
+
   const topItems = skillData.map((item) => (
     <li key={item.id}>
       <div className="relative flex flex-col items-center h-full p-2 border justify-evenly rounded-xl border-subBdColor bg-subBgColor">
@@ -21,21 +22,21 @@ export default function MySkill() {
               r="54"
               pathLength="1"
               strokeLinecap="round"
-              strokeWidth="8"
+              strokeWidth="5"
             ></circle>
             <circle
               cx="60"
               cy="60"
               r="54"
               strokeLinecap="round"
-              strokeWidth="8"
+              strokeWidth="5"
               opacity="1"
               pathLength="1"
               strokeDashoffset="0px"
               strokeDasharray={item.stroke}
             ></circle>
           </svg>
-          <span className="absolute text-center transform -translate-x-1/2 -translate-y-1/2 lg:text-xl left-1/2 top-1/2 ">
+          <span className="absolute text-center transform -translate-x-1/2 -translate-y-1/2 left-1/2 top-1/2 ">
             {item.percent}
           </span>
         </div>
@@ -44,8 +45,9 @@ export default function MySkill() {
       </div>
     </li>
   ));
+
   const bottomItems = languageData.map((item) => (
-    <li key={item.id} className="flex flex-col justify-center gap-2 ">
+    <li key={item.id} className="flex flex-col justify-center gap-3 ">
       <h5 className="text-sm lg:text-base">
         {item.title} -{" "}
         <span className="text-mainColor">( {`${item.value} %`} )</span>
@@ -54,14 +56,15 @@ export default function MySkill() {
     </li>
   ));
   return (
-    <div className="flex flex-col w-full h-full gap-10 mx-auto my-skill-container ">
+    <div className="flex flex-col w-full h-full px-10 mx-auto gap-14 my-skill-container ">
+
       {/* top part */}
       <ul className="grid w-full grid-cols-4 gap-3 md:gap-6 basis-1/3">
         {topItems}
       </ul>
 
       {/* bottom part */}
-      <ul className="grid w-full grid-cols-2 gap-6 basis-2/3 ">
+      <ul className="grid w-full grid-cols-2 gap-5 basis-2/3 ">
         {bottomItems}
       </ul>
     </div>

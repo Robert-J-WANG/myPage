@@ -1,55 +1,31 @@
-import React, { useState } from "react";
-import SectionLayout from "@/Layout/SectionLayout";
-import SectionHeader from "../widgets/SectionHeader";
-import SectionPagination from "../widgets/SectionPagination";
-import { aboutMenuData } from "@/server/data";
+
 import AboutMe from "../about/Introduction";
 import MySkill from "../about/MySkill";
 import Education from "../about/Education";
-import Experience from "../about/Experience";
+import SectionHeader from "../widgets/SectionHeader";
 
 export default function About() {
-  const [page, setPage] = useState(1);
-  const headerContent = aboutMenuData.find((item) => item.id === page)
-    ?.title ? (
-    <SectionHeader
-      title={aboutMenuData.find((item) => item.id === page)?.title}
-    />
-  ) : null;
-
-  const mainContent = (
-    <div
-      className="flex items-center w-full h-full transition-transform ease-in-out duration-1500"
-      style={{ transform: `translateX(-${(page - 1) * 100}%)` }}
+  return (
+   <div
+      className="flex flex-col items-center justify-center w-full h-full gap-20 px-20 py-20 "
     >
-      <div className="flex-shrink-0 w-full h-full">
+      
+      <div className="flex flex-col w-full h-full gap-10 border-[2px] border-borderColor rounded-xl px-5 py-10">
+        <SectionHeader title={"About Me" }>
+          <span>👨‍💻👨‍💻</span>
+        </SectionHeader>
         <AboutMe />
       </div>
-      <div className="flex-shrink-0 w-full h-full">
+       <div className="flex flex-col w-full h-full gap-10 border-[2px] border-borderColor rounded-xl px-5 py-10">
+        <SectionHeader title={"About Skills"}/>
         <MySkill />
       </div>
-      <div className="flex-shrink-0 w-full h-full">
+      <div className="flex flex-col w-full h-full gap-10 border-[2px] border-borderColor rounded-xl px-5 py-10">
+        <SectionHeader title={"About Education"}/>
         <Education />
       </div>
-      <div className="flex-shrink-0 w-full h-full">
-        <Experience />
-      </div>
+      
+
     </div>
-  );
-
-  const footerContent = (
-    <SectionPagination
-      count={aboutMenuData.length}
-      handlePage={(e, v) => setPage(v)}
-    />
-  );
-
-  return (
-    <SectionLayout
-      id="about"
-      headerContent={headerContent}
-      mainContent={mainContent}
-      footerContent={footerContent}
-    />
   );
 }

@@ -17,22 +17,24 @@ export default function Timeline({ data }) {
               <span className="absolute -left-0.5 top-0 mt-1 ">
                 {/* Big circle */}
                 <span className="absolute z-10 inline-block w-6 h-6 border-4 rounded-full -left-3 top-6 border-mainColor "></span>
-                {/* Small circle */}
-                <span className="absolute inline-block w-4 h-4 rounded-full -left-2 top-7 z-11 bg-bgColor "></span>
+                
                 {/* X-line */}
-                <span className="absolute -left-10 top-6 -z-10 mt-2.5 h-1 w-20 rounded-full bg-subBdColor "></span>
+                <span className="absolute -left-10 top-6 mt-2.5 h-1 w-20 rounded-full bg-subBdColor "></span>
+
+                {/* Small circle */}
+                <span className="absolute inline-block w-4 h-4 rounded-full -left-2 top-7 bg-bgColor "></span>
               </span>
 
               {/* Text Content */}
-              <h5 className="w-full sm:text-lg md:text-xl lg:text-2xl text-mainColor">
+              <h5 className="w-full text-sm lg:text-base text-mainColor">
                 {item.title}
               </h5>
-              <p className="w-full text-sm sm:text-base md:text-lg lg:text-xl text-subColor">
+              <p className="w-full text-sm lg:text-base text-subColor">
                 {item.school}
               </p>
 
               {/* Content List */}
-              <ul className="w-full text-sm sm:text-base mg:text-lg lg:text-xl text-textColor">
+              <ul className="w-full text-sm lg:text-base text-textColor">
                 {item.content.map((li, index) => (
                   <li key={index}>{li}</li>
                 ))}

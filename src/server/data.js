@@ -25,48 +25,52 @@ export const navLinkData = [
 
 // Home
 export const socialLinksData = [
-  {
-    id: 1,
-    title: "facebook",
-    anchor: "https://www.facebook.com/robin.wong.904108",
-    icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/facebook.png",
-    icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/facebook.png",
-  },
+  // {
+  //   id: 1,
+  //   title: "facebook",
+  //   anchor: "https://www.facebook.com/robin.wong.904108",
+  //   icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/facebook.png",
+  //   icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/facebook.png",
+  // },
+  
   {
     id: 2,
-    title: "twitter",
-    anchor: "https://twitter.com/Robin666",
-    icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/twitter.png",
-    icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/twitter.png",
-  },
-  {
-    id: 3,
     title: "linkedIn",
     anchor: "https://www.linkedin.com/in/robert-j-wang/",
     icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/linkedin.png",
     icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/linkedin.png",
   },
   {
-    id: 4,
+    id: 3,
     title: "gitHub",
     anchor: "https://github.com/Robert-J-WANG",
     icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/github.png",
     icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/github.png",
   },
+
+  {
+    id: 4,
+    title: "emial",
+    anchor: "mailto:robertwang6486@gmail.com?subject=反馈&body=请描述您的反馈",
+    icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/email.png",
+    icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/email.png",
+  },
 ];
+
+
 
 // About
 export const aboutMenuData = [
   { id: 1, title: "Introduction" },
   { id: 2, title: "Skills" },
   { id: 3, title: "Education" },
-  { id: 4, title: "Experience" },
+  // { id: 4, title: "Experience" },
 ];
 
 export const infoData = [
-  { id: 1, title: "First Name ", value: ": Jiqiang ( Robert )" },
+  { id: 1, title: "First Name ", value: ": Robert ( Jiqiang )" },
   { id: 2, title: "Last Name ", value: ": WANG" },
-  { id: 3, title: "Nationality ", value: ": Chinese" },
+  // { id: 3, title: "Nationality ", value: ": Chinese" },
   { id: 4, title: "Language ", value: ": English, Chinese" },
   { id: 5, title: "College", value: ": Unitec" },
   { id: 6, title: "Location", value: ": Auckland" },
@@ -82,26 +86,26 @@ export const skillData = [
   {
     id: 2,
     title: "Back-end Development",
-    stroke: "0.50px 1px",
-    percent: "50%",
+    stroke: "0.70px 1px",
+    percent: "70%",
   },
   {
     id: 3,
-    title: "Mobile App Development",
-    stroke: "0.45px 1px",
-    percent: "45%",
+    title: "Manchine Learning & AI ",
+    stroke: "0.50px 1px",
+    percent: "50%",
   },
-  { id: 4, title: "UI/UX Design", stroke: "0.30px 1px", percent: "30%" },
+  { id: 4, title: "Data Engineering & Analytics", stroke: "0.60px 1px", percent: "60%" },
 ];
 export const languageData = [
   { id: 1, title: "Html & Css", value: "90" },
   { id: 2, title: "Javascript", value: "80" },
-  { id: 3, title: "React Js", value: "75" },
-  { id: 4, title: "Node Js", value: "60" },
-  { id: 5, title: "React Native", value: "40" },
-  { id: 6, title: "C# & Java", value: "50" },
-  { id: 7, title: "Photoshop", value: "45" },
-  { id: 8, title: "Figma", value: "40" },
+  { id: 3, title: "ReactJs", value: "80" },
+  { id: 4, title: "NodeJs", value: "70" },
+  { id: 5, title: "Typecript", value: "60" },
+  { id: 6, title: "C# & Python", value: "60" },
+  { id: 7, title: "PostgreSQL", value: "60" },
+  { id: 8, title: "Azure", value: "50" },
 ];
 
 // resume data
@@ -112,22 +116,23 @@ export const resumeData = [
       {
         id: 1,
         year: "2024 - 2025",
-        title: "Master of Applied Technologies-Computing",
+        title: "Master of Applied Technologies in Computing",
         school: "Unitec Institute of Technology",
         content: [
-          "Specialized in advanced computing technologies", "Focused on Machine Learning, Big Data & Data Analysis, Cloud Computing and IoT",
-          "Proficient in tools like Python, TensorFlow, Hadoop and AWS for developing innovative tech solutions"
+          "Specialized in advanced computing technologies,", 
+          "Focused on Machine Learning, Data Analysis, Cloud Computing and IoT,",
+          "Proficient in tools like Python, TensorFlow, Hadoop and Azure"
         ]
 
       },
       {
         id: 2,
         year: "2022 - 2023",
-        title: "Graduate Diploma in Computing",
+        title: "Graduate Diploma in Software Development",
         school: "Unitec Institute of Technology",
         content: [
-          "Completed a comprehensive program focused on software development",
-          "Learned Programming Languages, web technologies and database management",
+          "Completed a comprehensive program focused on software development,",
+          "Learned Programming Languages, web technologies and database management,",
           "Gained an understanding of Agile methodologies and Testing skills",
         ]
 
@@ -135,10 +140,10 @@ export const resumeData = [
       {
         id: 3,
         year: "2006 - 2010",
-        title: "Bachelor of Mechanical Design and Automotive Engineering",
+        title: "Bachelor of engineering in Mechanical Design, Manufacturing and Automation",
         school: "Shenyang University of Technology",
         content:
-          ["Completed a degree in mechanical engineering and automotive design", "Learned a strong foundation in engineering principles and design techniques", "Proficient in skills like autoCAD, UG, Solidworks and project management"]
+          ["Learned a strong foundation in engineering and design principles,", "skilled in using autoCAD, UG, Solidworks and project management"]
 
       },
     ],
@@ -148,20 +153,20 @@ export const resumeData = [
     data: [
       {
         id: 1,
-        year: "2020 - Now",
+        year: "2024 - Now",
         title: "Internship Objective",
         school: "Unitec Institute of Technology",
         content: [
-          "Currently seeking an internship in web development", "Also interested in software development & big data & data analysis", "Passionate about applying technical skills in real-world projects", "Eager to gain hands-on experience in the tech industry",
+          "Currently seeking an internship/ graduate roles in web development", "Also interested in software development & big data & data analysis", "Passionate about applying technical skills in real-world projects", "Eager to gain hands-on experience in the tech industry",
         ]
       },
       {
         id: 2,
-        year: "2017 - 2019",
-        title: "Various roles",
+        year: "2022 - 2023",
+        title: "Software Developer Intern",
         school: "Living Foods Limited",
         content: [
-          "Gained hands-on experience in various roles", "Enhanced my ability to work efficiently in different environments", "Improved my skills in cooperating with team members on diverse tasks"
+          "Collaborated with the product manager to upgrade the company website to a responsive SPA using React.js, significantly improving UI/UX and performance","Assisted senior engineers in developing an inventory management system by creating REST APIs with ASP.NET to manage vehicle data.", 
         ]
       },
       {

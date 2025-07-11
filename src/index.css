@@ -4,7 +4,12 @@
 
 /* 通用样式配置 */
 
-* {
+body {
+  font-family: 'Space Mono', monospace;
+}
+
+
+/* * {
   @apply p-0 m-0;
 }
 
@@ -15,5 +20,5 @@ a {
 ul,
 li {
   @apply list-none;
-}
+} */
 

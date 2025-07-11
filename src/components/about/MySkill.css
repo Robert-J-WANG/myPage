@@ -1,0 +1,33 @@
+@charset "UTF-8";
+.my-skill-container {
+  /* 表示总长度背景色 */
+  /* 表示已完成进度背景色 */
+}
+
+.my-skill-container .circle {
+  fill: none;
+  stroke: #9feaad;
+  rotate: -90deg;
+}
+
+.my-skill-container .circlebg {
+  stroke: rgba(145, 216, 209, 0.3);
+}
+
+.my-skill-container progress {
+  width: 100%;
+  height: 0.3rem;
+  color: #9feaad;
+  background: rgba(145, 216, 209, 0.3);
+  border-radius: 0.3rem;
+}
+
+.my-skill-container progress::-webkit-progress-bar {
+  background-color: rgba(145, 216, 209, 0.3);
+  border-radius: 0.3rem;
+}
+
+.my-skill-container progress::-webkit-progress-value {
+  background: #9feaad;
+  border-radius: 0.3rem;
+}

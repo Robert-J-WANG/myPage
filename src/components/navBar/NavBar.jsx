@@ -14,9 +14,9 @@ export default function NavBar() {
       <div className="hidden h-4/5 md:block">
         <a
           href={`${BASE_PATH}/home`}
-          className="text-[2.25rem] font-[900] italic bg-clip-text text-transparent bg-gradient-to-r from-subColor to-mainColor "
+          className="text-[2.25rem] font-[700] italic bg-clip-text text-transparent bg-gradient-to-r from-subColor to-mainColor "
         >
-          Robert .
+          Robert.
         </a>
       </div>
 
