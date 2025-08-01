@@ -16,7 +16,7 @@ function App() {
           <AnimationBackground
             starSizes={[3, 6, 9, 15, 30, 45]}
             starColor={"#87888c33"}
-            starNumber={10}
+            starNumber={15}
           />
         }
       />

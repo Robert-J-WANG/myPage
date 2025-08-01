@@ -5,10 +5,10 @@ export default function SectionLayout({
   id,
   headerContent,
   mainContent,
-  footerContent,
+  // footerContent,
 }) {
   return (
-    <div id={id} className="w-full">
+    <div id={id} className="w-full ">
       {/* Header Section */}
       <header className="flex items-end justify-center w-full h-20 ">
         {headerContent && headerContent}
@@ -20,9 +20,9 @@ export default function SectionLayout({
       </main>
 
       {/* /* Footer Section */}
-      <footer className="flex items-start justify-center w-full h-12">
+      {/* <footer className="flex items-start justify-center w-full h-12 bg-green-600">
         {footerContent && footerContent}
-      </footer>
+      </footer> */}
     </div>
   );
 }

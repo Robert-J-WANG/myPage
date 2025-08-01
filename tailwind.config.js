@@ -7,7 +7,8 @@ export default {
     extend: {
       fontFamily: {
          spaceMono: ['"Space Mono"', 'monospace'],
-        // RCD: ["Space Mono","Radio Canada", "sans-serif"],
+         winkyRough:["Winky Rough", "sans-serif"],
+        RCD: ["Radio Canada", "sans-serif"],
       },
 
       colors: {

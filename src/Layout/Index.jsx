@@ -11,7 +11,7 @@ const didAnimationBgOpen = true;
 
 function Index({ header, content, animationBackground }) {
   return (
-    <div className="relative w-full text-textColor">
+    <div className="relative w-full min-h-screen text-textColor">
       {/* header 导航区 */}
       <header className="w-full h-16 border-b-[1px] border-subBdColor flex justify-center items-center">
         {header && header}
