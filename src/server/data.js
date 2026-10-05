@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { BASE_PATH } from "@/config";
 import meowBubbles from "@/assets/projectsImgs/meowBubbles.png";
 import orewaBeachLodges from "@/assets/projectsImgs/orewaBeachLodges.png";
@@ -15,7 +14,6 @@ import weather from "@/assets/projectsImgs/weather.png";
 import burgerQueen from "@/assets/projectsImgs/burgerQueen.png";
 import shoppia from "@/assets/projectsImgs/shoppia.png";
 import topMovies from "@/assets/projectsImgs/topMovies.png";
-import Programming from '../../src copy 2/components/blog/Programming';
 // Header
 export const navLinkData = [
   { id: 1, key: "home", to: `${BASE_PATH}/home`, content: "Home" },
