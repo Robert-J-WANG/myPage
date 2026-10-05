@@ -1,6 +1,6 @@
 import React from "react";
-import { infoData } from "@/data/portfolio";
-import aboutMe from "@/assets/aboutMe.png"; // 动态加载图片
+import { personalDetails } from "@/data/site";
+import aboutMe from "@/assets/profile/about-me.webp";
 
 
 export default function Introduction() {
@@ -26,7 +26,7 @@ export default function Introduction() {
       <div className="flex flex-col items-center justify-center w-[370px] md:w-full gap-4 md:gap-8 basis-1/2 md:items-start">
         {/* middle list */}
         <ul className="flex flex-col justify-center gap-1 md:gap-3">
-          {infoData.map((item) => (
+          {personalDetails.map((item) => (
             <li
               key={item.id}
               className="flex items-center justify-start gap-1 md:gap-2"
@@ -42,13 +42,6 @@ export default function Introduction() {
           ))}
         </ul>
         {/* bottom link */}
-        <a
-          href="/resume.pdf"
-          target="_blank"
-          className="flex items-center justify-center duration-500 border rounded text-textColor bg-mainColor20 border-mainColor hover:bg-mainColor hover:text-bgColor "
-        >
-          <span className="px-2 py-1">Download Resume</span>
-        </a>
       </div>
     </div>
   );

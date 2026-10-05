@@ -1,4 +1,4 @@
-import { projectsData } from "@/data/portfolio";
+import { projects } from "@/data/projects";
 import { getProjectTags } from "@/utils/portfolio";
 
-export const useTags = () => getProjectTags(projectsData.cardData);
+export const useTags = () => getProjectTags(projects);

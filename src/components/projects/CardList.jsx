@@ -1,5 +1,5 @@
 import React from "react";
-import worksLink from "@/assets/worksLink.svg";
+import worksLink from "@/assets/icons/external-link.svg";
 // import { useAOSAnimation } from "../../hooks/useAOSAnimation";
 
 // eslint-disable-next-line no-unused-vars
@@ -15,6 +15,8 @@ export default function CardList({ id, img, title, description, url }) {
           className="absolute top-0 left-0 w-full h-full duration-500 group-hover:blur group-hover:opacity-20"
           src={img}
           alt=""
+          loading="lazy"
+          decoding="async"
         />
 
         <div className="absolute top-0 z-20 flex items-center justify-center w-full h-full duration-500 rounded -left-full bg-subBgColor group-hover:translate-x-full">

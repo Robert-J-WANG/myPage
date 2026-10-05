@@ -3,7 +3,8 @@ import SocialLinks from "../home/SocialLinks";
 import SectionLayout from "@/Layout/SectionLayout";
 import { useAOSAnimation } from "@/hooks/useAOSAnimation";
 import TypewriterText from "@/components/home/TypewriterText";
-import avatar from "@/assets/myAvatar.png";
+import { homeIntroduction } from "@/data/site";
+import avatar from "@/assets/profile/avatar.webp";
 
 function Home() {
   useAOSAnimation(1500);
@@ -32,17 +33,7 @@ function Home() {
         </div>
 
         <p className="flex flex-col justify-between gap-1 text-xs text-transparent text-start xs:text-sm sm:text-base lg:text-xl bg-clip-text bg-gradient-to-r from-mainColor to-textColor">
-          <span>With a background in Applied Technology of Computing, </span>
-          <span>I’m all about diving into new challenges, chasing innovation, </span>
-          <span>
-            and growing in the fast-paced tech scene.
-          </span>
-           <span>
-            Life’s too short for boring code or a dull mindset,
-          </span>
-           <span>
-             so I bring passion and positivity to everything I do. ✨✨✨
-          </span>
+          {homeIntroduction.map((line) => <span key={line}>{line}</span>)}
         </p>
       </div>
 
