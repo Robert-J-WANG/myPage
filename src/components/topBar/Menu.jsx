@@ -3,7 +3,7 @@ import { useState, useContext } from "react";
 import { menuData } from "../../data";
 
 // 引入createContext
-import { PageContext } from "@/layout";
+import { PageContext } from "@/Layout";
 
 function Menu() {
   const [clickedKey, setClickedKey] = useState("home");
