@@ -30,8 +30,9 @@ src/
   app/                 # App、路由与站点级配置
   components/          # Header、SectionHeading、ProjectCard 等通用 UI
   pages/               # Home、About、Projects
-  data/portfolio.js    # 个人资料、技能、教育、项目的唯一静态数据源
-  assets/              # 已压缩且被正式引用的图片、图标、PDF
+  data/site.js         # 导航、个人资料、技能、教育等站点内容
+  data/projects.js     # 项目卡片数据及其本地截图导入
+  assets/              # profile、projects、icons 等正式引用资源
   styles/              # 全局样式与少量组件补充样式
   utils/               # 纯函数，例如项目筛选
 ```
@@ -47,10 +48,12 @@ src/
 
 ### 数据与内容
 
-- `src/server/data.js` 改为 `src/data/portfolio.js`；它不是 server 代码。
-- 项目标签、项目详情、社交链接、技能与教育资料仅在该文件维护。
+- 不使用数据库、CMS 或云存储。所有展示数据和图片随静态站点构建，适合当前个人主页的规模。
+- 站点资料放在 `src/data/site.js`，项目卡片放在 `src/data/projects.js`；组件不保存个人信息、项目链接或展示列表。
+- 个人图片、项目截图和站点图标分别放在 `src/assets/profile/`、`src/assets/projects/` 与 `src/assets/icons/`。当前图片采用 WebP：项目截图最长边 960px，头像最长边 512px，About 图片最长边 960px；这满足现有显示尺寸并显著减少首次下载量。
+- 原始 PNG/JPEG/WebP 放在 `src/assets/source/profile/` 或 `src/assets/source/projects/` 并提交到 Git；生成的 WebP 位于正式资源目录但被 Git 忽略。`predev`、`pretest`、`prebuild` 以及 CI workflow 都会运行 `npm run images:optimize`，因此本地和部署环境都从原图自动生成相同的 WebP。图片生成会修改本地忽略的生成目录，但不修改版本控制中的内容。
 - 项目筛选抽为一个纯函数，标签从项目数据派生，避免 `reactHooks` / `react-hooks` 这类双写不一致。
-- 简历要么以实际 PDF 放入 `public/resume.pdf`，要么在资料未准备好前隐藏下载入口；不保留失效链接。
+- 当前没有 `public/resume.pdf`，因此不渲染下载入口；补充实际 PDF 后再恢复对应链接。
 
 ## 4. UI 设计原则
 
@@ -59,14 +62,14 @@ src/
 - About：使用连续信息区块而非三层大边框；在宽屏双栏、窄屏单栏，避免固定 `px-20` 等造成拥挤的尺寸。
 - Projects：标签为按钮；卡片统一 16:9 图片比例、标题、简介与“查看项目”链接，图片使用 `loading="lazy"`。
 - 导航：桌面显示完整导航；移动端只在真正折叠时显示菜单按钮。移除只负责把可见菜单移出屏幕的旧行为。
-- 默认移除持续 Canvas 背景、AOS 和打字机效果；如保留动效，只使用少量 CSS transition，且不影响内容阅读。
+- Canvas 背景、AOS 和打字机效果是否替换，留待已确认的 UI/动画阶段决定；在此之前不得单独删除或改变其体验。
 
 ## 5. 依赖与构建决策
 
 ### 当前工程底座
 
 - 运行时基础为 `react`、`react-dom` 和 `react-router`。
-- 工具链为 Vite 8、Tailwind CSS 4、DaisyUI 5、ESLint 10、TypeScript 6 和 Vitest 5。
+- 工具链为 Vite 8、Tailwind CSS 4、DaisyUI 5、ESLint 10、TypeScript 6 和 Vitest 5；`sharp` 仅作为开发依赖执行本地、可重复的图片转码，不参与浏览器运行时或 CI 构建。
 - 使用 Node.js 24（最低 `24.21.0`）；`.nvmrc` 和 `package.json` 的 `engines` 固定本地与未来 CI 的运行时。
 - TypeScript 配置已启用 `allowJs` 且关闭 `checkJs`：旧 `.js/.jsx` 页面继续运行，新写或完整重做的组件才迁至 `.ts/.tsx`。不为旧文件做只改后缀的迁移。
 - `components.json` 已准备好 shadcn/ui 的 Vite、Tailwind 4 与 TypeScript 配置。只有在 UI 步骤确实使用组件时，才添加对应 shadcn/ui 源码和依赖。
@@ -106,7 +109,8 @@ src/
 | 0 | 清除 `copy` 文件、重复资源和失效引用；修复标签与简历链接决策 | 只有正式源码；`lint`、`build` 通过 |
 | 1 | 现代工程底座：Node 24、渐进 TypeScript、React 19、Router 8、Vite 8、Tailwind 4、ESLint 10、Vitest；清除真正无用代码和依赖 | 本地可运行；`lint`、`test`、`build` 通过 |
 | 2 | GitHub Actions CI 与 Pages 部署；替换旧发布脚本 | push 自动验证；部署不依赖本机命令 |
-| 3 | 内容与资源：数据资料、失效链接、站点图标、图片优化 | 所有展示数据准确；构建资源合理 |
+| 3 | 内容与资源：数据资料、失效链接、站点图标、图片盘点 | 所有展示数据准确；资源目录清楚；不在本阶段改变图片视觉质量 |
+| 3.1 | 图片交付：WebP 编码、尺寸限制与原生懒加载 | 原图不进入 Git；部署图片体积合理；新增图片可用同一命令处理 |
 | 4 | 在确认设计后重做响应式 UI、布局与动画；采用 shadcn/ui，替换 AOS/DaisyUI/Sass 与旧页面动效 | 375px 与桌面宽度可读；当前或确认的新动效完整；项目图片延迟加载 |
 
 每个阶段独立提交和验证，不在同一个提交中混合无关格式化、依赖升级和 UI 改动。

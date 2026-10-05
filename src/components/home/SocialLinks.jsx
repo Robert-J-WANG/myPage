@@ -1,11 +1,11 @@
 import React from "react";
-import { socialLinksData } from "@/data/portfolio";
+import { socialLinks } from "@/data/site";
 
 export default function SocialLinks() {
   return (
     //   {/* bottom links */}
     <ul className="flex items-center justify-center gap-10">
-      {socialLinksData.map((item) => (
+      {socialLinks.map((item) => (
         <li key={item.id} className="">
           <a
             href={item.anchor}

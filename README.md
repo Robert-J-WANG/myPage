@@ -10,6 +10,7 @@ A personal portfolio, job-search site, and learning project built with React.
 - Tailwind CSS 4 and DaisyUI 5
 - TypeScript in gradual-migration mode
 - ESLint and Vitest
+- Sharp for local, repeatable image optimization
 
 The application currently keeps its existing JavaScript pages. New or fully rewritten components can use TypeScript, while `allowJs` keeps the current pages working without a disruptive conversion.
 
@@ -37,15 +38,26 @@ npm run check
 ```text
 src/
   app/                 # Router and shared route layout
-  assets/              # Portfolio images
+  assets/              # profile, project and icon assets
   components/          # Page sections and reusable UI
-  data/portfolio.js    # The single source of portfolio content
+  data/site.js         # Navigation, profile, skills and timeline content
+  data/projects.js     # Project cards and their local screenshot imports
   hooks/               # Small UI hooks
   styles/              # Global Tailwind CSS entry point
   utils/               # Pure, tested data helpers
 ```
 
-Update personal information, links, skills, education, and project cards in `src/data/portfolio.js`. Do not create duplicate data files or keep `copy` components as a backup; Git history preserves earlier versions.
+Update personal information, links, skills and timeline content in `src/data/site.js`; update project cards in `src/data/projects.js`. Keep images in the matching `src/assets/` subdirectory. Do not create `copy` files as a backup; Git history preserves earlier versions.
+
+## Adding images
+
+Commit original PNG, JPEG, or WebP files in `src/assets/source/profile/` or `src/assets/source/projects/`. Generated WebP files in `src/assets/profile/` and `src/assets/projects/` are ignored by Git.
+
+```bash
+npm run images:optimize
+```
+
+The command generates WebP files in `src/assets/profile/` and `src/assets/projects/`. It runs automatically before `dev`, `test`, and `build`, and is also an explicit step in CI and Pages deployment. Project screenshots and the About image are limited to 960px wide; the avatar is limited to 512px. Review the generated image, then update its import in the relevant data file and commit the original plus code changes. Project-card images load lazily in the browser.
 
 ## Deployment
 

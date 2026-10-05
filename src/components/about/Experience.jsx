@@ -1,9 +1,7 @@
 import React from "react";
-import { resumeData } from "@/data/portfolio";
+import { experienceEntries } from "@/data/site";
 import Timeline from "./TimeLine";
 
 export default function Experience() {
-  const ExpData = resumeData.find((item) => item.name === "Experience");
-  // console.log(EduData.data);
-  return <Timeline data={ExpData.data} />;
+  return <Timeline data={experienceEntries} />;
 }

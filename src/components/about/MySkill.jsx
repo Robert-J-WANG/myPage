@@ -1,10 +1,10 @@
 import React from "react";
 import "./MySkill.scss";
-import { skillData, languageData } from "@/data/portfolio";
+import { skillRatings, technologyRatings } from "@/data/site";
 
 export default function MySkill() {
 
-  const topItems = skillData.map((item) => (
+  const topItems = skillRatings.map((item) => (
     <li key={item.id}>
       <div className="relative flex flex-col items-center h-full p-2 border justify-evenly rounded-xl border-subBdColor bg-subBgColor">
         {/* circle */}
@@ -46,7 +46,7 @@ export default function MySkill() {
     </li>
   ));
 
-  const bottomItems = languageData.map((item) => (
+  const bottomItems = technologyRatings.map((item) => (
     <li key={item.id} className="flex flex-col justify-center gap-3 ">
       <h5 className="text-sm lg:text-base">
         {item.title} -{" "}
