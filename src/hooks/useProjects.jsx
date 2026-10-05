@@ -1,15 +1,4 @@
-import { useEffect, useState } from "react";
-import { projectsData } from "../server/data";
+import { projectsData } from "@/data/portfolio";
+import { filterProjects } from "@/utils/portfolio";
 
-export const useProjects = (activeTag) => {
-  const [projects, setProjects] = useState([]);
-
-  useEffect(() => {
-    const activeProjects = projectsData.cardData.filter((item) => {
-      return item.tags.includes(activeTag);
-    });
-    setProjects(activeProjects);
-  }, [activeTag]);
-
-  return projects;
-};
+export const useProjects = (activeTag) => filterProjects(projectsData.cardData, activeTag);

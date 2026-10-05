@@ -1,107 +1,56 @@
-## 使用 yarn+vite+tailwind 创建 和发布 react 项目配置：
+# myPage
 
-## Part1: 创建项目
+A personal portfolio, job-search site, and learning project built with React.
 
-### yarn 部分
+## Stack
 
-1. #### 全局安装 yarn
+- Node.js 24.21.0
+- React 19 and React Router 8
+- Vite 8
+- Tailwind CSS 4 and DaisyUI 5
+- TypeScript in gradual-migration mode
+- ESLint and Vitest
 
-   ```bash
-   npm install --global yarn
-   ```
+The application currently keeps its existing JavaScript pages. New or fully rewritten components can use TypeScript, while `allowJs` keeps the current pages working without a disruptive conversion.
 
-2. #### 检查 yarn 是否安装成功及版本
+## Local development
 
-   ```bash
-   yarn -version
-   ```
+```bash
+nvm use
+npm ci
+npm run dev
+```
 
-### Vite 部分
+## Quality checks
 
-1. #### 安装 vite 脚手架
+```bash
+npm run lint
+npm run test
+npm run build
+npm run check
+```
 
-   ```bash
-   yarn create vite
-   ```
+`npm run build` type-checks the project, builds the Vite site, and creates `dist/404.html` from `dist/index.html`. This preserves clean client-side URLs such as `/myPage/projects` on GitHub Pages.
 
-2. #### 按照提示执行：
+## Project structure
 
-   ​ ✔ Project name: … myPortfolio
-   ​ ✔ Package name: … myportfolio
-   ​ ✔ Select a framework: › React
-   ​ ✔ Select a variant: › JavaScript
+```text
+src/
+  app/                 # Router and shared route layout
+  assets/              # Portfolio images
+  components/          # Page sections and reusable UI
+  data/portfolio.js    # The single source of portfolio content
+  hooks/               # Small UI hooks
+  styles/              # Global Tailwind CSS entry point
+  utils/               # Pure, tested data helpers
+```
 
-3. #### 进入项目文件夹
+Update personal information, links, skills, education, and project cards in `src/data/portfolio.js`. Do not create duplicate data files or keep `copy` components as a backup; Git history preserves earlier versions.
 
-   ```bash
-   cd myPortfolio
-   ```
+## Deployment
 
-4. #### 生成 vite 配置文件
+GitHub Actions runs `npm run check` on pull requests targeting `master`. Each push to `master` runs the same checks and deploys `dist/` to GitHub Pages.
 
-   ```bash
-       yarn
-   ```
+Before the first deployment, open the repository **Settings → Pages** and select **GitHub Actions** as the publishing source. No deployment token or local deploy command is required.
 
-   ​
-
-5. #### 运行项目测试是否安装成功
-
-   ```bash
-   yarn dev
-   ```
-
-   ​
-
-### Tailwind 部分
-
-1. #### 安装 tailwindcss 相关包
-
-   ```bash
-   yarn add tailwindcss -D
-   yarn add postcss
-   yarn add autoprefixer
-   ```
-
-2. #### 根目录下创建`postcss.config.js`文件，并添加配置代码，引入 tailwindcss 和 autoprefixer
-
-   ```js
-   export default {
-     plugins: {
-       tailwindcss: {},
-       autoprefixer: {}
-     }
-   }
-   ```
-
-3. #### 初始化 tailwindcss 配置，生成 tailwind.config.js 文件
-
-   ```bash
-   yarn tailwind init
-   ```
-
-   #### 并添加下面内容到 tailwind.config.js 文件中
-
-   ```js
-   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-   ```
-
-4. #### 引入 tailwindcss 到项目中
-
-   #### 清空 index.css 中的内容，并移入 tailwindcss
-
-   ```css
-   @tailwind base;
-   @tailwind components;
-   @tailwind utilities;
-   ```
-
-## Part2: Existing issues:
-
-1.  #### 并列子组件 Works 和 Blog 同时包含多个子组件，并使用 route 跳转，路径重定向的问题（未解决）
-
-2.  #### 使用锚点跳转和页面滚动锚点高亮的双向绑定问题（已解决）
-
-3.  #### 使用锚点跳转和页面滚动修改 URL 路径的问题（解决方案不合理）
-
-4.  #### 使用 MUI 的 Pagination 组件，自定样式的问题（部分解决）
+See [the technical design](docs/technical-design.md) for the migration decisions and project boundaries.

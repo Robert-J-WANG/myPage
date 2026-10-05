@@ -1,4 +1,3 @@
-import { BASE_PATH } from "@/config";
 import meowBubbles from "@/assets/projectsImgs/meowBubbles.png";
 import orewaBeachLodges from "@/assets/projectsImgs/orewaBeachLodges.png";
 import cityViews from "@/assets/projectsImgs/cityViews.png";
@@ -16,9 +15,9 @@ import shoppia from "@/assets/projectsImgs/shoppia.png";
 import topMovies from "@/assets/projectsImgs/topMovies.png";
 // Header
 export const navLinkData = [
-  { id: 1, key: "home", to: `${BASE_PATH}/home`, content: "Home" },
-  { id: 2, key: "about", to: `${BASE_PATH}/about`, content: "About" },
-  { id: 3, key: "projects", to: `${BASE_PATH}/projects`, content: "Projects" },
+  { id: 1, key: "home", to: "/home", content: "Home" },
+  { id: 2, key: "about", to: "/about", content: "About" },
+  { id: 3, key: "projects", to: "/projects", content: "Projects" },
 ];
 
 // Home
@@ -48,7 +47,7 @@ export const socialLinksData = [
 
   {
     id: 4,
-    title: "emial",
+    title: "email",
     anchor: "mailto:robertwang6486@gmail.com?subject=反馈&body=请描述您的反馈",
     icon2: "https://img.icons8.com/sf-regular-filled/48/1c1e26/email.png",
     icon1: "https://img.icons8.com/sf-regular-filled/48/9feaad/email.png",
@@ -186,20 +185,6 @@ export const resumeData = [
 
 // projects data
 export const projectsData = {
-  tagsData: [
-    "All",
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Tailwind",
-    "Bootstrap",
-    "Axios",
-    "React-router",
-    "react-hooks",
-    "Redux",
-    "Zustand",
-    "Canvas",
-  ],
   cardData: [
     {
       id: 1,
@@ -235,7 +220,7 @@ export const projectsData = {
     },
     {
       id: 5,
-      tags: ["All", "React", "reactHooks"],
+      tags: ["All", "React", "react-hooks"],
       title: "TodoList",
       description: "Add and delete a todo list easily",
       img: todoList,
@@ -243,7 +228,7 @@ export const projectsData = {
     },
     {
       id: 6,
-      tags: ["All", "Bootstrap", "React", "reactHooks"],
+      tags: ["All", "Bootstrap", "React", "react-hooks"],
       title: "BookSheet",
       description: "Manage your books",
       img: bookSheet,

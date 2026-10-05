@@ -1,12 +1,3 @@
-import PropTypes from "prop-types";
-
-Index.propTypes = {
-  header: PropTypes.node, // 头部区显示的内容
-  content: PropTypes.node, // 内容区显示的内容
-  animationBackground: PropTypes.node, // 背景动画内容
-};
-
-// 开启/关闭动画背景开关
 const didAnimationBgOpen = true;
 
 function Index({ header, content, animationBackground }) {
@@ -14,12 +5,12 @@ function Index({ header, content, animationBackground }) {
     <div className="relative w-full min-h-screen text-textColor">
       {/* header 导航区 */}
       <header className="w-full h-16 border-b-[1px] border-subBdColor flex justify-center items-center">
-        {header && header}
+        {header}
       </header>
 
       {/* content 内容区 */}
       <main className="container mx-auto max-w-[1280px] flex flex-col justify-start items-center">
-        {content && content}
+        {content}
       </main>
 
       {/* 页面背景组件 */}

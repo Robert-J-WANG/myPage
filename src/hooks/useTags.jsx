@@ -1,11 +1,4 @@
-import { useState, useEffect } from "react";
-import { projectsData } from "../server/data";
+import { projectsData } from "@/data/portfolio";
+import { getProjectTags } from "@/utils/portfolio";
 
-export const useTags = () => {
-  // 标签列表数据
-  const [tags, setTags] = useState([]);
-  useEffect(() => {
-    setTags(projectsData.tagsData);
-  }, []);
-  return tags;
-};
+export const useTags = () => getProjectTags(projectsData.cardData);
