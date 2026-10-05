@@ -1,45 +1,44 @@
 {
-  "homepage": "https://github.com/Robert-J-WANG/myPage.git",
-  "name": "myportfolio",
+  "homepage": "https://robert-j-wang.github.io/myPage/",
+  "name": "my-page",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
-    "postbuild": "ncp dist/index.html dist/404.html"
+    "build": "tsc -b && vite build && node scripts/copy-spa-fallback.mjs",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run lint && npm run test && npm run build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@mui/icons-material": "^5.14.3",
-    "@mui/material": "^5.14.3",
     "aos": "^2.3.4",
-    "autoprefixer": "^10.4.14",
-    "gh-pages": "^6.3.0",
-    "postcss": "^8.4.27",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router": "^6.14.2",
-    "react-router-dom": "^6.14.2",
-    "sass": "^1.64.1",
-    "typewriter-effect": "^2.20.1"
+    "daisyui": "^5.0.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^8.4.0",
+    "sass": "^1.105.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.3",
-    "daisyui": "^4.12.10",
-    "eslint": "^8.45.0",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "ncp": "^2.0.0",
-    "tailwindcss": "^3.3.3",
-    "vite": "^6.3.5"
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "eslint": "^10.12.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.6",
+    "globals": "^17.0.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.0",
+    "vitest": "^5.0.3",
+    "vite": "^8.3.2"
+  },
+  "engines": {
+    "node": ">=24.21.0 <25",
+    "npm": ">=11.19.0"
   }
 }

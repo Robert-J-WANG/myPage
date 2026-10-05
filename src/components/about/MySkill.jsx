@@ -1,6 +1,6 @@
 import React from "react";
 import "./MySkill.scss";
-import { skillData, languageData } from "../../server/data";
+import { skillData, languageData } from "@/data/portfolio";
 
 export default function MySkill() {
 

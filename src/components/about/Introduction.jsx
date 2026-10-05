@@ -1,5 +1,5 @@
 import React from "react";
-import { infoData } from "../../server/data";
+import { infoData } from "@/data/portfolio";
 import aboutMe from "@/assets/aboutMe.png"; // 动态加载图片
 
 

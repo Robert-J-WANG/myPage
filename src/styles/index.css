@@ -1,0 +1,33 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme {
+  --font-spaceMono: "Space Mono", monospace;
+  --font-winkyRough: "Winky Rough", sans-serif;
+  --font-RCD: "Radio Canada", sans-serif;
+  --color-textColor: #c1d3cf;
+  --color-bgColor: #1c1e26;
+  --color-bgColorHeader: rgb(45 49 57 / 30%);
+  --color-mainColor: #9feaad;
+  --color-mainColor20: rgb(145 216 209 / 30%);
+  --color-subColor: #82a8d2;
+  --color-subColor2: #8be1e4;
+  --color-subBgColor: rgb(96 121 153 / 20%);
+  --color-subBdColor: rgb(96 121 153 / 60%);
+  --color-borderColor: #535862;
+  --color-textBlue: #499ff8;
+  --breakpoint-xs: 30rem;
+  --breakpoint-3xl: 120rem;
+  --breakpoint-4xl: 150rem;
+  --animate-spin-slow: spin 4s linear infinite;
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+body {
+  font-family: "Space Mono", monospace;
+}
