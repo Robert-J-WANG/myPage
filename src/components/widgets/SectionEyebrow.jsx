@@ -1,0 +1,13 @@
+export default function SectionEyebrow({ children }) {
+  return (
+    <div className="flex items-center gap-4">
+      <p className="shrink-0 text-sm font-bold uppercase tracking-[0.18em] text-eyebrow">
+        {children}
+      </p>
+      <span
+        aria-hidden="true"
+        className="h-px flex-1 bg-gradient-to-r from-eyebrow/60 to-transparent"
+      />
+    </div>
+  );
+}

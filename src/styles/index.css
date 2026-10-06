@@ -1,21 +1,25 @@
 @import "tailwindcss";
-@plugin "daisyui";
 
-@theme {
-  --font-spaceMono: "Space Mono", monospace;
-  --font-winkyRough: "Winky Rough", sans-serif;
-  --font-RCD: "Radio Canada", sans-serif;
-  --color-textColor: #c1d3cf;
-  --color-bgColor: #1c1e26;
-  --color-bgColorHeader: rgb(45 49 57 / 30%);
-  --color-mainColor: #9feaad;
-  --color-mainColor20: rgb(145 216 209 / 30%);
-  --color-subColor: #82a8d2;
-  --color-subColor2: #8be1e4;
-  --color-subBgColor: rgb(96 121 153 / 20%);
-  --color-subBdColor: rgb(96 121 153 / 60%);
-  --color-borderColor: #535862;
-  --color-textBlue: #499ff8;
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --text-heading: clamp(1.875rem, 1.7rem + 0.75vw, 2.25rem);
+  --text-heading--line-height: 1.2;
+  --text-subheading: clamp(1.5rem, 1.4rem + 0.4vw, 1.75rem);
+  --text-subheading--line-height: 1.3;
+  --color-page: var(--theme-page);
+  --color-content: var(--theme-content);
+  --color-muted: var(--theme-muted);
+  --color-accent: var(--theme-accent);
+  --color-accent-soft: var(--theme-accent-soft);
+  --color-eyebrow: var(--theme-eyebrow);
+  --color-control: var(--theme-control);
+  --color-chrome: var(--theme-chrome);
+  --color-surface: var(--theme-surface);
+  --color-section: var(--theme-section);
+  --color-border: var(--theme-border);
+  --color-border-strong: var(--theme-border-strong);
+  --color-decoration: var(--theme-decoration);
   --breakpoint-xs: 30rem;
   --breakpoint-3xl: 120rem;
   --breakpoint-4xl: 150rem;
@@ -28,6 +32,65 @@
   }
 }
 
+:root {
+  /* Shared palette */
+  --palette-paper: #f7f8fa;
+  --palette-ink: #1c1e26;
+  --palette-slate: #535862;
+  --palette-blue: #529af9;
+  --palette-blue-soft: #82a8d2;
+  --palette-green: #9feaad;
+  --palette-cyan: #8be1e4;
+
+  /* Light theme: blue leads, green supports. */
+  --theme-page: var(--palette-paper);
+  --theme-content: var(--palette-ink);
+  --theme-muted: var(--palette-slate);
+  --theme-accent: var(--palette-blue);
+  --theme-accent-soft: color-mix(in srgb, var(--theme-accent) 24%, transparent);
+  --theme-eyebrow: color-mix(
+    in srgb,
+    var(--palette-green) 48%,
+    var(--theme-content)
+  );
+  --theme-control: rgb(247 248 250 / 86%);
+  --theme-chrome: rgb(238 242 246 / 94%);
+  --theme-surface: rgb(130 168 210 / 14%);
+  --theme-section: rgb(130 168 210 / 7%);
+  --theme-border: #c9cdd4;
+  --theme-border-strong: rgb(83 88 98 / 38%);
+  --theme-decoration: var(--palette-blue-soft);
+}
+
+.dark {
+  /* Dark theme: green leads, blue supports. */
+  --theme-page: var(--palette-ink);
+  --theme-content: #c1d3cf;
+  --theme-muted: var(--palette-blue-soft);
+  --theme-accent: var(--palette-green);
+  --theme-eyebrow: var(--palette-blue-soft);
+  --theme-control: rgb(28 30 38 / 82%);
+  --theme-chrome: rgb(35 40 50 / 94%);
+  --theme-surface: rgb(96 121 153 / 20%);
+  --theme-section: rgb(96 121 153 / 10%);
+  --theme-border: var(--palette-slate);
+  --theme-border-strong: rgb(96 121 153 / 60%);
+  --theme-decoration: var(--palette-cyan);
+}
+
+html {
+  min-width: 20rem;
+  background: var(--theme-page);
+}
+
 body {
   font-family: "Space Mono", monospace;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--theme-page);
+  color: var(--theme-content);
+}
+
+#root {
+  min-height: 100vh;
 }

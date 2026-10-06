@@ -1,10 +1,22 @@
 import { navigationLinks } from "@/data/site";
 import MyNavLink from "./MyNavLink";
-function Menu() {
+
+function Menu({ mobile = false, onNavigate }) {
   return (
-    <ul className="flex items-center justify-center gap-6 sm:gap-10 lg:gap-16">
+    <ul
+      className={
+        mobile
+          ? "flex flex-col gap-1"
+          : "flex items-center justify-center gap-8 lg:gap-12"
+      }
+    >
       {navigationLinks.map((item) => (
-        <MyNavLink key={item.key} to={item.to}>
+        <MyNavLink
+          key={item.key}
+          to={item.to}
+          mobile={mobile}
+          onNavigate={onNavigate}
+        >
           {item.content}
         </MyNavLink>
       ))}
