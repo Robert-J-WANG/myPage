@@ -1,20 +1,22 @@
 const didAnimationBgOpen = true;
 
-function Index({ header, content, animationBackground }) {
+function Index({ header, content, footer, animationBackground }) {
   return (
-    <div className="relative w-full min-h-screen text-textColor">
+    <div className="relative isolate min-h-screen w-full text-content transition-colors">
       {/* header 导航区 */}
-      <header className="w-full h-16 border-b-[1px] border-subBdColor flex justify-center items-center">
+      <header className="sticky top-0 z-40 w-full border-b border-border-strong bg-chrome backdrop-blur-xl">
         {header}
       </header>
 
       {/* content 内容区 */}
-      <main className="container mx-auto max-w-[1280px] flex flex-col justify-start items-center">
+      <main className="container relative z-10 mx-auto flex max-w-[1280px] flex-col items-center justify-start">
         {content}
       </main>
 
-      {/* 页面背景组件 */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden bg-bgColor -z-10">
+      {footer}
+
+      {/* 固定在视口内的背景动画，不随页面内容高度变化 */}
+      <div className="fixed inset-0 z-0 h-screen w-screen overflow-hidden bg-page transition-colors">
         {didAnimationBgOpen && animationBackground}
       </div>
     </div>

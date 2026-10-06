@@ -1,18 +1,17 @@
 # myPage
 
-A personal portfolio, job-search site, and learning project built with React.
+A personal portfolio, job-search site, and learning project built with React. It is intentionally a static site: personal information and project data live in the repository, and GitHub Pages serves the production build.
 
 ## Stack
 
 - Node.js 24.21.0
 - React 19 and React Router 8
-- Vite 8
-- Tailwind CSS 4 and DaisyUI 5
-- TypeScript in gradual-migration mode
-- ESLint and Vitest
+- Vite 8 and Tailwind CSS 4
+- Project-owned UI primitives with `class-variance-authority`, `cn`, and Lucide icons
+- ESLint, TypeScript configuration for gradual migration, and Vitest
 - Sharp for local, repeatable image optimization
 
-The application currently keeps its existing JavaScript pages. New or fully rewritten components can use TypeScript, while `allowJs` keeps the current pages working without a disruptive conversion.
+Pages remain JavaScript/JSX. TypeScript is configured with `allowJs` so a future component can be migrated when there is a concrete benefit; no file is converted only for its extension.
 
 ## Local development
 
@@ -37,17 +36,25 @@ npm run check
 
 ```text
 src/
-  app/                 # Router and shared route layout
-  assets/              # profile, project and icon assets
-  components/          # Page sections and reusable UI
-  data/site.js         # Navigation, profile, skills and timeline content
-  data/projects.js     # Project cards and their local screenshot imports
+  app/                 # Router, root layout, and theme selection
+  assets/source/       # Committed original profile and project images
+  components/          # Pages, sections, navigation, and UI primitives
+  data/                # Site content and project-card data
   hooks/               # Small UI hooks
-  styles/              # Global Tailwind CSS entry point
+  lib/                 # Shared client-side helpers
+  styles/              # Global Tailwind entry point and theme tokens
   utils/               # Pure, tested data helpers
 ```
 
-Update personal information, links, skills and timeline content in `src/data/site.js`; update project cards in `src/data/projects.js`. Keep images in the matching `src/assets/` subdirectory. Do not create `copy` files as a backup; Git history preserves earlier versions.
+Update navigation, profile text, skills, and links in `src/data/site.js`. Update project cards in `src/data/projects.js`. Do not create `copy` files as backups; Git history preserves earlier versions.
+
+## Themes, navigation, and project pages
+
+The first visit follows the operating-system light/dark preference. A manual choice is stored in the browser under `portfolio-theme`. The two themes share the same semantic color roles: light mode uses blue as the primary accent and dark mode uses green.
+
+`/home` is a continuous page with About, Skills, and Featured Projects sections. Navigation uses stable hash links, including repeatable smooth scrolling when a visitor reselects the current section. `/projects` holds the full filtered collection; `/projects/:id` provides the reusable project-detail skeleton. The detail page currently displays only verified title, preview, short overview, technology tags, and Live Demo link. It deliberately does not invent case-study content for early learning demos.
+
+The site intentionally has no résumé download link. Current résumé variants remain in their delivery channels so the website cannot drift out of sync with an application-specific document.
 
 ## Adding images
 
@@ -57,7 +64,7 @@ Commit original PNG, JPEG, or WebP files in `src/assets/source/profile/` or `src
 npm run images:optimize
 ```
 
-The command generates WebP files in `src/assets/profile/` and `src/assets/projects/`. It runs automatically before `dev`, `test`, and `build`, and is also an explicit step in CI and Pages deployment. Project screenshots and the About image are limited to 960px wide; the avatar is limited to 512px. Review the generated image, then update its import in the relevant data file and commit the original plus code changes. Project-card images load lazily in the browser.
+The command generates WebP files in the matching output directories. It runs automatically before `dev`, `test`, and `build`, and is also an explicit step in CI and Pages deployment. Project screenshots and the About image are limited to 960px wide; the avatar is limited to 512px. Review the generated image, then update its import in the relevant data file and commit the original plus code changes. Project-card images load lazily in the browser.
 
 ## Deployment
 
@@ -65,4 +72,4 @@ GitHub Actions runs `npm run check` on pull requests targeting `master`. Each pu
 
 Before the first deployment, open the repository **Settings → Pages** and select **GitHub Actions** as the publishing source. No deployment token or local deploy command is required.
 
-See [the technical design](docs/technical-design.md) for the migration decisions and project boundaries.
+See [the technical design](docs/technical-design.md) for architecture boundaries and the plan for future case-study data.
