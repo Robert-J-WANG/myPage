@@ -23,7 +23,7 @@ export default function ProjectsPage() {
       <header className="mx-auto w-full max-w-6xl px-6 pt-16 sm:px-8 sm:pt-20 lg:pt-24">
         <SectionEyebrow>Projects</SectionEyebrow>
         <h1 className="mt-4 text-heading font-bold text-content">
-          More projects and interface experiments.
+          More projects and frontend experiments.
         </h1>
         <p className="mt-5 max-w-3xl text-base leading-7 text-content">
           Browse the full collection or filter it by the technologies used.
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
 
         {visibleProjects.length < 1 ? (
           <p className="px-6 text-center text-base text-muted">
-            Currently under development...
+            No projects match this filter.
           </p>
         ) : (
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 sm:px-8 min-[68rem]:grid-cols-[repeat(2,480px)] min-[68rem]:justify-center min-[68rem]:gap-10">

@@ -22,10 +22,10 @@ export const socialLinks = [
 
 export const homeIntroduction = [
   "I build clear, practical web experiences with React and modern JavaScript.",
-  "My background combines software development study with practical engineering experience.",
+  "My background combines software development education with practical engineering experience.",
 ];
 
-export const typewriterText = "Robert J. WANG";
+export const typewriterText = "Robert J. Wang";
 
 export const skillGroups = [
   {

@@ -14,7 +14,7 @@ export default function FeaturedProjectsSection() {
       <header className="max-w-4xl">
         <SectionEyebrow>Featured projects</SectionEyebrow>
         <h2 className="mt-4 text-heading font-bold text-content">
-          Selected work built around practical interfaces.
+          Selected projects focused on practical, responsive interfaces.
         </h2>
         <p className="mt-5 text-base leading-7 text-content">
           A selection of React and TypeScript projects focused on responsive

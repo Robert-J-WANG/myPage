@@ -1,6 +1,7 @@
 const PROJECT_TAG_LABELS = {
   "react-hooks": "React Hooks",
   "React-router": "React Router",
+  Tailwind: "Tailwind CSS",
 };
 
 export function formatProjectTag(tag) {

@@ -27,7 +27,7 @@ export const projects = [
     tags: ["All", "JavaScript"],
     title: "Orewa Beach Lodges",
     description:
-      "A responsive holiday-lodge booking interface for browsing accommodation details.",
+      "A responsive accommodation website for exploring lodge details and booking information.",
     img: orewaBeachLodges,
     url: "https://robert-j-wang.github.io/Orewa-Beach-Loges/",
   },
@@ -52,7 +52,7 @@ export const projects = [
   {
     id: 5,
     tags: ["All", "React", "react-hooks"],
-    title: "TodoList",
+    title: "To-do List",
     description:
       "A React to-do list for adding, completing, and removing everyday tasks.",
     img: todoList,
@@ -70,7 +70,7 @@ export const projects = [
   {
     id: 7,
     tags: ["All", "Axios", "React"],
-    title: "gitHub Users Search",
+    title: "GitHub User Search",
     description:
       "A React search interface for finding and displaying GitHub user profiles.",
     img: gitUserSearch,
@@ -87,7 +87,7 @@ export const projects = [
       "Axios",
       "Bootstrap",
     ],
-    title: "Tshirt Shopping Cart",
+    title: "T-shirt Shopping Cart",
     description:
       "A TypeScript shopping cart for selecting product sizes and managing cart state.",
     img: tshirtShoppingCart,
@@ -96,7 +96,7 @@ export const projects = [
   {
     id: 9,
     tags: ["All", "React", "Tailwind", "react-hooks", "Zustand"],
-    title: "AgriBazaar NZ Website",
+    title: "AgriBazaar NZ",
     description:
       "A responsive marketplace interface for browsing agricultural machinery for sale or hire.",
     img: agriBazaarNZ,
