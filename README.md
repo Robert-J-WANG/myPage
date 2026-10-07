@@ -1,19 +1,32 @@
 # myPage
 
-A personal portfolio, job-search site, and learning project built with React. It is intentionally a static site: personal information and project data live in the repository, and GitHub Pages serves the production build.
+Personal portfolio website for presenting my profile, technical skills, and selected web projects.
 
-## Stack
+[View the live site](https://robert-j-wang.github.io/myPage/)
 
-- Node.js 24.21.0
+## Current features
+
+- Responsive homepage with About, Skills, and Featured Projects sections
+- Light and dark themes with the visitor's choice stored locally
+- Filterable project collection and reusable project detail pages
+- Fixed animated background, profile animation, and typewriter introduction
+- Automatically optimized WebP images
+- Clean client-side routes hosted on GitHub Pages
+
+## Technology
+
 - React 19 and React Router 8
 - Vite 8 and Tailwind CSS 4
-- Project-owned UI primitives with `class-variance-authority`, `cn`, and Lucide icons
-- ESLint, TypeScript configuration for gradual migration, and Vitest
-- Sharp for local, repeatable image optimization
+- Lucide icons and small project-owned UI components
+- Vitest and ESLint
+- Sharp image processing
+- GitHub Actions and GitHub Pages
 
-Pages remain JavaScript/JSX. TypeScript is configured with `allowJs` so a future component can be migrated when there is a concrete benefit; no file is converted only for its extension.
+The application code uses JavaScript and JSX. TypeScript remains only in the Vite configuration and build toolchain.
 
-## Local development
+## Run locally
+
+The project requires Node.js 24 and npm 11. The versions used by the project are recorded in `.nvmrc` and `package.json`.
 
 ```bash
 nvm use
@@ -21,55 +34,29 @@ npm ci
 npm run dev
 ```
 
-## Quality checks
+## Available commands
 
-```bash
-npm run lint
-npm run test
-npm run build
-npm run check
-```
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Optimize images and start the local Vite server |
+| `npm run lint` | Run ESLint |
+| `npm run test` | Optimize images and run Vitest once |
+| `npm run build` | Optimize images and create the production build |
+| `npm run check` | Run lint, tests, and production build |
+| `npm run images:optimize` | Regenerate optimized WebP assets |
+| `npm run preview` | Preview the production build locally |
 
-`npm run build` type-checks the project, builds the Vite site, and creates `dist/404.html` from `dist/index.html`. This preserves clean client-side URLs such as `/myPage/projects` on GitHub Pages.
+## Updating portfolio content
 
-## Project structure
+- Edit navigation, profile text, skills, contact details, and social links in `src/data/site.js`.
+- Edit project titles, descriptions, tags, images, and links in `src/data/projects.js`.
+- Add original images to `src/assets/source/profile/` or `src/assets/source/projects/`.
+- Run `npm run images:optimize` after adding or replacing an image. The command also runs automatically before development, tests, and production builds.
 
-```text
-src/
-  app/                 # Router, root layout, and theme selection
-  assets/source/       # Committed original profile and project images
-  components/          # Pages, sections, navigation, and UI primitives
-  data/                # Site content and project-card data
-  hooks/               # Small UI hooks
-  lib/                 # Shared client-side helpers
-  styles/              # Global Tailwind entry point and theme tokens
-  utils/               # Pure, tested data helpers
-```
-
-Update navigation, profile text, skills, and links in `src/data/site.js`. Update project cards in `src/data/projects.js`. Do not create `copy` files as backups; Git history preserves earlier versions.
-
-## Themes, navigation, and project pages
-
-The first visit follows the operating-system light/dark preference. A manual choice is stored in the browser under `portfolio-theme`. The two themes share the same semantic color roles: light mode uses blue as the primary accent and dark mode uses green.
-
-`/home` is a continuous page with About, Skills, and Featured Projects sections. Navigation uses stable hash links, including repeatable smooth scrolling when a visitor reselects the current section. `/projects` holds the full filtered collection; `/projects/:id` provides the reusable project-detail skeleton. The detail page currently displays only verified title, preview, short overview, technology tags, and Live Demo link. It deliberately does not invent case-study content for early learning demos.
-
-The site intentionally has no résumé download link. Current résumé variants remain in their delivery channels so the website cannot drift out of sync with an application-specific document.
-
-## Adding images
-
-Commit original PNG, JPEG, or WebP files in `src/assets/source/profile/` or `src/assets/source/projects/`. Generated WebP files in `src/assets/profile/` and `src/assets/projects/` are ignored by Git.
-
-```bash
-npm run images:optimize
-```
-
-The command generates WebP files in the matching output directories. It runs automatically before `dev`, `test`, and `build`, and is also an explicit step in CI and Pages deployment. Project screenshots and the About image are limited to 960px wide; the avatar is limited to 512px. Review the generated image, then update its import in the relevant data file and commit the original plus code changes. Project-card images load lazily in the browser.
+Generated WebP files are not committed. Commit the original image and the related data or component change instead.
 
 ## Deployment
 
-GitHub Actions runs `npm run check` on pull requests targeting `main`. Each push to `main` runs the same checks and deploys `dist/` to GitHub Pages.
+Pull requests targeting `main` run the quality workflow. A successful push to `main` builds and deploys the site to GitHub Pages through GitHub Actions.
 
-Before the first deployment, open the repository **Settings → Pages** and select **GitHub Actions** as the publishing source. No deployment token or local deploy command is required.
-
-See [the technical design](docs/technical-design.md) for architecture boundaries and the plan for future case-study data.
+See [the technical design](docs/technical-design.md) for the current architecture and delivery design.

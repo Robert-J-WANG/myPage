@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <section className="flex min-h-[calc(100vh-12rem)] w-full flex-col items-center justify-center gap-5 text-center">
       <p className="text-sm font-bold uppercase tracking-[0.18em] text-accent">

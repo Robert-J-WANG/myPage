@@ -2,7 +2,7 @@ import { Link, useLocation } from "react-router";
 
 import { scrollToSection } from "@/lib/scrollToSection";
 
-export default function MyNavLink({ to, children, mobile = false, onNavigate }) {
+export default function NavLink({ to, children, mobile = false, onNavigate }) {
   const location = useLocation();
   const [pathname, section] = to.split("#");
   const targetHash = section ? `#${section}` : "";

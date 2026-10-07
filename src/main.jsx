@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
+import App from "@/app/App";
 import { initialiseTheme } from "@/app/theme/theme";
-import App from "./App.jsx";
 import "./styles/index.css";
 
 initialiseTheme();

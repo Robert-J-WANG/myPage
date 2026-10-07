@@ -1,24 +1,14 @@
 import { ArrowLeft, Code2, ExternalLink } from "lucide-react";
 import { Link, Navigate, useParams } from "react-router";
 
-import SectionEyebrow from "@/components/widgets/SectionEyebrow";
-import { featuredProjects, projects } from "@/data/projects";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { projects } from "@/data/projects";
+import { formatProjectTag } from "@/lib/portfolio";
 
-function displayTag(tag) {
-  const labels = {
-    "react-hooks": "React Hooks",
-    "React-router": "React Router",
-  };
-
-  return labels[tag] ?? tag;
-}
-
-export default function ProjectDetails() {
+export default function ProjectDetailsPage() {
   const { projectId } = useParams();
   const numericProjectId = Number(projectId);
-  const project =
-    featuredProjects.find(({ id }) => id === numericProjectId) ??
-    projects.find(({ id }) => id === numericProjectId);
+  const project = projects.find(({ id }) => id === numericProjectId);
 
   if (!project) {
     return <Navigate replace to="/projects" />;
@@ -89,7 +79,7 @@ export default function ProjectDetails() {
                   key={tag}
                   className="rounded-md border border-border-strong bg-control px-2.5 py-1 text-sm font-semibold text-content"
                 >
-                  {displayTag(tag)}
+                  {formatProjectTag(tag)}
                 </li>
               ))}
             </ul>

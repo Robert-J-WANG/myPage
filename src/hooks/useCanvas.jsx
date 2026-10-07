@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import { initializeCanvasAndStars } from "@/utils/canvas";
+import { initializeCanvasAndStars } from "@/lib/canvas";
 
 const useCanvas = (viewportSize, starSizes, starColor, starNumber) => {
   const canvasRef = useRef(null);

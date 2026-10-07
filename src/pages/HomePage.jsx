@@ -2,16 +2,16 @@ import { useEffect } from "react";
 import { ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router";
 
-import Skills from "@/components/pages/Skills";
-import FeaturedProjects from "@/components/projects/FeaturedProjects";
+import FeaturedProjectsSection from "@/components/home/FeaturedProjectsSection";
+import SkillsSection from "@/components/home/SkillsSection";
 import TypewriterText from "@/components/home/TypewriterText";
-import SectionEyebrow from "@/components/widgets/SectionEyebrow";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import { homeIntroduction } from "@/data/site";
 import { useAOSAnimation } from "@/hooks/useAOSAnimation";
 import { scrollToSection } from "@/lib/scrollToSection";
 import avatar from "@/assets/profile/avatar.webp";
 
-function Home() {
+function HomePage() {
   useAOSAnimation(700);
 
   const { hash } = useLocation();
@@ -94,10 +94,10 @@ function Home() {
         </div>
       </section>
 
-      <Skills />
-      <FeaturedProjects />
+      <SkillsSection />
+      <FeaturedProjectsSection />
     </>
   );
 }
 
-export default Home;
+export default HomePage;

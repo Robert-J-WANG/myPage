@@ -2,10 +2,10 @@ import { MoveRight } from "lucide-react";
 import { Link } from "react-router";
 
 import ProjectCard from "@/components/projects/ProjectCard";
-import SectionEyebrow from "@/components/widgets/SectionEyebrow";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import { featuredProjects } from "@/data/projects";
 
-export default function FeaturedProjects({ showViewMore = true }) {
+export default function FeaturedProjectsSection() {
   return (
     <section
       id="projects"
@@ -28,21 +28,19 @@ export default function FeaturedProjects({ showViewMore = true }) {
         ))}
       </div>
 
-      {showViewMore && (
-        <div className="mt-10 flex items-center justify-end gap-4">
-          <span
-            aria-hidden="true"
-            className="h-px max-w-2xl flex-1 bg-gradient-to-l from-eyebrow/60 to-transparent"
-          />
-          <Link
-            to="/projects"
-            className="inline-flex h-11 shrink-0 items-center justify-center gap-2 px-2 text-sm font-bold uppercase tracking-[0.18em] text-accent transition-colors hover:text-eyebrow"
-          >
-            View more projects
-            <MoveRight aria-hidden="true" className="size-6" />
-          </Link>
-        </div>
-      )}
+      <div className="mt-10 flex items-center justify-end gap-4">
+        <span
+          aria-hidden="true"
+          className="h-px max-w-2xl flex-1 bg-gradient-to-l from-eyebrow/60 to-transparent"
+        />
+        <Link
+          to="/projects"
+          className="inline-flex h-11 shrink-0 items-center justify-center gap-2 px-2 text-sm font-bold uppercase tracking-[0.18em] text-accent transition-colors hover:text-eyebrow"
+        >
+          View more projects
+          <MoveRight aria-hidden="true" className="size-6" />
+        </Link>
+      </div>
     </section>
   );
 }
