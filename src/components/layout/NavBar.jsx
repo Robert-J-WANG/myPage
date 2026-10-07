@@ -15,7 +15,7 @@ export default function NavBar() {
       <div className="flex items-center justify-between h-16 gap-4">
         <Link
           to="/home"
-          aria-label="Robert — home"
+          aria-label="Robert J. Wang — Home"
           className="inline-flex items-center group"
         >
           <span className="flex size-9 items-center justify-end rounded-lg border border-border-strong bg-gradient-to-br from-surface to-accent-soft pr-0.5 text-xl font-bold text-accent transition-colors group-hover:border-accent/60">

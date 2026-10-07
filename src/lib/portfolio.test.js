@@ -21,6 +21,7 @@ describe("portfolio helpers", () => {
 
   it("formats internal project tag names for display", () => {
     expect(formatProjectTag("react-hooks")).toBe("React Hooks");
+    expect(formatProjectTag("Tailwind")).toBe("Tailwind CSS");
     expect(formatProjectTag("React")).toBe("React");
   });
 

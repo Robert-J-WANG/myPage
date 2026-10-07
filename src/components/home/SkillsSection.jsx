@@ -39,8 +39,8 @@ export default function SkillsSection() {
 
           <div className="space-y-7">
             <p className="mt-5 text-base leading-7 text-content">
-              Technologies I have used across study, work, and personal
-              projects.
+              Technologies I have used across my studies, work experience,
+              and personal projects.
             </p>
             {skillGroups.map((group) => (
               <div key={group.title}>
