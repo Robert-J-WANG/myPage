@@ -36,7 +36,7 @@ src/
 - `/home` 是连续首页，锚点为 `#about`、`#skills`、`#projects`。同一个锚点被再次点击时，也会重新执行平滑定位。
 - `/projects` 展示可筛选的完整作品列表；`/projects/:id` 展示项目详情骨架；未知路径进入 Not Found 页面。
 - Vite 的 `base` 为 GitHub Pages 子路径。构建脚本把 `dist/index.html` 复制为 `dist/404.html`，因此直接打开 `/myPage/projects` 也能由客户端路由正确呈现。
-- GitHub Actions 在面向 `master` 的 PR 执行 `npm run check`；推送到 `master` 后检查、构建并发布 `dist/` 到 GitHub Pages。
+- GitHub Actions 在面向 `main` 的 PR 执行 `npm run check`；推送到 `main` 后检查、构建并发布 `dist/` 到 GitHub Pages。
 
 ## 4. UI 与主题
 
@@ -67,3 +67,9 @@ src/
 - 测试只覆盖高价值纯逻辑：标签派生、按标签筛选、外部链接完整性。不引入端到端或视觉回归服务。
 
 每个大步骤结束前运行 Node 24 下的 `npm run check`。项目不提交密钥，不引入没有当前需求的后端、数据库、认证、状态管理或复杂 TypeScript 类型。
+
+## 7. Git 工作流
+
+- `main` 是唯一默认分支、PR 基准分支和 GitHub Pages 发布分支。
+- 功能分支从 `main` 创建，使用 `feat/`、`fix/`、`chore/`、`docs/`、`refactor/`、`test/`、`ci/` 或 `perf/` 前缀和简短小写 kebab-case 描述，例如 `feat/site-metadata`。不使用工具、代理或个人环境名称作为前缀。
+- 每个功能分支完成后运行 `npm run check`，推送到远程并创建 PR；合并后在本地切换 `main`、执行 `git pull --ff-only`，再删除已合并的本地和远程功能分支。

@@ -68,7 +68,7 @@ The command generates WebP files in the matching output directories. It runs aut
 
 ## Deployment
 
-GitHub Actions runs `npm run check` on pull requests targeting `master`. Each push to `master` runs the same checks and deploys `dist/` to GitHub Pages.
+GitHub Actions runs `npm run check` on pull requests targeting `main`. Each push to `main` runs the same checks and deploys `dist/` to GitHub Pages.
 
 Before the first deployment, open the repository **Settings → Pages** and select **GitHub Actions** as the publishing source. No deployment token or local deploy command is required.
 
