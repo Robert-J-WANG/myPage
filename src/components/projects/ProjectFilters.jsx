@@ -1,14 +1,6 @@
-import { useTags } from "@/hooks/useTags";
+import { formatProjectTag } from "@/lib/portfolio";
 
-function displayTag(tag) {
-  if (tag === "react-hooks") return "React Hooks";
-  if (tag === "React-router") return "React Router";
-  return tag;
-}
-
-export default function Tags({ activeTag, handleTagClick }) {
-  const tags = useTags();
-
+export default function ProjectFilters({ tags, activeTag, onTagChange }) {
   return (
     <div className="flex flex-wrap items-center gap-2">
       {tags.map((tag) => (
@@ -20,9 +12,9 @@ export default function Tags({ activeTag, handleTagClick }) {
               : "border-border-strong bg-control text-content hover:border-accent/60 hover:text-accent"
           }`}
           key={tag}
-          onClick={() => handleTagClick(tag)}
+          onClick={() => onTagChange(tag)}
         >
-          {displayTag(tag)}
+          {formatProjectTag(tag)}
         </button>
       ))}
     </div>

@@ -1,17 +1,20 @@
+import { useState } from "react";
 import { SlidersHorizontal } from "lucide-react";
 
-import GoTop from "@/components/projects/GoTop";
+import BackToTop from "@/components/projects/BackToTop";
 import ProjectCard from "@/components/projects/ProjectCard";
-import Tags from "@/components/projects/Tags";
-import SectionEyebrow from "@/components/widgets/SectionEyebrow";
-import { useActiveTag } from "@/hooks/useActiveTag";
-import { useProjects } from "@/hooks/useProjects";
+import ProjectFilters from "@/components/projects/ProjectFilters";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
+import { projects } from "@/data/projects";
+import { filterProjects, getProjectTags } from "@/lib/portfolio";
 import useScrollPosition from "@/hooks/useScrollPosition";
 import useWindowSize from "@/hooks/useWindowSize";
 
-export default function Projects() {
-  const { activeTag, handleTagClick } = useActiveTag();
-  const projects = useProjects(activeTag);
+const projectTags = getProjectTags(projects);
+
+export default function ProjectsPage() {
+  const [activeTag, setActiveTag] = useState("All");
+  const visibleProjects = filterProjects(projects, activeTag);
   const scrollPosition = useScrollPosition();
   const windowSize = useWindowSize();
 
@@ -36,7 +39,11 @@ export default function Projects() {
             <SlidersHorizontal aria-hidden="true" className="size-4" />
             <span>Filter</span>
           </div>
-          <Tags activeTag={activeTag} handleTagClick={handleTagClick} />
+          <ProjectFilters
+            tags={projectTags}
+            activeTag={activeTag}
+            onTagChange={setActiveTag}
+          />
         </div>
       </section>
 
@@ -55,20 +62,20 @@ export default function Projects() {
         </div>
 
 
-        {projects.length < 1 ? (
+        {visibleProjects.length < 1 ? (
           <p className="px-6 text-center text-base text-muted">
             Currently under development...
           </p>
         ) : (
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 sm:px-8 min-[68rem]:grid-cols-[repeat(2,480px)] min-[68rem]:justify-center min-[68rem]:gap-10">
-            {projects.map((project) => (
+            {visibleProjects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         )}
       </section>
 
-      {scrollPosition.scrollY > windowSize.height / 2 && <GoTop />}
+      {scrollPosition.scrollY > windowSize.height / 2 && <BackToTop />}
     </div>
   );
 }

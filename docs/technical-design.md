@@ -1,75 +1,95 @@
 # myPage 技术设计
 
-**状态：** 2026-10-07 基础工程与 UI 重构已完成，项目案例内容待成熟项目确定后补充。
+## 1. 产品与系统边界
 
-## 1. 产品边界
+myPage 是用于求职和作品展示的静态个人门户。系统负责展示个人简介、技能、项目列表和项目详情，并通过 GitHub Pages 发布。
 
-myPage 是用于求职、作品展示和学习成果归档的静态个人门户。它需要清楚展示内容、在 GitHub Pages 稳定发布，并让维护者能简单更新资料、图片和项目列表。
+当前系统不包含账号、后端 API、数据库、CMS、表单存储或服务端状态。站点内容随前端代码一同构建，联系入口使用外部链接和 `mailto:`。
 
-不建设账号、后端接口、数据库、CMS、留言存储、分析平台或复杂状态管理。联系入口保持 `mailto:`、LinkedIn 和 GitHub 链接即可。
-
-## 2. 当前架构
+## 2. 源码结构
 
 ```text
 src/
-  app/                 # Router、根布局、主题选择
-  Layout/               # 页面公共外壳
+  app/                 # 应用入口组件、根布局、路由和主题逻辑
+  assets/
+    source/            # 提交到 Git 的原始图片
+    profile/           # 自动生成的个人图片 WebP
+    projects/          # 自动生成的项目图片 WebP
   components/
-    pages/              # Home、Projects、ProjectDetails、NotFound
-    projects/           # 卡片、精选区、筛选器、返回顶部
-    navBar/             # 桌面与移动导航
-    ui/                 # 项目自有 Button primitive
-    widgets/            # SectionEyebrow、固定背景动画
-  data/                 # site.js 与 projects.js
-  assets/source/        # 版本控制中的原始图片
-  hooks/                # 小型 UI hook
-  lib/                  # 通用浏览器辅助函数
-  styles/index.css      # Tailwind 入口与语义主题 token
-  utils/                # 可测试的纯数据函数
+    home/              # 首页专用 section 与打字机组件
+    layout/            # 导航、页脚、主题切换和背景动画
+    projects/          # 项目卡片、筛选器与返回顶部按钮
+    ui/                # 小型通用 UI 组件
+  data/                # 站点资料与项目数据
+  hooks/               # 动画、Canvas、滚动和视口状态 hooks
+  lib/                 # Canvas、项目数据和滚动等共享函数
+  pages/               # 路由页面组件
+  styles/              # Tailwind 入口和主题 token
+  main.jsx             # 浏览器入口
 ```
 
-这是个人站点所需的最小结构：页面组件不直接保存个人资料或项目链接，展示数据集中在 `src/data/`；不增加 feature 层、状态管理层或后端抽象。
+页面组件负责组合界面，展示数据集中在 `src/data/`，可复用组件按实际使用场景分类。项目规模不需要额外的 feature 层、全局状态管理层或后端抽象。
 
-## 3. 路由与部署
+## 3. 应用组成
 
-- 使用 React Router 8 的浏览器路由；`basename` 来自 `import.meta.env.BASE_URL`，组件只写站内路径，不拼接 `/myPage`。
-- `/home` 是连续首页，锚点为 `#about`、`#skills`、`#projects`。同一个锚点被再次点击时，也会重新执行平滑定位。
-- `/projects` 展示可筛选的完整作品列表；`/projects/:id` 展示项目详情骨架；未知路径进入 Not Found 页面。
-- Vite 的 `base` 为 GitHub Pages 子路径。构建脚本把 `dist/index.html` 复制为 `dist/404.html`，因此直接打开 `/myPage/projects` 也能由客户端路由正确呈现。
-- GitHub Actions 在面向 `main` 的 PR 执行 `npm run check`；推送到 `main` 后检查、构建并发布 `dist/` 到 GitHub Pages。
+`src/main.jsx` 初始化已保存的主题并渲染 `App`。`App` 提供 React Router，`RootLayout` 提供所有页面共用的导航、内容容器、页脚和固定 Canvas 背景。
 
-## 4. UI 与主题
+背景动画位于根布局，因此路由切换不会重新创建背景组件。页面内容通过 Router `Outlet` 渲染：
 
-- 首页采用连续的 About、Skills、Featured Projects 三个 section；完整项目集合独立放在 `/projects`，避免首页过长且保持作品浏览入口清楚。
-- 设计使用语义颜色 token。浅色主题以蓝色为主强调色、绿色为辅助；深色主题以绿色为主强调色、蓝色为辅助。组件只使用 `page`、`content`、`accent`、`surface` 等语义 token，不在组件中硬编码主题颜色。
-- 字体层级保持为正文、辅助/控件、页面标题、详情子标题四类。`SectionEyebrow` 统一处理 section 标识和装饰分割线。
-- 星空 Canvas 固定在视口背景，只在根布局创建一次；头像环、打字机和 AOS 进入动画保留为已确认的个人风格。
-- 项目卡片为固定比例、响应式的两列/单列布局，图片懒加载；鼠标或键盘聚焦时显示从左到右的详情遮罩。
-- 详情页仅展示已经存在于项目数据中的标题、预览图、简介、技术与 Live Demo。它不为早期 Demo 编造贡献、截图、仓库链接或挑战总结。
+- `HomePage` 组合 About、Skills 和 Featured Projects。
+- `ProjectsPage` 管理当前筛选标签并展示过滤后的项目。
+- `ProjectDetailsPage` 按路由参数读取项目数据。
+- `NotFoundPage` 处理未知路径。
 
-## 5. 数据与图片
+站点保持局部 React 状态。主题、移动导航、项目筛选和动画状态不需要跨页面状态库。
 
-- 站点资料放在 `src/data/site.js`，项目卡片放在 `src/data/projects.js`。
-- 不使用数据库、CMS 或云存储。当前规模下，随静态站点构建的数据更容易维护且无需凭据。
-- 原始 PNG/JPEG/WebP 放在 `src/assets/source/profile/` 或 `src/assets/source/projects/` 并提交到 Git；生成的 WebP 位于正式资源目录但被 Git 忽略。
-- `npm run images:optimize` 会把项目截图和 About 图片限制到 960px 宽、头像限制到 512px。它在 `dev`、`test`、`build` 及 CI 中自动运行；卡片图片仍使用浏览器原生懒加载。
+## 4. 路由与静态托管
 
-### 未来案例数据
+应用使用 React Router 的浏览器路由，`basename` 来自 `import.meta.env.BASE_URL`。组件使用 `/home`、`/projects` 等站内路径，不直接拼接 GitHub Pages 仓库前缀。
 
-目前列表包含若干学习期 Demo，其中部分只使用 mock 数据或完成度有限。等 UU Cars 和 RoostMap 完成并可验证后，再为成熟项目补充真实的长简介、个人贡献、截图、仓库地址和 Live Demo 信息。详情页应按“字段存在才渲染”的方式渐进扩展，不为当前数据加入空白占位区。
+| 路径 | 内容 |
+| --- | --- |
+| `/` | 重定向到 `/home` |
+| `/home` | 连续首页 |
+| `/home#about` | 首页 About 区域 |
+| `/home#skills` | 首页 Skills 区域 |
+| `/home#projects` | 首页 Featured Projects 区域 |
+| `/projects` | 可筛选的完整项目列表 |
+| `/projects/:projectId` | 项目详情页 |
+| 其他路径 | Not Found 页面 |
 
-## 6. 依赖与质量门槛
+Vite 的 `base` 设置为 `/myPage/`。生产构建结束后，`scripts/copy-spa-fallback.mjs` 将 `dist/index.html` 复制为 `dist/404.html`，让 GitHub Pages 上的直接访问请求可以回到客户端路由。
 
-- 运行时：React 19、React DOM、React Router 8、Lucide、AOS、`class-variance-authority` 和 `cn`。
-- 构建与质量：Node 24、Vite 8、Tailwind CSS 4、TypeScript 6（`allowJs`）、ESLint 10、Vitest 5、Sharp。
-- DaisyUI 与 Sass 已移除：当前页面没有 DaisyUI class 或 Sass 文件，继续保留只会增加安装与构建依赖。
-- AOS 仍驱动首页两处已确认的进入动画；不在没有等价、已确认替代效果时移除。
-- 测试只覆盖高价值纯逻辑：标签派生、按标签筛选、外部链接完整性。不引入端到端或视觉回归服务。
+## 5. 数据与资源
 
-每个大步骤结束前运行 Node 24 下的 `npm run check`。项目不提交密钥，不引入没有当前需求的后端、数据库、认证、状态管理或复杂 TypeScript 类型。
+`src/data/site.js` 保存导航、联系方式、首页简介和技能；`src/data/projects.js` 保存项目标题、简介、标签、图片和外部链接。页面和组件只读取这些模块，不在 JSX 中维护另一份相同数据。
 
-## 7. Git 工作流
+原始图片保存在 `src/assets/source/` 并提交到 Git。`scripts/optimize-images.mjs` 使用 Sharp 生成 WebP：
 
-- `main` 是唯一默认分支、PR 基准分支和 GitHub Pages 发布分支。
-- 功能分支从 `main` 创建，使用 `feat/`、`fix/`、`chore/`、`docs/`、`refactor/`、`test/`、`ci/` 或 `perf/` 前缀和简短小写 kebab-case 描述，例如 `feat/site-metadata`。不使用工具、代理或个人环境名称作为前缀。
-- 每个功能分支完成后运行 `npm run check`，推送到远程并创建 PR；合并后在本地切换 `main`、执行 `git pull --ff-only`，再删除已合并的本地和远程功能分支。
+- About 图片和项目截图最大宽度为 960px。
+- 头像最大宽度为 512px。
+- 输出写入 `src/assets/profile/` 和 `src/assets/projects/`。
+- 输出目录被 Git 忽略，并在 `dev`、`test` 和 `build` 前自动生成。
+
+项目卡片图片使用浏览器原生懒加载。当前数据量适合随静态站点构建，不需要数据库或云端媒体服务。
+
+## 6. UI、主题与动画
+
+Tailwind CSS 提供布局和组件样式，`src/styles/index.css` 定义浅色与深色主题的语义 token。组件使用 `page`、`content`、`accent`、`surface`、`control` 等角色，不直接绑定某个主题的具体颜色。
+
+浅色主题以蓝色作为主要强调色，深色主题以绿色作为主要强调色。首次访问跟随系统主题，手动选择保存在 `portfolio-theme`。
+
+`SectionEyebrow` 统一 section 标题与装饰线；项目卡片在鼠标悬停或键盘聚焦时显示详情遮罩。AOS 负责首页进入动画，自有 Canvas 逻辑负责固定星空背景，React 状态负责打字机与主题切换。
+
+## 7. 质量与交付
+
+项目使用 Node.js 24 和 npm 11。应用代码使用 JavaScript/JSX；TypeScript 配置服务于 Vite 配置和构建工具，shadcn 配置当前生成 JSX。
+
+`npm run check` 依次执行 ESLint、Vitest 和生产构建。现有单元测试覆盖：
+
+- 项目标签去重与排序
+- 项目筛选
+- 标签显示名称转换
+- 项目外部链接和基础数据完整性
+
+面向 `main` 的 Pull Request 触发 `.github/workflows/quality.yml`。推送到 `main` 触发 `.github/workflows/deploy-pages.yml`，完成依赖安装、资源生成、质量检查、构建和 GitHub Pages 发布。部署使用 GitHub Pages 的短期身份令牌，不需要在仓库中保存部署密钥。

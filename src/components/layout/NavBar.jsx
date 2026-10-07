@@ -2,10 +2,10 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { Mail, MenuIcon, X } from "lucide-react";
 
-import ThemeToggle from "@/components/ThemeToggle";
+import ThemeToggle from "@/components/layout/ThemeToggle";
 import { Button } from "@/components/ui/button";
 import { contactLink } from "@/data/site";
-import Menu from "./Menu";
+import NavMenu from "./NavMenu";
 
 export default function NavBar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,7 +27,7 @@ export default function NavBar() {
         </Link>
 
         <div className="hidden md:block">
-          <Menu />
+          <NavMenu />
         </div>
 
         <div className="flex items-center gap-2">
@@ -63,7 +63,7 @@ export default function NavBar() {
           id="mobile-navigation"
           className="py-3 border-t border-border-strong md:hidden"
         >
-          <Menu mobile onNavigate={() => setIsMenuOpen(false)} />
+          <NavMenu mobile onNavigate={() => setIsMenuOpen(false)} />
           <a
             href={contactLink}
             className="inline-flex items-center justify-center w-full h-10 gap-2 px-4 mt-2 text-base font-bold transition-colors border rounded-lg border-border-strong bg-chrome text-content hover:bg-surface hover:text-accent"

@@ -1,10 +1,10 @@
 import { Code2 } from "lucide-react";
 
 import aboutMe from "@/assets/profile/about-me.webp";
-import SectionEyebrow from "@/components/widgets/SectionEyebrow";
+import SectionEyebrow from "@/components/ui/SectionEyebrow";
 import { skillGroups } from "@/data/site";
 
-export default function Skills() {
+export default function SkillsSection() {
   return (
     <section
       id="skills"

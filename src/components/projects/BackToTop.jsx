@@ -1,6 +1,6 @@
 import { ArrowUp } from "lucide-react";
 
-export default function GoTop() {
+export default function BackToTop() {
   return (
     <button
       type="button"

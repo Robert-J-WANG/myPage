@@ -1,7 +1,7 @@
 import { navigationLinks } from "@/data/site";
-import MyNavLink from "./MyNavLink";
+import NavLink from "./NavLink";
 
-function Menu({ mobile = false, onNavigate }) {
+function NavMenu({ mobile = false, onNavigate }) {
   return (
     <ul
       className={
@@ -11,17 +11,17 @@ function Menu({ mobile = false, onNavigate }) {
       }
     >
       {navigationLinks.map((item) => (
-        <MyNavLink
+        <NavLink
           key={item.key}
           to={item.to}
           mobile={mobile}
           onNavigate={onNavigate}
         >
           {item.content}
-        </MyNavLink>
+        </NavLink>
       ))}
     </ul>
   );
 }
 
-export default Menu;
+export default NavMenu;

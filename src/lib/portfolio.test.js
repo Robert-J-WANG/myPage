@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { projects } from "@/data/projects";
-import { filterProjects, getProjectTags } from "./portfolio";
+import { filterProjects, formatProjectTag, getProjectTags } from "./portfolio";
 
 const sampleProjects = [
   { id: 1, tags: ["All", "React", "Tailwind"] },
@@ -17,6 +17,11 @@ describe("portfolio helpers", () => {
   it("filters projects by the active tag", () => {
     expect(filterProjects(sampleProjects, "React").map((project) => project.id)).toEqual([1, 3]);
     expect(filterProjects(sampleProjects, "All")).toHaveLength(3);
+  });
+
+  it("formats internal project tag names for display", () => {
+    expect(formatProjectTag("react-hooks")).toBe("React Hooks");
+    expect(formatProjectTag("React")).toBe("React");
   });
 
   it("keeps every published project link as an HTTPS URL", () => {

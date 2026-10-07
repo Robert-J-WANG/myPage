@@ -2,10 +2,10 @@ import { createBrowserRouter, Navigate } from "react-router";
 import { createElement } from "react";
 
 import RootLayout from "@/app/RootLayout";
-import Home from "@/components/pages/Home";
-import NotFound from "@/components/pages/NotFound";
-import ProjectDetails from "@/components/pages/ProjectDetails";
-import Projects from "@/components/pages/Projects";
+import HomePage from "@/pages/HomePage";
+import NotFoundPage from "@/pages/NotFoundPage";
+import ProjectDetailsPage from "@/pages/ProjectDetailsPage";
+import ProjectsPage from "@/pages/ProjectsPage";
 
 export const router = createBrowserRouter(
   [
@@ -14,7 +14,7 @@ export const router = createBrowserRouter(
       Component: RootLayout,
       children: [
         { index: true, element: createElement(Navigate, { replace: true, to: "/home" }) },
-        { path: "home", Component: Home },
+        { path: "home", Component: HomePage },
         {
           path: "about",
           element: createElement(Navigate, {
@@ -22,9 +22,9 @@ export const router = createBrowserRouter(
             to: "/home#about",
           }),
         },
-        { path: "projects", Component: Projects },
-        { path: "projects/:projectId", Component: ProjectDetails },
-        { path: "*", Component: NotFound },
+        { path: "projects", Component: ProjectsPage },
+        { path: "projects/:projectId", Component: ProjectDetailsPage },
+        { path: "*", Component: NotFoundPage },
       ],
     },
   ],
