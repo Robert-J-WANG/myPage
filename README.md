@@ -8,7 +8,7 @@ Personal portfolio website for presenting my profile, technical skills, and sele
 
 - Responsive homepage with About, Skills, and Featured Projects sections
 - Light and dark themes with the visitor's choice stored locally
-- Filterable project collection and reusable project detail pages
+- Curated five-project collection with filtering and reusable project detail pages
 - Rich UUcars case study with product highlights and public, user, and admin interface previews
 - Fixed animated background, profile animation, and typewriter introduction
 - Automatically optimized WebP images

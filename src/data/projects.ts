@@ -1,21 +1,12 @@
-import agriBazaarNZ from "@/assets/projects/agriBazaarNZ.webp";
-import bookSheet from "@/assets/projects/bookSheet.webp";
 import burgerQueen from "@/assets/projects/burgerQueen.webp";
-import cityViews from "@/assets/projects/cityViews.webp";
-import countdown from "@/assets/projects/countdown.webp";
-import gitUserSearch from "@/assets/projects/gitUserSearch.webp";
 import meowBubbles from "@/assets/projects/meowBubbles.webp";
-import orewaBeachLodges from "@/assets/projects/orewaBeachLodges.webp";
 import shoppia from "@/assets/projects/shoppia.webp";
-import todoList from "@/assets/projects/todoList.webp";
 import topMovies from "@/assets/projects/topMovies.webp";
-import tshirtShoppingCart from "@/assets/projects/tshirtShoppingCart.webp";
 import uucarsAdminDashboard from "@/assets/projects/uucars-admin-dashboard.webp";
 import uucarsBrowse from "@/assets/projects/uucars-browse.webp";
 import uucarsCover from "@/assets/projects/uucars-cover.webp";
 import uucarsListing from "@/assets/projects/uucars-listing.webp";
 import uucarsUserListings from "@/assets/projects/uucars-user-listings.webp";
-import weather from "@/assets/projects/weather.webp";
 
 export type ProjectDetails = {
   overview: string[];
@@ -107,95 +98,6 @@ export const projects: Project[] = [
     liveUrl: "https://robert-j-wang.github.io/Meow-Bubble/",
   },
   {
-    slug: "orewa-beach-lodges",
-    tags: ["All", "JavaScript"],
-    title: "Orewa Beach Lodges",
-    summary:
-      "A responsive accommodation website for exploring lodge details and booking information.",
-    image: orewaBeachLodges,
-    liveUrl: "https://robert-j-wang.github.io/Orewa-Beach-Loges/",
-  },
-  {
-    slug: "city-views",
-    tags: ["All", "JavaScript"],
-    title: "City Views",
-    summary:
-      "A JavaScript image slider for presenting city photography with simple navigation.",
-    image: cityViews,
-    liveUrl: "https://robert-j-wang.github.io/js_image_slider/",
-  },
-  {
-    slug: "christmas-countdown",
-    tags: ["All", "JavaScript"],
-    title: "Christmas Countdown",
-    summary:
-      "A JavaScript countdown interface that tracks the time remaining until Christmas Day.",
-    image: countdown,
-    liveUrl: "https://robert-j-wang.github.io/js_christmas_countdown/",
-  },
-  {
-    slug: "todo-list",
-    tags: ["All", "React", "react-hooks"],
-    title: "To-do List",
-    summary:
-      "A React to-do list for adding, completing, and removing everyday tasks.",
-    image: todoList,
-    liveUrl: "https://robert-j-wang.github.io/react_todo_list/",
-  },
-  {
-    slug: "booksheet",
-    tags: ["All", "Bootstrap", "React", "react-hooks"],
-    title: "BookSheet",
-    summary:
-      "A React book tracker for organising a personal reading list and book details.",
-    image: bookSheet,
-    liveUrl: "https://robert-j-wang.github.io/react_booksheet/",
-  },
-  {
-    slug: "github-user-search",
-    tags: ["All", "Axios", "React"],
-    title: "GitHub User Search",
-    summary:
-      "A React search interface for finding and displaying GitHub user profiles.",
-    image: gitUserSearch,
-    liveUrl: "https://robert-j-wang.github.io/react_search_users/",
-  },
-  {
-    slug: "tshirt-shopping-cart",
-    tags: [
-      "All",
-      "react-hooks",
-      "React",
-      "TypeScript",
-      "Zustand",
-      "Axios",
-      "Bootstrap",
-    ],
-    title: "T-shirt Shopping Cart",
-    summary:
-      "A TypeScript shopping cart for selecting product sizes and managing cart state.",
-    image: tshirtShoppingCart,
-    liveUrl: "https://robert-j-wang.github.io/react_Tshirt/",
-  },
-  {
-    slug: "agri-bazaar-nz",
-    tags: ["All", "React", "Tailwind", "react-hooks", "Zustand"],
-    title: "AgriBazaar NZ",
-    summary:
-      "A responsive marketplace interface for browsing agricultural machinery for sale or hire.",
-    image: agriBazaarNZ,
-    liveUrl: "https://robert-j-wang.github.io/react_AgriBazaar_website/",
-  },
-  {
-    slug: "weather-forecast",
-    tags: ["All", "TypeScript", "React", "Bootstrap", "Axios", "react-hooks"],
-    title: "Weather Forecast",
-    summary:
-      "A React weather dashboard for searching cities and displaying forecast data.",
-    image: weather,
-    liveUrl: "https://robert-j-wang.github.io/react_weather/",
-  },
-  {
     slug: "burger-queen",
     tags: [
       "All",
@@ -242,9 +144,9 @@ export const projects: Project[] = [
 
 const featuredProjectSlugs = [
   "uucars",
-  "agri-bazaar-nz",
-  "burger-queen",
   "shoppia",
+  "meow-bubbles",
+  "top-movies",
 ];
 
 export const featuredProjects = featuredProjectSlugs.map((slug) => {

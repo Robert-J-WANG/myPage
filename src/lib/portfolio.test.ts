@@ -57,7 +57,7 @@ describe("portfolio helpers", () => {
   it("keeps project identifiers and links valid", () => {
     const slugs = projects.map((project) => project.slug);
 
-    expect(projects).toHaveLength(14);
+    expect(projects).toHaveLength(5);
     expect(new Set(slugs)).toHaveLength(slugs.length);
     expect(
       slugs.every((slug) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug)),
