@@ -14,17 +14,18 @@ export default function FeaturedProjectsSection() {
       <header className="max-w-4xl">
         <SectionEyebrow>Featured projects</SectionEyebrow>
         <h2 className="mt-4 text-heading font-bold text-content">
-          Selected projects focused on practical, responsive interfaces.
+          Selected projects built around practical products and clear user
+          experiences.
         </h2>
         <p className="mt-5 text-base leading-7 text-content">
-          A selection of React and TypeScript projects focused on responsive
-          design, routing, and client-side state.
+          A selection of full-stack and frontend projects spanning responsive
+          interfaces, application workflows, and modern delivery.
         </p>
       </header>
 
       <div className="mt-10 grid grid-cols-1 gap-6 min-[68rem]:grid-cols-[repeat(2,480px)] min-[68rem]:justify-center min-[68rem]:gap-10">
         {featuredProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
+          <ProjectCard key={project.slug} project={project} />
         ))}
       </div>
 

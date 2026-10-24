@@ -23,7 +23,7 @@ export const router = createBrowserRouter(
           }),
         },
         { path: "projects", Component: ProjectsPage },
-        { path: "projects/:projectId", Component: ProjectDetailsPage },
+        { path: "projects/:projectSlug", Component: ProjectDetailsPage },
         { path: "*", Component: NotFoundPage },
       ],
     },

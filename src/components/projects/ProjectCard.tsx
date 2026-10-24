@@ -1,17 +1,23 @@
 import { Eye } from "lucide-react";
 import { Link } from "react-router";
 
-export default function ProjectCard({ project }) {
+import type { Project } from "@/data/projects";
+
+type ProjectCardProps = {
+  project: Project;
+};
+
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="mx-auto">
       <Link
-        to={`/projects/${project.id}`}
+        to={`/projects/${project.slug}`}
         aria-label={`View ${project.title} details`}
         className="group grid aspect-[4/3] w-full max-w-[480px] grid-rows-[2fr_1fr] overflow-hidden rounded-t-xl border border-border-strong bg-surface focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent sm:h-[390px] sm:w-[520px] sm:max-w-none min-[68rem]:h-[360px] min-[68rem]:w-[480px]"
       >
         <div className="relative min-h-0 overflow-hidden border-b border-border-strong bg-page">
           <img
-            src={project.img}
+            src={project.image}
             alt={`${project.title} interface preview`}
             className="size-full object-cover transition-[filter,opacity] duration-500 group-hover:blur group-hover:opacity-20 group-focus-visible:blur group-focus-visible:opacity-20"
             loading="lazy"
@@ -29,7 +35,7 @@ export default function ProjectCard({ project }) {
         <div className="flex min-h-0 flex-col justify-center px-5 py-4">
           <h3 className="text-base font-bold text-content">{project.title}</h3>
           <p className="mt-2 min-h-12 line-clamp-2 text-sm leading-6 text-content">
-            {project.description}
+            {project.summary}
           </p>
         </div>
       </Link>
