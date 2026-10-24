@@ -61,7 +61,6 @@ export default function ProjectsPage() {
           <span className="h-px w-1/3 max-w-xs bg-gradient-to-r from-eyebrow/60 to-transparent" />
         </div>
 
-
         {visibleProjects.length < 1 ? (
           <p className="px-6 text-center text-base text-muted">
             No projects match this filter.
@@ -69,7 +68,7 @@ export default function ProjectsPage() {
         ) : (
           <div className="mx-auto grid w-full max-w-6xl grid-cols-1 gap-6 px-6 sm:px-8 min-[68rem]:grid-cols-[repeat(2,480px)] min-[68rem]:justify-center min-[68rem]:gap-10">
             {visibleProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard key={project.slug} project={project} />
             ))}
           </div>
         )}

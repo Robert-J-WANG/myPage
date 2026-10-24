@@ -9,6 +9,7 @@ Personal portfolio website for presenting my profile, technical skills, and sele
 - Responsive homepage with About, Skills, and Featured Projects sections
 - Light and dark themes with the visitor's choice stored locally
 - Filterable project collection and reusable project detail pages
+- Rich UUcars case study with product highlights and public, user, and admin interface previews
 - Fixed animated background, profile animation, and typewriter introduction
 - Automatically optimized WebP images
 - Clean client-side routes hosted on GitHub Pages
@@ -22,7 +23,7 @@ Personal portfolio website for presenting my profile, technical skills, and sele
 - Sharp image processing
 - GitHub Actions and GitHub Pages
 
-The application code uses JavaScript and JSX. TypeScript remains only in the Vite configuration and build toolchain.
+The general site UI uses JavaScript and JSX. The project data, project cards, project details, and portfolio helpers use a focused TypeScript boundary.
 
 ## Run locally
 
@@ -49,7 +50,7 @@ npm run dev
 ## Updating portfolio content
 
 - Edit navigation, profile text, skills, contact details, and social links in `src/data/site.js`.
-- Edit project titles, descriptions, tags, images, and links in `src/data/projects.js`.
+- Edit project titles, descriptions, tags, images, links, and optional case-study details in `src/data/projects.ts`.
 - Add original images to `src/assets/source/profile/` or `src/assets/source/projects/`.
 - Run `npm run images:optimize` after adding or replacing an image. The command also runs automatically before development, tests, and production builds.
 

@@ -29,6 +29,7 @@ src/
 ```
 
 页面组件负责组合界面，展示数据集中在 `src/data/`，可复用组件按实际使用场景分类。项目规模不需要额外的 feature 层、全局状态管理层或后端抽象。
+站点主体继续使用 JavaScript/JSX；项目数据、项目卡片、项目详情页和项目工具函数形成一个小型 TypeScript/TSX 边界，用类型约束详情数据与组件输入。
 
 ## 3. 应用组成
 
@@ -38,7 +39,7 @@ src/
 
 - `HomePage` 组合 About、Skills 和 Featured Projects。
 - `ProjectsPage` 管理当前筛选标签并展示过滤后的项目。
-- `ProjectDetailsPage` 按路由参数读取项目数据。
+- `ProjectDetailsPage` 按项目 slug 读取数据；成熟项目可展示概览、工程亮点、技术栈与界面图集，旧练习项目继续使用简化详情。
 - `NotFoundPage` 处理未知路径。
 
 站点保持局部 React 状态。主题、移动导航、项目筛选和动画状态不需要跨页面状态库。
@@ -55,14 +56,16 @@ src/
 | `/home#skills` | 首页 Skills 区域 |
 | `/home#projects` | 首页 Featured Projects 区域 |
 | `/projects` | 可筛选的完整项目列表 |
-| `/projects/:projectId` | 项目详情页 |
+| `/projects/:projectSlug` | 项目详情页 |
 | 其他路径 | Not Found 页面 |
 
 Vite 的 `base` 设置为 `/myPage/`。生产构建结束后，`scripts/copy-spa-fallback.mjs` 将 `dist/index.html` 复制为 `dist/404.html`，让 GitHub Pages 上的直接访问请求可以回到客户端路由。
 
 ## 5. 数据与资源
 
-`src/data/site.js` 保存导航、联系方式、首页简介和技能；`src/data/projects.js` 保存项目标题、简介、标签、图片和外部链接。页面和组件只读取这些模块，不在 JSX 中维护另一份相同数据。
+`src/data/site.js` 保存导航、联系方式、首页简介和技能；`src/data/projects.ts` 保存项目 slug、标题、简介、标签、图片与外部链接。成熟项目可额外提供 `details`，其中包含概览段落、工程亮点和界面截图；没有 `details` 的旧项目自动使用简化详情。
+
+`Project` 和 `ProjectDetails` 类型是项目展示域的数据契约。详情路由、首页精选列表和完整项目列表共享同一份数据，不在组件中维护重复内容。
 
 原始图片保存在 `src/assets/source/` 并提交到 Git。`scripts/optimize-images.mjs` 使用 Sharp 生成 WebP：
 
@@ -83,13 +86,14 @@ Tailwind CSS 提供布局和组件样式，`src/styles/index.css` 定义浅色�
 
 ## 7. 质量与交付
 
-项目使用 Node.js 24 和 npm 11。应用代码使用 JavaScript/JSX；TypeScript 配置服务于 Vite 配置和构建工具，shadcn 配置当前生成 JSX。
+项目使用 Node.js 24 和 npm 11。JavaScript/JSX 承担一般页面与布局，TypeScript/TSX 用于项目数据、卡片、详情页、辅助函数和对应测试。`tsc -b` 是生产构建的一部分。
 
 `npm run check` 依次执行 ESLint、Vitest 和生产构建。现有单元测试覆盖：
 
 - 项目标签去重与排序
 - 项目筛选
 - 标签显示名称转换
-- 项目外部链接和基础数据完整性
+- 项目 slug、外部链接和基础数据完整性
+- 可选详情数据的概览、亮点和截图完整性
 
 面向 `main` 的 Pull Request 触发 `.github/workflows/quality.yml`。推送到 `main` 触发 `.github/workflows/deploy-pages.yml`，完成依赖安装、资源生成、质量检查、构建和 GitHub Pages 发布。部署使用 GitHub Pages 的短期身份令牌，不需要在仓库中保存部署密钥。
