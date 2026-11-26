@@ -65,7 +65,7 @@ Vite 的 `base` 设置为 `/myPage/`。生产构建结束后，`scripts/copy-spa
 
 `src/data/site.js` 保存导航、联系方式、首页简介和技能；`src/data/projects.ts` 保存项目 slug、标题、简介、标签、图片与外部链接。项目可按内容成熟度提供可选 `details`，其中包含概览段落、工程亮点和界面截图；没有 `details` 的项目自动使用简化详情。
 
-`Project` 和 `ProjectDetails` 类型是项目展示域的数据契约。当前完整列表包含 5 个经过筛选的项目，首页从中选取 4 个 Featured Projects；详情路由、首页精选列表和完整项目列表共享同一份数据，不在组件中维护重复内容。
+`Project` 和 `ProjectDetails` 类型是项目展示域的数据契约。当前完整列表包含 6 个经过筛选的项目，首页从中选取 4 个 Featured Projects；详情路由、首页精选列表和完整项目列表共享同一份数据，不在组件中维护重复内容。
 
 原始图片保存在 `src/assets/source/` 并提交到 Git。`scripts/optimize-images.mjs` 使用 Sharp 生成 WebP：
 

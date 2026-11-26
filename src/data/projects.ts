@@ -1,5 +1,10 @@
 import burgerQueen from "@/assets/projects/burgerQueen.webp";
 import meowBubbles from "@/assets/projects/meowBubbles.webp";
+import roostmapArea from "@/assets/projects/roostmap-area.webp";
+import roostmapCover from "@/assets/projects/roostmap-cover.webp";
+import roostmapExplore from "@/assets/projects/roostmap-explore.webp";
+import roostmapExploreFiltered from "@/assets/projects/roostmap-explore-filtered.webp";
+import roostmapMethodology from "@/assets/projects/roostmap-methodology.webp";
 import shoppia from "@/assets/projects/shoppia.webp";
 import topMovies from "@/assets/projects/topMovies.webp";
 import uucarsAdminDashboard from "@/assets/projects/uucars-admin-dashboard.webp";
@@ -89,6 +94,62 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "roostmap",
+    tags: ["All", "React", "TypeScript", "MapLibre", "Azure"],
+    title: "RoostMap",
+    summary:
+      "A React and TypeScript map application that compares weekly rents across 2,009 New Zealand SA2 areas using official MBIE rental bond data.",
+    image: roostmapCover,
+    liveUrl: "https://victorious-island-0bcdf8f10.3.azurestaticapps.net",
+    repositoryUrl: "https://github.com/Robert-J-WANG/RoostMap",
+    details: {
+      overview: [
+        "RoostMap is a rental-area evidence explorer for New Zealand. It shows weekly rents from MBIE rental bond data for 2,009 Statistical Area 2 (SA2) areas across 16 Regions, using Stats NZ SA2 2019 boundaries.",
+        "Visitors can explore a Region on a map and in a list, filter by dwelling type and bedrooms, and open an area to see its latest observed rent, Reported Bonds, 12-month change, and quarterly rent history. It is a static front-end application built on a versioned data release, and it shows official statistics rather than live listings.",
+      ],
+      highlights: [
+        {
+          title: "Interactive rent map",
+          description:
+            "A MapLibre GL JS choropleth colours each SA2 area by rent band, follows the selected dwelling type and bedroom category, and keeps the Region, category, and selected area in the URL.",
+        },
+        {
+          title: "Honest rent history",
+          description:
+            "A Recharts line chart shows quarterly rent history and leaves missing quarters as gaps; missing values display as No data instead of zeros or estimates.",
+        },
+        {
+          title: "Validated data pipeline",
+          description:
+            "Node.js scripts join MBIE rent data with Stats NZ boundaries into a versioned static data release, and Zod data contracts check every file in tests and in the browser.",
+        },
+        {
+          title: "Tested preview deployments",
+          description:
+            "GitHub Actions runs linting, Vitest tests, and a production build, deploys each pull request to an Azure Static Web Apps preview, and runs Playwright journeys against it.",
+        },
+      ],
+      screenshots: [
+        {
+          src: roostmapExplore,
+          alt: "RoostMap Explore page with a Wellington Region rent map and area list",
+        },
+        {
+          src: roostmapExploreFiltered,
+          alt: "RoostMap Explore page in dark theme showing Auckland Region rents for 3-bedroom houses",
+        },
+        {
+          src: roostmapArea,
+          alt: "RoostMap area page for Thorndon with rent figures, boundary map, and rent history chart",
+        },
+        {
+          src: roostmapMethodology,
+          alt: "RoostMap methodology page describing data sources and how rents are calculated",
+        },
+      ],
+    },
+  },
+  {
     slug: "meow-bubbles",
     tags: ["All", "JavaScript", "Canvas"],
     title: "Meow Bubbles",
@@ -144,9 +205,9 @@ export const projects: Project[] = [
 
 const featuredProjectSlugs = [
   "uucars",
+  "roostmap",
   "shoppia",
   "meow-bubbles",
-  "top-movies",
 ];
 
 export const featuredProjects = featuredProjectSlugs.map((slug) => {
