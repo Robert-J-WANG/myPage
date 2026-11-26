@@ -146,7 +146,7 @@ export default function ProjectDetailsPage() {
             <section className="mt-16 sm:mt-20">
               <SectionEyebrow>Interface</SectionEyebrow>
               <h2 className="mt-6 text-subheading font-bold text-content">
-                Marketplace and management interfaces
+                Key interface screens
               </h2>
 
               <div className="mt-8 grid gap-6 lg:grid-cols-2">
