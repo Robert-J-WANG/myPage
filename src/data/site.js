@@ -21,8 +21,8 @@ export const socialLinks = [
 ];
 
 export const homeIntroduction = [
-  "I build clear, practical web experiences with React and modern JavaScript.",
-  "My background combines software development education with practical engineering experience.",
+  "I'm a graduate software developer in Auckland, building web applications with C#, ASP.NET Core, React and TypeScript.",
+  "I hold a Master of Applied Technologies (Computing) and have built and deployed two projects: a full-stack .NET and React used-car marketplace, and a React and TypeScript map application built on official data.",
 ];
 
 export const typewriterText = "Robert J. Wang";
@@ -31,16 +31,39 @@ export const skillGroups = [
   {
     id: 1,
     title: "Frontend",
-    skills: ["HTML", "CSS", "JavaScript", "TypeScript", "React", "Tailwind CSS"],
+    skills: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "MapLibre GL JS",
+      "Recharts",
+    ],
   },
   {
     id: 2,
-    title: "Backend",
-    skills: ["C#", "ASP.NET Core", "Node.js", "Express", "REST APIs"],
+    title: "Backend & Data",
+    skills: [
+      "C#",
+      "ASP.NET Core",
+      "Entity Framework Core",
+      "Node.js",
+      "Express",
+      "REST APIs",
+      "SQL Server",
+      "Redis",
+    ],
   },
   {
     id: 3,
-    title: "Data & Delivery",
-    skills: ["SQL Server", "Redis", "Docker", "GitHub Actions", "Azure"],
+    title: "Testing",
+    skills: ["xUnit", "Vitest", "React Testing Library", "Playwright"],
+  },
+  {
+    id: 4,
+    title: "Cloud & Delivery",
+    skills: ["Docker", "GitHub Actions", "Azure"],
   },
 ];
